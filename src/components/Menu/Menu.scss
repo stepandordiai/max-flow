@@ -1,0 +1,44 @@
+.menu {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	position: fixed;
+	top: 70px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	height: calc(100vh - 70px);
+	background: var(--bg-clr);
+	padding: 10px;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.3s;
+
+	p {
+		font-size: 1.5rem;
+		border-bottom: 3px solid rgba(255, 255, 255, 0.25);
+		padding: 10px 0;
+		transition: all 0.3s;
+
+		&:hover {
+			border-bottom: 3px solid rgba(255, 255, 255, 1);
+		}
+	}
+}
+
+.menu__inner {
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.3s 0.6s;
+}
+
+.menu__inner--active {
+	opacity: 1 !important;
+	pointer-events: all !important;
+}
+
+.menu--active {
+	opacity: 1;
+	pointer-events: all;
+}

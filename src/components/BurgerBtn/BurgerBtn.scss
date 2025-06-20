@@ -41,7 +41,7 @@
 	transition: translate 0.5s, rotate 0.5s 0.5s;
 }
 
-@media screen and (width < 896px) {
+@media screen and (width <= 800px) {
 	.burger-2 {
 		display: flex;
 	}
