@@ -58,6 +58,7 @@ const Header = () => {
 					</svg>
 				</a>
 				<BurgerBtn />
+				<div className="header__divider"></div>
 			</header>
 		</>
 	);

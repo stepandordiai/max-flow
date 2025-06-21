@@ -12,6 +12,15 @@
 	background: var(--bg-clr);
 }
 
+.header__divider {
+	position: absolute;
+	width: calc(100% - 50px);
+	height: 3px;
+	bottom: 0;
+	border-radius: 1.5px;
+	background: rgba(255, 255, 255, 0.1);
+}
+
 .header__logo {
 	font-size: 1.5rem;
 	@include flex-center;
@@ -81,6 +90,10 @@
 @media screen and (width <= 800px) {
 	.header {
 		padding: 0 15px;
+	}
+
+	.header__divider {
+		width: calc(100% - 30px);
 	}
 
 	.header__nav {
