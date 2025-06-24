@@ -1,5 +1,16 @@
 @use "./../../scss/mixins" as *;
 
+.home {
+	opacity: 0;
+	animation: animateHome 0.3s forwards;
+}
+
+@keyframes animateHome {
+	to {
+		opacity: 1;
+	}
+}
+
 .home__top {
 	position: relative;
 	min-height: 100svh;
@@ -22,7 +33,7 @@
 	left: 50%;
 	transform: translateX(-50%);
 	height: 50px;
-	width: 2px;
+	width: 3px;
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: 10px;
 	transition: all 0.3s;
@@ -82,7 +93,7 @@ h1 {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-end;
-	gap: 2px;
+	gap: 3px;
 
 	button {
 		padding: 10px;
@@ -101,7 +112,7 @@ h1 {
 
 	button:nth-of-type(2) {
 		background: rgba(255, 255, 255, 0.1);
-		border: 2px dashed #fff;
+		border: 3px dashed #fff;
 	}
 }
 
@@ -145,13 +156,9 @@ h1 {
 	position: relative;
 	max-width: 10px;
 	height: 1000px;
-	// background: conic-gradient(white 0%, rgba(255, 255, 255, 0.1) 0%);
 	background: rgba(255, 255, 255, 0.099);
 	margin: auto;
 	border-radius: 5px;
-	// display: flex;
-	// justify-content: center;
-	// align-items: center;
 }
 
 .process__inner {
@@ -164,7 +171,6 @@ h1 {
 
 .process__card1 {
 	position: absolute;
-	// transform: translateX(100px);
 	right: 0;
 	transform: translateX(calc(100% + 25px));
 	background: rgba(255, 255, 255, 0.1);
@@ -235,7 +241,6 @@ h1 {
 	font-size: 2rem;
 	font-weight: 400;
 	padding-top: 25px;
-	// padding-bottom: 25px;
 	color: #000;
 	text-align: center;
 }
@@ -245,13 +250,11 @@ h1 {
 	gap: 25px;
 	max-width: 700px;
 	padding: 25px;
-	// padding: 200px 15px;
 	margin: auto;
 	flex-wrap: wrap;
 
 	p {
 		font-size: 1.5rem;
-		// color: #000;
 		color: rgba(0, 0, 0, 0.25);
 
 		&:hover {
