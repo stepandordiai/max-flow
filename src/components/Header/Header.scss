@@ -27,6 +27,13 @@
 	bottom: 0;
 	border-radius: 1.5px;
 	background: rgba(255, 255, 255, 0.1);
+	overflow: hidden;
+}
+
+.header__divider-inner {
+	width: 0%;
+	background: #fff;
+	height: 100%;
 }
 
 .header__logo {

@@ -1,5 +1,8 @@
 import { Helmet } from "react-helmet";
 import { useEffect } from "react";
+import saveMoneyIcon from "/icons/save-money.png";
+import executionIcon from "/icons/execution.png";
+import homeAutomationIcon from "/icons/home-automation.png";
 import "./Home.scss";
 
 const Home = () => {
@@ -17,7 +20,7 @@ const Home = () => {
 			const conicInner = document.querySelector(".process__inner");
 
 			const rect = conic.getBoundingClientRect();
-			const scrollRange = window.innerHeight; // how much distance the animation takes
+			const scrollRange = window.innerHeight * 2; // how much distance the animation takes
 			const triggerPoint = window.innerHeight / 2; // when to start
 
 			if (rect.top <= triggerPoint + scrollRange && rect.bottom >= 0) {
@@ -38,6 +41,21 @@ const Home = () => {
 				const cardRect = card.getBoundingClientRect();
 				if (cardRect.top <= window.innerHeight / 2) {
 					card.classList.add("process__card--active");
+				}
+			});
+		});
+
+		let delay = 300;
+
+		document.querySelectorAll(".process-count").forEach((count) => {
+			document.addEventListener("scroll", () => {
+				const countRect = count.getBoundingClientRect();
+				if (countRect.bottom < window.innerHeight) {
+					count.querySelectorAll(".char").forEach((char, index) => {
+						setTimeout(() => {
+							char.classList.add("char--active");
+						}, delay + 300 * index);
+					});
 				}
 			});
 		});
@@ -78,38 +96,131 @@ const Home = () => {
 					<p className="benefits__title">Výhody</p>
 					<div className="benefits-container">
 						<div className="benefits">
-							<p>Maximální úspora</p>
-							<p>Vlastní spotřeba &gt;80% energie.</p>
+							<div>
+								<p>Maximální úspora</p>
+								<p>Vlastní spotřeba &gt;80% energie.</p>
+							</div>
+							<img width={100} height={100} src={saveMoneyIcon} alt="" />
 						</div>
 						<div className="benefits">
-							<p>Inteligentní řízení</p>
-							<p>AI optimalizace toku energie.</p>
+							<div>
+								<p>Inteligentní řízení</p>
+								<p>AI optimalizace toku energie.</p>
+							</div>
+							<img width={100} height={100} src={homeAutomationIcon} alt="" />
 						</div>
 						<div className="benefits">
-							<p>Bezstarostný provoz</p>
-							<p>Vše řídí SOLARIS 360°.</p>
+							<div>
+								<p>Bezstarostný provoz</p>
+								<p>Vše řídí SOLARIS 360°.</p>
+							</div>
+							<img width={100} height={100} src={executionIcon} alt="" />
 						</div>
 					</div>
 					<h2 className="process__title">Jak systém funguje</h2>
-					<div className="process">
-						<div className="process__inner"></div>
+					<div className="process__outer">
 						<div className="process__card process__card1">
-							<p>1</p>
 							<p>FVE</p>
+							<div
+								style={{
+									width: "100%",
+									borderBottom: "3px dashed white",
+									marginBottom: 10,
+									marginTop: 10,
+								}}
+							></div>
+							<ul>
+								<li>Solární panely vyrábí elektřinu ze slunce.</li>
+								<li>
+									Tato elektřina je primárně spotřebovávána přímo v objektu
+									(např. osvětlení, výtahy, ohřev vody).
+								</li>
+							</ul>
 						</div>
 						<div className="process__card process__card2">
-							<p>2</p>
 							<p>Baterie</p>
+							<div
+								style={{
+									width: "100%",
+									borderBottom: "3px dashed white",
+									marginBottom: 10,
+									marginTop: 10,
+								}}
+							></div>
+							<ul>
+								<li>
+									Pokud je okamžitá výroba větší než spotřeba, přebytečná
+									energie se uloží do bateriového úložiště.
+								</li>
+								<li>
+									Energie z baterie se poté může využít večer nebo při výpadku
+									dodávky ze sítě.
+								</li>
+								<li>
+									Výhoda: Zvyšuje soběstačnost a snižuje náklady na elektřinu z
+									distribuční sítě.
+								</li>
+							</ul>
 						</div>
 						<div className="process__card process__card3">
-							<p>3</p>
 							<p>Řízená spotřeba</p>
+							<div
+								style={{
+									width: "100%",
+									borderBottom: "3px dashed white",
+									marginBottom: 10,
+									marginTop: 10,
+								}}
+							></div>
+							<ul>
+								<li>
+									Chytrý řídicí systém rozhoduje, kam se má energie směřovat:
+									<ul>
+										<li>
+											Když je dostatek elektřiny → aktivuje se např. ohřev vody,
+											čerpadla apod.
+										</li>
+										<li>
+											Když je málo energie → spotřebiče se omezí nebo se odebírá
+											ze sítě
+										</li>
+									</ul>
+								</li>
+								<li>
+									Cílem je minimalizovat nákup ze sítě a maximalizovat využití
+									vlastní elektřiny.
+								</li>
+							</ul>
 						</div>
 						<div className="process__card process__card4">
-							<p>4</p>
 							<p>Prodej přebytků</p>
+							<div
+								style={{
+									width: "100%",
+									borderBottom: "3px dashed white",
+									marginBottom: 10,
+									marginTop: 10,
+								}}
+							></div>
+							<ul>
+								<li>
+									Když je baterie plná a spotřeba malá, přebytky se prodávají do
+									distribuční sítě.
+								</li>
+								<li>
+									Výnosy se obvykle rozpočítávají mezi členy SVJ nebo slouží
+									jako příjem pro pokrytí nákladů.
+								</li>
+								<li>
+									Nutné je mít smlouvu o výkupu s dodavatelem / distributorem.
+								</li>
+							</ul>
+						</div>
+						<div className="process">
+							<div className="process__inner"></div>
 						</div>
 					</div>
+
 					<div className="partners-container">
 						<h2 className="partners__title">Partners</h2>
 						<div className="partners">
@@ -124,50 +235,57 @@ const Home = () => {
 							<p>TOWERCOM</p>
 							<p>AGC</p>
 							<p>Chisage ESS</p>
-							{/* <img
-						src="https://jinkosolarcdn.shwebspace.com/themes/basicen/skin/images/logony.png"
-						alt=""
-						/>
-						
-						<img
-						src="https://www.canadiansolar.com/wp-content/uploads/2024/06/CS-LOGO-RED-RGB-NEW-2024-W-TAG-2.png"
-						alt=""
-						/>
-						<img
-						src="https://lh4.googleusercontent.com/proxy/341zOYGIOFlOW5xf7XYn1CNQqGaKaOOXc9uAKv9aqbU-PX_0ameieUdtYshiwsEjcMGtbEMWv96le1WXvbtR65quSuLbJ--cyZkI7d6I8rjZOI5qriUi8jowokGgPw"
-						alt=""
-						/>
-						<img
-						src="https://cdn.prod.website-files.com/5fa5ee97e1eb253b5efc0385/5fad42bc7dee3e2002385080_Tigo-logo.svg"
-						alt=""
-						/>
-						<img
-						src="https://www.memodo.cz/m/fileadmin/shopware_products/manufacturer_images/400x200px_Aiko-Logo.png"
-						alt=""
-						/>
-						<img
-						src="https://upload.wikimedia.org/wikipedia/commons/0/09/%C5%A0koda_nieuw.png"
-						alt=""
-						/> */}
 						</div>
 					</div>
 					<h2>About us in numbers</h2>
 					<div className="stats">
 						<div>
 							<p>instalací ročně</p>
-							<p>50+</p>
+							<p className="process-count">
+								{"50+".split("").map((char, index) => {
+									return (
+										<span key={index} className="char">
+											{char}
+										</span>
+									);
+								})}
+							</p>
 						</div>
 						<div>
 							<p>zemí</p>
-							<p>20+</p>
+							<p className="process-count">
+								{"20+".split("").map((char, index) => {
+									return (
+										<span key={index} className="char">
+											{char}
+										</span>
+									);
+								})}
+							</p>
 						</div>
 						<div>
 							<p>let zkušeností</p>
-							<p>12</p>
+							<p className="process-count">
+								{"12".split("").map((char, index) => {
+									return (
+										<span key={index} className="char">
+											{char}
+										</span>
+									);
+								})}
+							</p>
 						</div>
 						<div>
 							<p>podporovaných zařízení</p>
-							<p>1000+</p>
+							<p className="process-count">
+								{"1000+".split("").map((char, index) => {
+									return (
+										<span key={index} className="char">
+											{char}
+										</span>
+									);
+								})}
+							</p>
 						</div>
 					</div>
 				</div>

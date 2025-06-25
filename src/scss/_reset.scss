@@ -47,7 +47,12 @@ p {
 
 ul,
 ul li {
-	list-style: none;
+	list-style-type: disc;
+	list-style-position: inside;
+
+	ul {
+		padding-left: 20px;
+	}
 }
 
 img {

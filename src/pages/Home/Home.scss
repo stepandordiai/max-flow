@@ -118,13 +118,13 @@ h1 {
 
 .benefits-container {
 	display: grid;
-	grid-template-columns: repeat(1, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 	gap: 25px;
 	width: 100%;
 }
 
 .benefits__title {
-	font-size: 2rem;
+	font-size: clamp(1.5rem, 3vw, 2rem);
 	padding: 25px 0;
 }
 
@@ -144,6 +144,9 @@ h1 {
 	p:nth-of-type(2) {
 		font-size: 1.5rem;
 		font-weight: 300;
+	}
+
+	img {
 		align-self: flex-end;
 	}
 }
@@ -152,11 +155,17 @@ h1 {
 	font-size: 2rem;
 }
 
+.process__outer {
+	position: relative;
+	width: 100%;
+	min-height: 1400px;
+}
+
 .process {
 	position: relative;
-	max-width: 10px;
-	height: 1000px;
-	background: rgba(255, 255, 255, 0.099);
+	width: 10px;
+	min-height: 1400px;
+	background: rgba(255, 255, 255, 0.1);
 	margin: auto;
 	border-radius: 5px;
 }
@@ -172,19 +181,19 @@ h1 {
 .process__card1 {
 	position: absolute;
 	right: 0;
-	transform: translateX(calc(100% + 25px));
+	width: calc(50% - 20px);
 	background: rgba(255, 255, 255, 0.1);
-	padding: 15px;
+	padding: 10px;
 	border-radius: 10px;
 }
 
 .process__card2 {
 	position: absolute;
-	top: 25%;
 	left: 0;
-	transform: translate(calc(-100% - 25px), -50%);
+	top: 25%;
+	width: calc(50% - 20px);
 	background: rgba(255, 255, 255, 0.1);
-	padding: 15px;
+	padding: 10px;
 	border-radius: 10px;
 }
 
@@ -192,9 +201,9 @@ h1 {
 	position: absolute;
 	top: 50%;
 	right: 0;
-	transform: translate(calc(100% + 25px), -50%);
+	width: calc(50% - 20px);
 	background: rgba(255, 255, 255, 0.1);
-	padding: 15px;
+	padding: 10px;
 	border-radius: 10px;
 }
 
@@ -202,9 +211,9 @@ h1 {
 	position: absolute;
 	top: 75%;
 	left: 0;
-	transform: translate(calc(-100% - 25px), -50%);
+	width: calc(50% - 20px);
 	background: rgba(255, 255, 255, 0.1);
-	padding: 15px;
+	padding: 10px;
 	border-radius: 10px;
 }
 
@@ -214,11 +223,6 @@ h1 {
 
 	p:nth-of-type(1) {
 		font-size: 2rem;
-	}
-
-	p:nth-of-type(2) {
-		align-self: flex-end;
-		width: max-content;
 	}
 
 	opacity: 0;
@@ -289,9 +293,22 @@ h1 {
 	}
 }
 
+.char {
+	opacity: 0;
+	transition: all 0.3s ease-in;
+}
+
+.char--active {
+	opacity: 1;
+}
+
 @media screen and (width <=1200px) {
 	.stats {
 		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.benefits-container {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
@@ -302,6 +319,10 @@ h1 {
 
 	.home__top-container {
 		gap: 15px;
+	}
+
+	.benefits-container {
+		grid-template-columns: repeat(1, 1fr);
 	}
 
 	.stats {

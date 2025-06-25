@@ -69,10 +69,18 @@ const Menu = () => {
 						Contact
 					</NavLink>
 				</nav>
-				<div className="socials">
-					<a href="">Facebook</a>
-					<a href="">Instagram</a>
-				</div>
+				<NavLink className="menu__btn" to="/contact">
+					<span>Chci nabídku</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						height="20px"
+						viewBox="0 -960 960 960"
+						width="20px"
+						fill="#ffffff"
+					>
+						<path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+					</svg>
+				</NavLink>
 			</div>
 		</div>
 	);
