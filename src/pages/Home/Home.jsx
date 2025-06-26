@@ -4,6 +4,7 @@ import saveMoneyIcon from "/icons/save-money.png";
 import executionIcon from "/icons/execution.png";
 import homeAutomationIcon from "/icons/home-automation.png";
 import "./Home.scss";
+import PartnersSection from "../../components/PartnersSection/PartnersSection";
 
 const Home = () => {
 	useEffect(() => {
@@ -218,23 +219,7 @@ const Home = () => {
 							<div className="process__inner"></div>
 						</div>
 					</div>
-
-					<div className="partners-container">
-						<h2 className="partners__title">Partners</h2>
-						<div className="partners">
-							<p>Jinko Solar</p>
-							<p>CanadianSolar</p>
-							<p>ZJBENY</p>
-							<p>Tigo</p>
-							<p>AIKO</p>
-							<p>SKODA</p>
-							<p>VOLVO</p>
-							<p>ASSA ABLOY</p>
-							<p>TOWERCOM</p>
-							<p>AGC</p>
-							<p>Chisage ESS</p>
-						</div>
-					</div>
+					<PartnersSection />
 					<h2>About us in numbers</h2>
 					<div className="stats">
 						<div>

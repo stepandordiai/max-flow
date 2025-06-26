@@ -238,42 +238,6 @@ h1 {
 	pointer-events: all;
 }
 
-.partners-container {
-	margin-top: 70px;
-	padding: 7.5px;
-	background: #fff;
-	border-radius: 10px;
-}
-
-.partners__title {
-	font-size: 2rem;
-	font-weight: 400;
-	color: #000;
-	text-align: center;
-}
-
-.partners {
-	@include flex-center;
-	gap: 3px;
-	max-width: 700px;
-	padding: 7.5px;
-	margin-left: auto;
-	margin-right: auto;
-	flex-wrap: wrap;
-
-	p {
-		font-size: 1.5rem;
-		color: rgba(0, 0, 0, 0.25);
-		padding: 10px;
-		border-radius: 5px;
-
-		&:hover {
-			color: var(--bg-clr);
-			background: var(--accent-bg-clr);
-		}
-	}
-}
-
 .stats {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
