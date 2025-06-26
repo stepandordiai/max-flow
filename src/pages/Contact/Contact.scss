@@ -1,7 +1,5 @@
 .contact {
-	padding: 95px 25px 25px 25px;
 	display: flex;
-	// justify-content: space-between;
 	gap: 25px;
 	opacity: 0;
 	animation: animateContact 0.3s forwards;
@@ -26,9 +24,13 @@
 
 	a {
 		color: #000;
+		padding: 5px;
+		border-radius: 5px;
+		transition: all 0.3s;
 
 		&:hover {
 			color: var(--bg-clr);
+			background: var(--accent-bg-clr);
 		}
 	}
 }
@@ -56,9 +58,8 @@
 
 .contact__info-socials {
 	display: flex;
-	align-items: flex-start;
-	flex-direction: column;
-	row-gap: 5px;
+	gap: 3px;
+	flex-wrap: wrap;
 }
 
 .contact__info-socials-link {
@@ -196,9 +197,6 @@ textarea {
 .custom-select-option {
 	padding: 10px;
 	cursor: pointer;
-
-	&:hover {
-	}
 }
 
 .custom-select-dd--active {
@@ -208,7 +206,6 @@ textarea {
 
 @media screen and (width <= 896px) {
 	.contact {
-		padding: 85px 15px 15px 15px;
 	}
 
 	.contact__info {

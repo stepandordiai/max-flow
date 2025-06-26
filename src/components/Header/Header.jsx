@@ -39,9 +39,18 @@ const Header = () => {
 					</NavLink>
 					<NavLink
 						to={"/product"}
-						className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
+						className={({ isActive }) =>
+							isActive
+								? activeLink + " header__nav-link-with-dd"
+								: inactiveLink + " header__nav-link-with-dd"
+						}
 					>
 						Product
+						<div className="header__nav-link-dd">
+							<p>SVJ</p>
+							<p>Solaris</p>
+							<p>Info</p>
+						</div>
 					</NavLink>
 					<NavLink
 						to={"/reference"}

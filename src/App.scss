@@ -10,12 +10,15 @@ body {
 	color: #ffffff;
 	font-family: "Outfit", sans-serif;
 	background: var(--bg-clr);
+	padding: 95px 25px 25px 25px;
 }
 
 a {
 	color: #fff;
 }
 
-h1 {
-	padding-top: 70px;
+@media screen and (width <= 896px) {
+	body {
+		padding: 85px 15px 15px 15px;
+	}
 }

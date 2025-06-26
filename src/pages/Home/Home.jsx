@@ -71,12 +71,10 @@ const Home = () => {
 			</Helmet>
 			<main className="home">
 				<div className="home__top">
-					<div>
-						<h1>
-							Chytrá energie pro SVJ –<br />
-							Ušetřete až 80% nákladů
-						</h1>
-					</div>
+					<h1 className="home__top-title">
+						Chytrá energie pro SVJ –<br />
+						Ušetřete až 80% nákladů
+					</h1>
 					<div
 						className="home__top-container"
 						style={{ alignSelf: "flex-end" }}

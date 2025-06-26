@@ -65,6 +65,32 @@
 	color: #000;
 }
 
+.header__nav-link-with-dd {
+	position: relative;
+}
+
+.header__nav-link-dd {
+	position: absolute;
+	background: white;
+	padding: 5px;
+	border-radius: 5px;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, 100%);
+	color: #000;
+	pointer-events: none;
+	opacity: 0;
+
+	P {
+		&:hover {
+			color: var(--bg-clr);
+			background: var(--accent-bg-clr);
+		}
+		padding: 5px;
+		border-radius: 2.5px;
+	}
+}
+
 .header__btn {
 	@include flex-center;
 	gap: 5px;

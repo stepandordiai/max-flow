@@ -13,18 +13,21 @@
 
 .home__top {
 	position: relative;
-	min-height: 100svh;
+	min-height: calc(100svh - 95px);
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
 	width: 100%;
-	padding: 95px 25px 95px 25px;
+	padding-bottom: 95px;
+}
+
+.home__top-title {
+	font-size: clamp(2rem, 4vw, 5rem);
+	font-weight: 500;
 }
 
 .home__bottom {
 	width: 100%;
-	min-height: 100svh;
-	padding: 70px 25px 25px 25px;
 }
 
 .scroll {
@@ -237,6 +240,7 @@ h1 {
 
 .partners-container {
 	margin-top: 70px;
+	padding: 7.5px;
 	background: #fff;
 	border-radius: 10px;
 }
@@ -244,25 +248,28 @@ h1 {
 .partners__title {
 	font-size: 2rem;
 	font-weight: 400;
-	padding-top: 25px;
 	color: #000;
 	text-align: center;
 }
 
 .partners {
 	@include flex-center;
-	gap: 25px;
+	gap: 3px;
 	max-width: 700px;
-	padding: 25px;
-	margin: auto;
+	padding: 7.5px;
+	margin-left: auto;
+	margin-right: auto;
 	flex-wrap: wrap;
 
 	p {
 		font-size: 1.5rem;
 		color: rgba(0, 0, 0, 0.25);
+		padding: 10px;
+		border-radius: 5px;
 
 		&:hover {
-			color: #000;
+			color: var(--bg-clr);
+			background: var(--accent-bg-clr);
 		}
 	}
 }
@@ -314,7 +321,8 @@ h1 {
 
 @media screen and (width <= 860px) {
 	.home__top {
-		padding: 85px 15px 85px 15px;
+		min-height: calc(100svh - 85px);
+		padding-bottom: 85px;
 	}
 
 	.home__top-container {
@@ -332,7 +340,7 @@ h1 {
 	.home__bottom {
 		width: 100%;
 		min-height: 100svh;
-		padding: 70px 15px 15px 15px;
+		// padding: 70px 15px 15px 15px;
 	}
 }
 
