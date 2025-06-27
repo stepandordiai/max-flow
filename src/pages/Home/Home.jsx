@@ -1,10 +1,11 @@
 import { Helmet } from "react-helmet";
+import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import saveMoneyIcon from "/icons/save-money.png";
 import executionIcon from "/icons/execution.png";
 import homeAutomationIcon from "/icons/home-automation.png";
-import "./Home.scss";
 import PartnersSection from "../../components/PartnersSection/PartnersSection";
+import "./Home.scss";
 
 const Home = () => {
 	useEffect(() => {
@@ -85,7 +86,9 @@ const Home = () => {
 							<span style={{ fontWeight: 500 }}>SOLARIS 360°</span>
 						</h2>
 						<div className="home__btn-container">
-							<button>Jak to funguje?</button>
+							<NavLink className={"home__link"} to={"/how-it-works"}>
+								Jak to funguje?
+							</NavLink>
 							<button>Nezávazná kalkulace</button>
 						</div>
 					</div>

@@ -1,0 +1,54 @@
+@use "./../../scss/mixins" as *;
+
+.contact-us {
+	position: relative;
+	background: #000;
+	color: #fff;
+	min-height: 25svh;
+	padding: 15px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	cursor: none;
+
+	div {
+		align-self: flex-end;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 15px;
+	}
+}
+
+.contact-us__title {
+	font-size: 1.5rem;
+}
+
+.contact-us__link {
+	@include flex-center;
+	gap: 5px;
+	background: rgba(0, 0, 0);
+	padding: 10px;
+	border-radius: 5px;
+	color: #fff;
+	cursor: none;
+}
+
+.div-element {
+	pointer-events: none;
+	position: absolute;
+	width: 0px;
+	opacity: 0;
+	border-radius: 10px;
+	aspect-ratio: 1/1;
+	transform: translate(-50%, -50%);
+	background: rgba(255, 255, 255, 0.1);
+	transition: all 0.15s ease-out;
+	padding: 12.5px;
+}
+
+.div-element--active {
+	width: 50px;
+	opacity: 1;
+}

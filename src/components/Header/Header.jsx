@@ -27,8 +27,8 @@ const Header = () => {
 		<>
 			<header className="header">
 				<NavLink className="header__logo" to={"/"}>
-					<img width={40} src={logoIcon2} alt="" />
-					<span>MaxFlow</span>
+					<img width={40} src={logoIcon2} alt="MaxFlow Logo" />
+					<span>MaxFlow 360&deg;</span>
 				</NavLink>
 				<nav className="header__nav">
 					<NavLink
@@ -53,16 +53,16 @@ const Header = () => {
 						</div>
 					</NavLink>
 					<NavLink
-						to={"/reference"}
+						to={"/how-it-works"}
 						className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
 					>
-						Reference
+						How it works
 					</NavLink>
 					<NavLink
-						to={"/blog"}
+						to={"/financing"}
 						className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
 					>
-						Blog
+						Financing
 					</NavLink>
 					<NavLink
 						to={"/contact"}
