@@ -1,11 +1,14 @@
+import { useTranslation } from "react-i18next";
 import BurgerBtn from "../BurgerBtn/BurgerBtn";
 import { NavLink } from "react-router-dom";
-import logoIcon2 from "/Group 214.png";
-import "./Header.scss";
+// import logoIcon2 from "/Group 214.png";
 import { useEffect } from "react";
 import LangSelect from "../LngSelect/LngSelect";
+import "./Header.scss";
 
 const Header = () => {
+	const { t } = useTranslation();
+
 	const inactiveLink = "header__nav-link";
 	const activeLink = "header__nav-link header__nav-link--active";
 
@@ -28,7 +31,7 @@ const Header = () => {
 		<>
 			<header className="header">
 				<NavLink className="header__logo" to={"/"}>
-					<img width={40} src={logoIcon2} alt="MaxFlow Logo" />
+					{/* <img width={40} src={logoIcon2} alt="MaxFlow Logo" /> */}
 					<span>MaxFlow 360&deg;</span>
 				</NavLink>
 				<nav className="header__nav">
@@ -36,7 +39,7 @@ const Header = () => {
 						to={"/"}
 						className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
 					>
-						Home
+						{t("home")}
 					</NavLink>
 					<NavLink
 						to={"/product"}
@@ -46,7 +49,7 @@ const Header = () => {
 								: inactiveLink + " header__nav-link-with-dd"
 						}
 					>
-						Product
+						{t("product")}
 						<div className="header__nav-link-dd">
 							<p>SVJ</p>
 							<p>Solaris</p>
@@ -57,25 +60,25 @@ const Header = () => {
 						to={"/how-it-works"}
 						className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
 					>
-						How it works
+						{t("how_it_works")}
 					</NavLink>
 					<NavLink
 						to={"/financing"}
 						className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
 					>
-						Financing
+						{t("financing")}
 					</NavLink>
 					<NavLink
 						to={"/contact"}
 						className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
 					>
-						Contact
+						{t("contact")}
 					</NavLink>
 				</nav>
 				<div className="header__right-container">
 					<LangSelect />
 					<NavLink className="header__btn" to="/contact">
-						<span>Chci nabídku</span>
+						<span>{t("want_a_quote")}</span>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							height="20px"

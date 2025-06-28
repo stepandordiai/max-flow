@@ -1,3 +1,24 @@
 {
-	"home_title": "Smart energy for SVJ - Save up to 80% of costs"
+	"home": "Home",
+	"product": "Product",
+	"how_it_works": "How it works",
+	"financing": "Financing",
+	"contact": "Contact",
+	"want_a_quote": "Want a quote",
+
+	"home_title": "Smart energy for SVJ - Save up to 80% of costs",
+	"home_sec_title": "Photovoltaics with AI control and cloud platform",
+	"home_btn": "How does it work",
+	"home_sec_btn": "Non-binding calculation",
+	"home_scroll": "Scroll to explore",
+
+	"benefits": {
+		"title": "Benefits",
+		"card1_title": "Maximum savings",
+		"card1_sec_title": "Own consumption >80% energy",
+		"card2_title": "Intelligent control",
+		"card2_sec_title": "AI energy flow optimization",
+		"card3_title": "Carefree operation",
+		"card3_sec_title": "Everything is controlled by"
+	}
 }

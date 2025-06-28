@@ -1,0 +1,46 @@
+.benefits-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 25px;
+	width: 100%;
+}
+
+.benefits__title {
+	font-size: clamp(1.5rem, 3vw, 2rem);
+	padding: 25px 0;
+}
+
+.benefits {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 300px;
+	padding: 15px;
+
+	p:nth-of-type(1) {
+		font-size: 2rem;
+	}
+
+	p:nth-of-type(2) {
+		font-size: 1.5rem;
+		font-weight: 300;
+	}
+
+	img {
+		align-self: flex-end;
+	}
+}
+
+@media screen and (width <=1200px) {
+	.benefits-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (width <= 860px) {
+	.benefits-container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}

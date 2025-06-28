@@ -1,3 +1,24 @@
 {
-	"home_title": "Chytrá energie pro SVJ - Ušetřete až 80% nákladů"
+	"home": "Úvod",
+	"product": "Produkt",
+	"how_it_works": "Jak to funguje",
+	"financing": "Financování",
+	"contact": "Kontakt",
+	"want_a_quote": "Chci nabídku",
+
+	"home_title": "Chytrá energie pro SVJ - Ušetřete až 80% nákladů",
+	"home_sec_title": "Fotovoltaika s AI řízením a cloudovou platformou",
+	"home_btn": "Jak to funguje",
+	"home_sec_btn": "Nezávazná kalkulace",
+	"home_scroll": "Prozkoumejte",
+
+	"benefits": {
+		"title": "Výhody",
+		"card1_title": "Maximální úspora",
+		"card1_sec_title": "Vlastní spotřeba >80% energie",
+		"card2_title": "Inteligentní řízení",
+		"card2_sec_title": "AI optimalizace toku energie",
+		"card3_title": "Bezstarostný provoz",
+		"card3_sec_title": "Vše řídí"
+	}
 }

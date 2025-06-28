@@ -1,3 +1,24 @@
 {
-	"home_title": "Šikovná energia pre SVJ - Ušetrite až 80% nákladov"
+	"home": "Úvod",
+	"product": "Produkt",
+	"how_it_works": "Ako to funguje",
+	"financing": "Financovanie",
+	"contact": "Kontakt",
+	"want_a_quote": "Chcem ponuku",
+
+	"home_title": "Šikovná energia pre SVJ - Ušetrite až 80% nákladov",
+	"home_sec_title": "Fotovoltaika s AI riadením a cloudovou platformou",
+	"home_btn": "Ako to funguje",
+	"home_sec_btn": "Nezáväzná kalkulácia",
+	"home_scroll": "Preskúmajte zrolovaním",
+
+	"benefits": {
+		"title": "Výhody",
+		"card1_title": "Maximálne úspory",
+		"card1_sec_title": "Vlastná spotreba >80 % energie",
+		"card2_title": "Inteligentné ovládanie",
+		"card2_sec_title": "Optimalizácia toku energie pomocou umelej inteligencie",
+		"card3_title": "Bezstarostná prevádzka",
+		"card3_sec_title": "Všetko je riadené systémom"
+	}
 }
