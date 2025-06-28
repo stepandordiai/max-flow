@@ -4,26 +4,38 @@ import arrowDownIcon from "/icons/down-arrow.png";
 import "./Contact.scss";
 
 const Contact = () => {
-	const countries = [
+	const countriesData = [
 		{
-			country: "CZ",
-			number: "+420",
+			name: "CZ",
+			code: "+420",
 			flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/1280px-Flag_of_the_Czech_Republic.svg.png",
 		},
 		{
-			country: "UA",
-			number: "+380",
+			name: "UA",
+			code: "+380",
 			flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/500px-Flag_of_Ukraine.svg.png",
+		},
+		{
+			name: "SK",
+			code: "+421",
+			flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/500px-Flag_of_Slovakia.svg.png",
 		},
 	];
 
-	const [country, setCountry] = useState(countries[0].country);
-	const [inputValue, setInputValue] = useState(countries[0].number);
-	const [currentCode, setCurrentCode] = useState(countries[0].number);
+	const [countryName, setCountryName] = useState(countriesData[0].name);
+	const [inputValue, setInputValue] = useState(countriesData[0].code);
+	const [currentCode, setCurrentCode] = useState(countriesData[0].code);
 
 	useEffect(() => {
 		const inputs = document.querySelectorAll(".js-input");
+		const customContainer = document.querySelector(".custom-input-container");
+		const customInput = document.querySelector(".custom-input");
 
+		const newCode = countriesData.find(
+			(country) => country.name === countryName
+		);
+
+		// Toggle active classList depending on wether input is empty or not
 		inputs.forEach((input) => {
 			input.addEventListener("input", () => {
 				if (input.value !== "") {
@@ -34,9 +46,7 @@ const Contact = () => {
 			});
 		});
 
-		const customContainer = document.querySelector(".custom-input-container");
-
-		const customInput = document.querySelector(".custom-input");
+		// Toggle active classList depending on wether input is empty or not (for tel)
 		customInput.addEventListener("input", () => {
 			if (customInput.value.length > 4) {
 				customContainer.classList.add("input--active");
@@ -45,37 +55,39 @@ const Contact = () => {
 			}
 		});
 
-		const newCode = countries.find((el) => el.country === country);
-		setInputValue(newCode.number);
-		setCurrentCode(newCode.number);
-	}, [country]);
+		setInputValue(newCode.code);
+		setCurrentCode(newCode.code);
+	}, [countryName]);
 
 	useEffect(() => {
-		document
-			.querySelector(".custom-select-btn")
-			.addEventListener("click", (e) => {
-				e.preventDefault();
-				document
-					.querySelector(".custom-select-dd")
-					.classList.toggle("custom-select-dd--active");
-			});
+		const customSelectDd = document.querySelector(".custom-select-dd");
+		const customSelectBtn = document.querySelector(".custom-select-btn");
+
+		customSelectBtn.addEventListener("click", (e) => {
+			e.preventDefault();
+			customSelectDd.classList.add("custom-select-dd--active");
+		});
 
 		document.querySelectorAll(".custom-select-option").forEach((option) => {
 			option.addEventListener("click", (e) => {
 				const dataValue = e.target.dataset.value;
 				const dataFlag = e.target.dataset.flag;
-				setCountry(dataValue);
+				setCountryName(dataValue);
 				document.querySelector(".custom-select-btn-txt").textContent =
 					dataValue;
 				document.querySelector(".custom-select-btn-flag").src = dataFlag;
-				document
-					.querySelector(".custom-select-dd")
-					.classList.remove("custom-select-dd--active");
+				customSelectDd.classList.remove("custom-select-dd--active");
 			});
+		});
+
+		document.addEventListener("click", (e) => {
+			if (e.target !== customSelectDd && e.target !== customSelectBtn) {
+				customSelectDd.classList.remove("custom-select-dd--active");
+			}
 		});
 	}, []);
 
-	const handleInputValue = (e) => {
+	const handleCodeInputValue = (e) => {
 		setInputValue(e.target.value);
 
 		let currentValue = e.target.value;
@@ -123,7 +135,11 @@ const Contact = () => {
 						</div>
 						<div>
 							<p style={{ marginBottom: 5 }}>Visit us</p>
-							<a className="contact__info-details-link" href="">
+							<a
+								className="contact__info-details-link"
+								href="https://maps.app.goo.gl/oKDKtZXyS9CcB43q9"
+								target="_blank"
+							>
 								<i className="fa-solid fa-map-location-dot"></i>
 								<span>Pod Hroby 271 Kolín IV</span>
 							</a>
@@ -194,7 +210,7 @@ const Contact = () => {
 										style={{ pointerEvents: "none" }}
 										className="custom-select-btn-flag"
 										width={20}
-										src={countries[0].flag}
+										src={countriesData[0].flag}
 										alt=""
 									/>
 									<span
@@ -211,7 +227,7 @@ const Contact = () => {
 									/>
 								</button>
 								<div className="custom-select-dd">
-									{countries.map((country, index) => {
+									{countriesData.map((country, index) => {
 										return (
 											<div
 												key={index}
@@ -222,7 +238,7 @@ const Contact = () => {
 													gap: 5,
 												}}
 												className="custom-select-option"
-												data-value={country.country}
+												data-value={country.name}
 												data-flag={country.flag}
 											>
 												<img
@@ -232,19 +248,18 @@ const Contact = () => {
 													alt=""
 												/>
 												<span style={{ pointerEvents: "none" }}>
-													{country.country}
+													{country.name}
 												</span>
 											</div>
 										);
 									})}
 								</div>
-								{/* <input style={{ display: "none" }} type="text" readOnly /> */}
 							</div>
 							<input
 								className="js-code-input custom-input"
 								id="tel"
 								value={inputValue}
-								onChange={(e) => handleInputValue(e)}
+								onChange={(e) => handleCodeInputValue(e)}
 								type="tel"
 								name="tel"
 							/>

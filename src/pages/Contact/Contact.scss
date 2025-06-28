@@ -1,3 +1,5 @@
+@use "./../../scss/mixins" as *;
+
 .contact {
 	display: flex;
 	gap: 25px;
@@ -41,17 +43,15 @@
 
 .contact__info-details {
 	display: flex;
-	flex-direction: column;
 	align-items: flex-start;
+	flex-direction: column;
 	row-gap: 25px;
 	margin-top: auto;
 	margin-bottom: auto;
 }
 
 .contact__info-details-link {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@include flex-center;
 	column-gap: 5px;
 	font-weight: 300;
 }
@@ -63,9 +63,7 @@
 }
 
 .contact__info-socials-link {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@include flex-center;
 	column-gap: 5px;
 	font-weight: 300;
 }
@@ -167,9 +165,7 @@ textarea {
 }
 
 .custom-select-btn {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@include flex-center;
 	gap: 3px;
 	padding-right: 10px;
 	border-right: 3px solid rgba(255, 255, 255, 0.1);
