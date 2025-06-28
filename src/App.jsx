@@ -7,8 +7,9 @@ import Financing from "./pages/Financing/Financing";
 import Contact from "./pages/Contact/Contact";
 import Menu from "./components/Menu/Menu";
 import Footer from "./components/Footer/Footer";
-import "./App.scss";
 import ScrollToTop from "./utils/ScrollToTop";
+import "./i18next";
+import "./App.scss";
 
 function App() {
 	return (

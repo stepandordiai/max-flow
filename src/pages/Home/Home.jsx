@@ -6,8 +6,12 @@ import executionIcon from "/icons/execution.png";
 import homeAutomationIcon from "/icons/home-automation.png";
 import PartnersSection from "../../components/PartnersSection/PartnersSection";
 import "./Home.scss";
+// import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+	const { t } = useTranslation();
+
 	useEffect(() => {
 		document.addEventListener("scroll", () => {
 			const scrollTop = document.documentElement.scrollTop;
@@ -66,17 +70,12 @@ const Home = () => {
 	return (
 		<>
 			<Helmet>
-				<title>
-					MaxFlow | Chytrá energie pro SVJ – Ušetřete až 80% nákladů
-				</title>
+				<title>MaxFlow | {t("home_title")}</title>
 				<link rel="canonical" href="https://maxflow.cz/" />
 			</Helmet>
 			<main className="home">
 				<div className="home__top">
-					<h1 className="home__top-title">
-						Chytrá energie pro SVJ –<br />
-						Ušetřete až 80% nákladů
-					</h1>
+					<h1 className="home__top-title">{t("home_title")}</h1>
 					<div
 						className="home__top-container"
 						style={{ alignSelf: "flex-end" }}

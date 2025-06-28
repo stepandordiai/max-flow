@@ -1,3 +1,4 @@
+import LngSelect from "../LngSelect/LngSelect";
 import styles from "./Footer.module.scss";
 
 const Footer = () => {

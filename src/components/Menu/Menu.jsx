@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import "./Menu.scss";
 import { useEffect } from "react";
+import "./Menu.scss";
 
 const Menu = () => {
 	useEffect(() => {

@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import logoIcon2 from "/Group 214.png";
 import "./Header.scss";
 import { useEffect } from "react";
+import LangSelect from "../LngSelect/LngSelect";
 
 const Header = () => {
 	const inactiveLink = "header__nav-link";
@@ -71,19 +72,22 @@ const Header = () => {
 						Contact
 					</NavLink>
 				</nav>
-				<NavLink className="header__btn" to="/contact">
-					<span>Chci nabídku</span>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						height="20px"
-						viewBox="0 -960 960 960"
-						width="20px"
-						fill="#ffffff"
-					>
-						<path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
-					</svg>
-				</NavLink>
-				<BurgerBtn />
+				<div className="header__right-container">
+					<LangSelect />
+					<NavLink className="header__btn" to="/contact">
+						<span>Chci nabídku</span>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							height="20px"
+							viewBox="0 -960 960 960"
+							width="20px"
+							fill="#ffffff"
+						>
+							<path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+						</svg>
+					</NavLink>
+					<BurgerBtn />
+				</div>
 				<div className="header__divider">
 					<div className="header__divider-inner"></div>
 				</div>

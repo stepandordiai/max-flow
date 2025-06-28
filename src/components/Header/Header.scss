@@ -4,7 +4,7 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 1;
+	z-index: 100;
 	width: 100%;
 	@include flex-between-center;
 	min-height: 70px;
@@ -101,24 +101,8 @@
 }
 
 .header__right-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 2px;
-}
-
-.lng-select {
-	// padding: 10px;
-	width: 40px;
-	display: grid;
-	place-content: center;
-	background: white;
-	color: #000;
-	border-radius: 5px;
-	aspect-ratio: 1/1;
-
-	&:hover {
-	}
+	@include flex-center;
+	column-gap: 3px;
 }
 
 .socials {
@@ -137,22 +121,18 @@
 	.header__divider {
 		width: calc(100% - 30px);
 	}
-
-	.header__nav {
-		// display: none;
-	}
-
-	.header__btn {
-		// display: none;
-	}
 }
 
-@media screen and (width < 800px) {
+@media screen and (width < 896px) {
 	.header__nav {
 		display: none;
 	}
 
 	.header__btn {
 		display: none;
+	}
+
+	.header__right-container {
+		column-gap: 15px;
 	}
 }
