@@ -49,8 +49,7 @@ const HowItWorksSection = () => {
 	}, []);
 
 	return (
-		<>
-			{" "}
+		<div>
 			<h2 className="process__title">Jak systém funguje</h2>
 			<div className="process__outer">
 				<div className="process__card process__card1">
@@ -154,7 +153,7 @@ const HowItWorksSection = () => {
 					<div className="process__inner"></div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

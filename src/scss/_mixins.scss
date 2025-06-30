@@ -4,6 +4,12 @@
 	align-items: center;
 }
 
+@mixin flex-center-start {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
 @mixin flex-between-center {
 	display: flex;
 	justify-content: space-between;
@@ -14,4 +20,9 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
+}
+
+@mixin grid-center {
+	display: grid;
+	place-content: center;
 }

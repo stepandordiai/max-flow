@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
-import PartnersSection from "../../components/PartnersSection/PartnersSection";
+import Partners from "../../components/Partners/Partners";
 import BenefitsSection from "../../components/BenefitsSection/BenefitsSection";
 import "./Home.scss";
 import HowItWorksSection from "../../components/HowItWorksSection/HowItWorksSection";
@@ -47,10 +47,10 @@ const Home = () => {
 					</div>
 					<div className="scroll" data-value={t("home_scroll")}></div>
 				</div>
-				<div className="home__bottom">
-					<BenefitsSection />
-					<HowItWorksSection />
-					<PartnersSection />
+				<BenefitsSection />
+				<HowItWorksSection />
+				<Partners />
+				<div>
 					<h2>About us in numbers</h2>
 					<div className="stats">
 						<div>

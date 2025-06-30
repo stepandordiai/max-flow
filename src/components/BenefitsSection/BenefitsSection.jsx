@@ -8,7 +8,7 @@ const BenefitsSection = () => {
 	const { t } = useTranslation();
 
 	return (
-		<>
+		<div>
 			<p className="benefits__title">{t("benefits.title")}</p>
 			<div className="benefits-container">
 				<div className="benefits">
@@ -33,7 +33,7 @@ const BenefitsSection = () => {
 					<img width={100} height={100} src={executionIcon} alt="" />
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

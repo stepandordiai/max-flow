@@ -1,6 +1,9 @@
 @use "./../../scss/mixins" as *;
 
 .home {
+	display: flex;
+	flex-direction: column;
+	row-gap: 70px;
 	opacity: 0;
 	animation: animateHome 0.3s forwards;
 }
