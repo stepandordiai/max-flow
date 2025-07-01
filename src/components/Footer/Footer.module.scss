@@ -1,7 +1,6 @@
 @use "./../../scss/mixins" as *;
 
 .footer {
-	min-height: 400px;
 	background: #fff;
 	border-radius: 10px;
 	color: #000;
@@ -129,7 +128,6 @@
 @media screen and (width <= 896px) {
 	.footer {
 		margin-top: 15px;
-		// padding: 7.5px;
 	}
 
 	.footer__bottom {
