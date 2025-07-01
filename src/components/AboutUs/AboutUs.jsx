@@ -4,7 +4,9 @@ const AboutUs = () => {
 	return (
 		<>
 			<div>
-				<h2 className="about-us">About us in numbers</h2>
+				<h2 className="about-us" id="about-us">
+					About us in numbers
+				</h2>
 				<div className="stats">
 					<div>
 						<p>instalací ročně</p>

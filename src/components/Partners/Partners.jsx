@@ -31,7 +31,7 @@ const Partners = () => {
 	];
 
 	return (
-		<div className={styles["partners"]}>
+		<div className={styles["partners"]} id="partners">
 			<div className={styles["partners__title-container"]}>
 				<h2 className={styles["partners__title"]}>Naši partneři</h2>
 			</div>

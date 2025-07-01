@@ -13,7 +13,7 @@ const Product = () => {
 			<main className="product">
 				{/* <h1>Product</h1> */}
 				<div>
-					<h2 className="product__section1-title">
+					<h2 className="product__section1-title" id="product-section-1">
 						Why MaxFlow 360&deg; for SVJ?
 					</h2>
 					<p style={{ marginBottom: 25 }}>
@@ -84,7 +84,7 @@ const Product = () => {
 				</div>
 
 				<div>
-					<h2>MaxFlow 360&deg; Cloud Platform</h2>
+					<h2 id="product-section-2">MaxFlow 360&deg; Cloud Platform</h2>
 					<p style={{ marginBottom: 25 }}>
 						All Your Energy Data in One Place – Anytime, Anywhere
 					</p>

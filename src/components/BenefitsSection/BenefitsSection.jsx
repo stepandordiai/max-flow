@@ -9,7 +9,9 @@ const BenefitsSection = () => {
 
 	return (
 		<div>
-			<p className="benefits__title">{t("benefits.title")}</p>
+			<h2 className="benefits__title" id="benefits">
+				{t("benefits.title")}
+			</h2>
 			<div className="benefits-container">
 				<div className="benefits">
 					<div>

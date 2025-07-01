@@ -50,7 +50,9 @@ const HowItWorksSection = () => {
 
 	return (
 		<div>
-			<h2 className="process__title">Jak systém funguje</h2>
+			<h2 className="process__title" id="process">
+				Jak systém funguje
+			</h2>
 			<div className="process__outer">
 				<div className="process__card process__card1">
 					<p>FVE</p>
