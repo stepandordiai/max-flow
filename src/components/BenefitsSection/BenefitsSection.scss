@@ -6,7 +6,9 @@
 }
 
 .benefits__title {
-	font-size: clamp(1.5rem, 3vw, 2rem);
+	font-size: clamp(2rem, 4vw, 4rem) !important;
+	font-weight: 400;
+	color: #fff;
 	padding: 25px 0;
 }
 
@@ -40,7 +42,12 @@
 }
 
 @media screen and (width <= 860px) {
+	.benefits__title {
+		padding: 15px 0;
+	}
+
 	.benefits-container {
 		grid-template-columns: repeat(1, 1fr);
+		gap: 15px;
 	}
 }

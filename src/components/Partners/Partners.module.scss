@@ -10,8 +10,6 @@
 
 .partners__title-container {
 	width: 100%;
-	height: 100%;
-	@include grid-center;
 }
 
 .partners__title {
@@ -19,12 +17,12 @@
 	font-weight: 400;
 	color: #fff;
 	padding: 25px 0;
+	text-align: center;
 }
 
 .partners__container {
 	width: 100%;
 	@include flex-center;
-	height: 100%;
 }
 
 .partners__grid {
@@ -57,14 +55,12 @@
 
 	.partners__title-container {
 		width: 100%;
-		height: 5;
-		@include grid-center;
+		// @include grid-center;
 	}
 
 	.partners__container {
 		width: 100%;
 		@include flex-center-start;
-		height: 100%;
 	}
 }
 

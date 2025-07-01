@@ -1,0 +1,64 @@
+.about-us {
+	font-size: clamp(2rem, 4vw, 4rem) !important;
+	font-weight: 400;
+	color: #fff;
+	padding: 25px 0;
+}
+
+.stats {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 25px;
+
+	div {
+		padding: 15px;
+		border-radius: 10px;
+		background: rgba(255, 255, 255, 0.1);
+		min-height: 200px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		p:nth-of-type(2) {
+			font-size: 3rem;
+			align-self: flex-end;
+		}
+
+		p:nth-of-type(1) {
+			font-size: 1.5rem;
+			font-weight: 300;
+		}
+	}
+}
+
+.char {
+	opacity: 0;
+	transition: all 0.3s ease-in;
+}
+
+.char--active {
+	opacity: 1;
+}
+
+@media screen and (width <=1200px) {
+	.stats {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media screen and (width <= 860px) {
+	.about-us {
+		padding: 15px 0;
+	}
+
+	.stats {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 15px;
+	}
+}
+
+@media screen and (width <= 600px) {
+	.stats {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}

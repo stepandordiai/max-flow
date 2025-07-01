@@ -1,5 +1,8 @@
 .process__title {
-	font-size: 2rem;
+	font-size: clamp(2rem, 4vw, 4rem) !important;
+	font-weight: 400;
+	color: #fff;
+	padding: 25px 0;
 }
 
 .process__outer {
@@ -80,4 +83,10 @@
 .process__card--active {
 	opacity: 1;
 	pointer-events: all;
+}
+
+@media screen and (width < 860px) {
+	.process__title {
+		padding: 15px 0;
+	}
 }

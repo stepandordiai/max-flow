@@ -121,6 +121,13 @@ h1 {
 	}
 }
 
+.about-us {
+	font-size: clamp(2rem, 4vw, 4rem) !important;
+	font-weight: 400;
+	color: #fff;
+	padding: 25px 0;
+}
+
 .stats {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
