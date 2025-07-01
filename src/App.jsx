@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import ScrollToTop from "./utils/ScrollToTop";
 import "./i18next";
 import "./App.scss";
+import FormCalculator from "./pages/FormCalculator/FormCalculator";
 
 function App() {
 	return (
@@ -22,6 +23,7 @@ function App() {
 				<Route path="/how-it-works" element={<HowItWorks />} />
 				<Route path="/financing" element={<Financing />} />
 				<Route path="/contact" element={<Contact />} />
+				<Route path="/form-calculator" element={<FormCalculator />} />
 			</Routes>
 			<Footer />
 			<ScrollToTop />

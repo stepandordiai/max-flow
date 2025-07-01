@@ -1,2 +1,1 @@
-update about us in numbers
-update footer
+add page formcalculator

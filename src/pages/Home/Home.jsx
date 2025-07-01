@@ -43,7 +43,7 @@ const Home = () => {
 							<NavLink className={"home__link"} to={"/how-it-works"}>
 								{t("home_btn")}?
 							</NavLink>
-							<button>{t("home_sec_btn")}</button>
+							<NavLink to={"/form-calculator"}>{t("home_sec_btn")}</NavLink>
 						</div>
 					</div>
 					<div className="scroll" data-value={t("home_scroll")}></div>
