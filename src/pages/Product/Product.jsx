@@ -115,7 +115,29 @@ const Product = () => {
 						</ul>
 					</div>
 				</div>
-				<ContactUs />
+				<ContactUs>
+					<p className="contact-us__title">
+						Ready to empower your SVJ with intelligent energy?
+					</p>
+					<div>
+						<p>
+							Let MaxFlow 360&deg; turn your building into a self-managing,
+							cost-efficient, solar-powered community.
+						</p>
+						<NavLink className="contact-us__link" to={"/contact"}>
+							<span>Chci nabídku</span>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								height="20px"
+								viewBox="0 -960 960 960"
+								width="20px"
+								fill="#ffffff"
+							>
+								<path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+							</svg>
+						</NavLink>
+					</div>
+				</ContactUs>
 			</main>
 		</>
 	);

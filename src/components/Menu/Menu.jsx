@@ -1,8 +1,11 @@
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import "./Menu.scss";
 
 const Menu = () => {
+	const { t } = useTranslation();
+
 	useEffect(() => {
 		const menuLinks = document.querySelectorAll(".menu__link");
 
@@ -34,7 +37,7 @@ const Menu = () => {
 						}
 						to={"/"}
 					>
-						Home
+						{t("home")}
 					</NavLink>
 					<NavLink
 						className={({ isActive }) =>
@@ -42,23 +45,23 @@ const Menu = () => {
 						}
 						to={"/product"}
 					>
-						Product
+						{t("product")}
 					</NavLink>
 					<NavLink
 						className={({ isActive }) =>
 							isActive ? activeMenuLink : inactiveMenuLink
 						}
-						to={"/reference"}
+						to={"/how-it-works"}
 					>
-						Reference
+						{t("how_it_works")}
 					</NavLink>
 					<NavLink
 						className={({ isActive }) =>
 							isActive ? activeMenuLink : inactiveMenuLink
 						}
-						to={"/blog"}
+						to={"/financing"}
 					>
-						Blog
+						{t("financing")}
 					</NavLink>
 					<NavLink
 						className={({ isActive }) =>
@@ -66,7 +69,7 @@ const Menu = () => {
 						}
 						to={"/contact"}
 					>
-						Contact
+						{t("contact")}
 					</NavLink>
 				</nav>
 				<NavLink className="menu__btn" to="/contact">
