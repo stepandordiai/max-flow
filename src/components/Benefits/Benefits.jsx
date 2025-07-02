@@ -8,7 +8,7 @@ const Benefits = () => {
 	const { t } = useTranslation();
 
 	return (
-		<>
+		<div>
 			<h2 className="benefits__title" id="benefits">
 				{t("benefits.title")}
 			</h2>
@@ -35,7 +35,7 @@ const Benefits = () => {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
