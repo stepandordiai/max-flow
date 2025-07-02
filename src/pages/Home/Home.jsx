@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import Partners from "../../components/Partners/Partners";
-import BenefitsSection from "../../components/BenefitsSection/BenefitsSection";
+import Benefits from "../../components/Benefits/Benefits";
 import AboutUs from "../../components/AboutUs/AboutUs";
 import bgImg from "/bg2.png";
 import "./Home.scss";
@@ -49,7 +49,7 @@ const Home = () => {
 					<div className="scroll" data-value={t("home_scroll")}></div>
 				</div>
 				<AboutUs />
-				<BenefitsSection />
+				<Benefits />
 				<Partners />
 			</main>
 		</>
