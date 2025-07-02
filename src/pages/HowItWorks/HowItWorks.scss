@@ -27,6 +27,7 @@
 	opacity: 0;
 	display: flex;
 	flex-direction: column;
+	row-gap: 25px;
 	animation: animateHome 0.3s forwards;
 }
 
@@ -108,9 +109,15 @@
 .process__card {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+	min-height: 300px;
 
 	p:nth-of-type(1) {
 		font-size: 2rem;
+	}
+
+	p:nth-of-type(2) {
+		align-self: flex-end;
 	}
 
 	opacity: 0;

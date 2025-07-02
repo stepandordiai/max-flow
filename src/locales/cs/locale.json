@@ -1,16 +1,16 @@
 {
 	"home": "Úvod",
 	"product": "Produkt",
-	"how_it_works": "Jak to funguje",
+	"how_it_works_title": "Jak to funguje",
 	"financing": "Financování",
 	"contact": "Kontakt",
 	"want_a_quote": "Chci nabídku",
+	"scroll_to_explore": "Prozkoumejte",
 
 	"home_title": "Chytrá energie pro SVJ - Ušetřete až 80% nákladů",
 	"home_sec_title": "Fotovoltaika s AI řízením a cloudovou platformou",
 	"home_btn": "Jak to funguje",
 	"home_sec_btn": "Nezávazná kalkulace",
-	"home_scroll": "Prozkoumejte",
 
 	"benefits": {
 		"title": "Výhody",
@@ -24,5 +24,16 @@
 
 	"partners": {
 		"title": "Naši partneři"
+	},
+
+	"how_it_works": {
+		"card1_title": "Bezplatný energetický audit",
+		"card1_sec_title": "Analyzujeme vaše faktury a navrhneme řešení",
+		"card2_title": "Návrh na míru",
+		"card2_sec_title": "Připravit dokumentaci k dotaci",
+		"card3_title": "Bezproblémová instalace",
+		"card3_sec_title": "O vše se postarají certifikovaní technici",
+		"card4_title": "Maximalizujte úspory",
+		"card4_sec_title": "Umělá inteligence začne okamžitě snižovat vaše náklady"
 	}
 }

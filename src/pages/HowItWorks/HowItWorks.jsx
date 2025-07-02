@@ -1,10 +1,13 @@
 import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
-import "./HowItWorks.scss";
 import { useEffect } from "react";
 import ContactUs from "../../components/ContactUs/ContactUs";
+import "./HowItWorks.scss";
 
 const HowItWorks = () => {
+	const { t } = useTranslation();
+
 	useEffect(() => {
 		document.addEventListener("scroll", () => {
 			const conic = document.querySelector(".process");
@@ -70,70 +73,72 @@ const HowItWorks = () => {
 	return (
 		<>
 			<Helmet>
-				<title>MaxFlow | How it works</title>
+				<title>MaxFlow | {t("how_it_works_title")}</title>
 				<link rel="canonical" href="https://maxflow.cz/how-it-works" />
 			</Helmet>
 			<div className="how-it-works">
-				<div className="how-it-works__top">
-					<h2 className="process__title">How It Works</h2>
-				</div>
-				<div className="process__outer" id="process">
-					<div className="process__outer-bottom">
-						<a href="#process" className="how-it-works__scroll">
-							Scroll to explore
-						</a>
+				<div>
+					<div className="how-it-works__top">
+						<h2 className="process__title">{t("how_it_works_title")}</h2>
 					</div>
+					<div className="process__outer" id="process">
+						<div className="process__outer-bottom">
+							<a href="#process" className="how-it-works__scroll">
+								{t("scroll_to_explore")}
+							</a>
+						</div>
 
-					<div className="process__card process__card1">
-						<p>Free Energy Audit</p>
-						<div
+						<div className="process__card process__card1">
+							<p>{t("how_it_works.card1_title")}</p>
+							{/* <div
 							style={{
 								width: "100%",
 								borderBottom: "3px dashed white",
 								marginBottom: 10,
 								marginTop: 10,
 							}}
-						></div>
-						<p>We analyze your bills and design a solution.</p>
-					</div>
-					<div className="process__card process__card2">
-						<p>Tailored Proposal</p>
-						<div
+						></div> */}
+							<p>{t("how_it_works.card1_sec_title")}.</p>
+						</div>
+						<div className="process__card process__card2">
+							<p>{t("how_it_works.card2_title")}</p>
+							{/* <div
 							style={{
 								width: "100%",
 								borderBottom: "3px dashed white",
 								marginBottom: 10,
 								marginTop: 10,
 							}}
-						></div>
-						<p>Prepare subsidy documentation.</p>
-					</div>
-					<div className="process__card process__card3">
-						<p>Hassle-Free Installation</p>
-						<div
+						></div> */}
+							<p>{t("how_it_works.card2_sec_title")}.</p>
+						</div>
+						<div className="process__card process__card3">
+							<p>{t("how_it_works.card3_title")}</p>
+							{/* <div
 							style={{
 								width: "100%",
 								borderBottom: "3px dashed white",
 								marginBottom: 10,
 								marginTop: 10,
 							}}
-						></div>
-						<p>Certified technicians handle everything.</p>
-					</div>
-					<div className="process__card process__card4">
-						<p>Maximize Savings</p>
-						<div
+						></div> */}
+							<p>{t("how_it_works.card3_sec_title")}.</p>
+						</div>
+						<div className="process__card process__card4">
+							<p>{t("how_it_works.card4_title")}</p>
+							{/* <div
 							style={{
 								width: "100%",
 								borderBottom: "3px dashed white",
 								marginBottom: 10,
 								marginTop: 10,
 							}}
-						></div>
-						<p>AI starts cutting your costs immediately.</p>
-					</div>
-					<div className="process">
-						<div className="process__inner"></div>
+						></div> */}
+							<p>{t("how_it_works.card4_sec_title")}.</p>
+						</div>
+						<div className="process">
+							<div className="process__inner"></div>
+						</div>
 					</div>
 				</div>
 				<ContactUs>

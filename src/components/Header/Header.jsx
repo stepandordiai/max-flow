@@ -60,7 +60,7 @@ const Header = () => {
 						to={"/how-it-works"}
 						className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
 					>
-						{t("how_it_works")}
+						{t("how_it_works_title")}
 					</NavLink>
 					<NavLink
 						to={"/financing"}

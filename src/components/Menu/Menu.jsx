@@ -53,7 +53,7 @@ const Menu = () => {
 						}
 						to={"/how-it-works"}
 					>
-						{t("how_it_works")}
+						{t("how_it_works_title")}
 					</NavLink>
 					<NavLink
 						className={({ isActive }) =>

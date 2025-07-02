@@ -47,7 +47,7 @@ const Footer = () => {
 								{t("product")}
 							</NavLink>
 							<NavLink className={styles["footer__nav-link"]}>
-								{t("how_it_works")}
+								{t("how_it_works_title")}
 							</NavLink>
 							<NavLink className={styles["footer__nav-link"]}>
 								{t("financing")}

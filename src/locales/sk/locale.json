@@ -1,16 +1,16 @@
 {
 	"home": "Úvod",
 	"product": "Produkt",
-	"how_it_works": "Ako to funguje",
+	"how_it_works_title": "Ako to funguje",
 	"financing": "Financovanie",
 	"contact": "Kontakt",
 	"want_a_quote": "Chcem ponuku",
+	"scroll_to_explore": "Preskúmajte zrolovaním",
 
 	"home_title": "Šikovná energia pre SVJ - Ušetrite až 80% nákladov",
 	"home_sec_title": "Fotovoltaika s AI riadením a cloudovou platformou",
 	"home_btn": "Ako to funguje",
 	"home_sec_btn": "Nezáväzná kalkulácia",
-	"home_scroll": "Preskúmajte zrolovaním",
 
 	"benefits": {
 		"title": "Výhody",
@@ -24,5 +24,16 @@
 
 	"partners": {
 		"title": "Naši partneri"
+	},
+
+	"how_it_works": {
+		"card1_title": "Bezplatný energetický audit",
+		"card1_sec_title": "Analyzujeme vaše faktúry a navrhneme riešenie",
+		"card2_title": "Návrh na mieru",
+		"card2_sec_title": "Pripravte dokumentáciu k dotáciám",
+		"card3_title": "Bezproblémová inštalácia",
+		"card3_sec_title": "O všetko sa postarajú certifikovaní technici",
+		"card4_title": "Maximalizujte úspory",
+		"card4_sec_title": "AI začne okamžite znižovať vaše náklady"
 	}
 }

@@ -1,16 +1,16 @@
 {
 	"home": "Home",
 	"product": "Product",
-	"how_it_works": "How it works",
+	"how_it_works_title": "How it works",
 	"financing": "Financing",
 	"contact": "Contact",
 	"want_a_quote": "Want a quote",
+	"scroll_to_explore": "Scroll to explore",
 
 	"home_title": "Smart energy for SVJ - Save up to 80% of costs",
 	"home_sec_title": "Photovoltaics with AI control and cloud platform",
 	"home_btn": "How does it work",
 	"home_sec_btn": "Non-binding calculation",
-	"home_scroll": "Scroll to explore",
 
 	"benefits": {
 		"title": "Benefits",
@@ -24,5 +24,16 @@
 
 	"partners": {
 		"title": "Our partners"
+	},
+
+	"how_it_works": {
+		"card1_title": "Free Energy Audit",
+		"card1_sec_title": "We analyze your bills and design a solution",
+		"card2_title": "Tailored Proposal",
+		"card2_sec_title": "Prepare subsidy documentation",
+		"card3_title": "Hassle-Free Installation",
+		"card3_sec_title": "Certified technicians handle everything",
+		"card4_title": "Maximize Savings",
+		"card4_sec_title": "AI starts cutting your costs immediately"
 	}
 }
