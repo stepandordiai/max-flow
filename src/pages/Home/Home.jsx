@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import Partners from "../../components/Partners/Partners";
 import BenefitsSection from "../../components/BenefitsSection/BenefitsSection";
-import "./Home.scss";
-import HowItWorksSection from "../../components/HowItWorksSection/HowItWorksSection";
 import AboutUs from "../../components/AboutUs/AboutUs";
+import bgImg from "/bg2.png";
+import "./Home.scss";
 
 const Home = () => {
 	const { t } = useTranslation();
@@ -30,11 +30,9 @@ const Home = () => {
 			</Helmet>
 			<main className="home">
 				<div className="home__top">
+					<img className="home__bg" src={bgImg} alt="" />
 					<h1 className="home__top-title">{t("home_title")}</h1>
-					<div
-						className="home__top-container"
-						style={{ alignSelf: "flex-end" }}
-					>
+					<div className="home__top-container">
 						<h2>
 							{t("home_sec_title")}{" "}
 							<span style={{ fontWeight: 500 }}>MaxFlow 360°</span>
@@ -43,14 +41,15 @@ const Home = () => {
 							<NavLink className={"home__link"} to={"/how-it-works"}>
 								{t("home_btn")}?
 							</NavLink>
-							<NavLink to={"/form-calculator"}>{t("home_sec_btn")}</NavLink>
+							<NavLink className={"home__link"} to={"/form-calculator"}>
+								{t("home_sec_btn")}
+							</NavLink>
 						</div>
 					</div>
 					<div className="scroll" data-value={t("home_scroll")}></div>
 				</div>
 				<AboutUs />
 				<BenefitsSection />
-				<HowItWorksSection />
 				<Partners />
 			</main>
 		</>

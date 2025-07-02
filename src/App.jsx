@@ -9,8 +9,8 @@ import Menu from "./components/Menu/Menu";
 import Footer from "./components/Footer/Footer";
 import ScrollToTop from "./utils/ScrollToTop";
 import "./i18next";
-import "./App.scss";
 import FormCalculator from "./pages/FormCalculator/FormCalculator";
+import "./scss/App.scss";
 
 function App() {
 	return (
