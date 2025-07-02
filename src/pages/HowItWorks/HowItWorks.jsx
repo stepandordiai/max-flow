@@ -52,6 +52,21 @@ const HowItWorks = () => {
 			});
 		});
 	}, []);
+
+	useEffect(() => {
+		document.addEventListener("scroll", () => {
+			const scrollTop = document.documentElement.scrollTop;
+			if (scrollTop > 0) {
+				document
+					.querySelector(".how-it-works__scroll")
+					.classList.add("how-it-works__scroll--active");
+			} else {
+				document
+					.querySelector(".how-it-works__scroll")
+					.classList.remove("how-it-works__scroll--active");
+			}
+		});
+	}, []);
 	return (
 		<>
 			<Helmet>
@@ -60,11 +75,15 @@ const HowItWorks = () => {
 			</Helmet>
 			<div className="how-it-works">
 				<div className="how-it-works__top">
-					<h2 className="process__title" id="process">
-						How It Works
-					</h2>
+					<h2 className="process__title">How It Works</h2>
 				</div>
-				<div className="process__outer">
+				<div className="process__outer" id="process">
+					<div className="process__outer-bottom">
+						<a href="#process" className="how-it-works__scroll">
+							Scroll to explore
+						</a>
+					</div>
+
 					<div className="process__card process__card1">
 						<p>Free Energy Audit</p>
 						<div
