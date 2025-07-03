@@ -35,5 +35,13 @@
 		"card3_sec_title": "O vše se postarají certifikovaní technici",
 		"card4_title": "Maximalizujte úspory",
 		"card4_sec_title": "Umělá inteligence začne okamžitě snižovat vaše náklady"
+	},
+
+	"about_us": {
+		"title": "O nás v číslech",
+		"card1_title": "instalace za rok",
+		"card2_title": "bytová družstva již zachráněna",
+		"card3_title": "roky zkušeností",
+		"card4_title": "podporovaná zařízení"
 	}
 }

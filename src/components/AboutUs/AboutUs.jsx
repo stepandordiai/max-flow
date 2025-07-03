@@ -1,64 +1,83 @@
+import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 import "./AboutUs.scss";
 
 const AboutUs = () => {
+	const { t } = useTranslation();
+
+	useEffect(() => {
+		let delay = 150;
+
+		document.querySelectorAll(".about-us__counter").forEach((count) => {
+			document.addEventListener("scroll", () => {
+				const countRect = count.getBoundingClientRect();
+				if (countRect.bottom < window.innerHeight) {
+					count
+						.querySelectorAll(".about-us__counter-char")
+						.forEach((char, index) => {
+							setTimeout(() => {
+								char.classList.add("about-us__counter-char--active");
+							}, delay + 150 * index);
+						});
+				}
+			});
+		});
+	}, []);
+
 	return (
-		<>
-			<div>
-				<h2 className="about-us" id="about-us">
-					About us in numbers
-				</h2>
-				<div className="stats">
-					<div>
-						<p>instalací ročně</p>
-						<p className="process-count">
-							{"50+".split("").map((char, index) => {
-								return (
-									<span key={index} className="char">
-										{char}
-									</span>
-								);
-							})}
-						</p>
-					</div>
-					<div>
-						<p>zemí</p>
-						<p className="process-count">
-							{"20+".split("").map((char, index) => {
-								return (
-									<span key={index} className="char">
-										{char}
-									</span>
-								);
-							})}
-						</p>
-					</div>
-					<div>
-						<p>let zkušeností</p>
-						<p className="process-count">
-							{"12".split("").map((char, index) => {
-								return (
-									<span key={index} className="char">
-										{char}
-									</span>
-								);
-							})}
-						</p>
-					</div>
-					<div>
-						<p>podporovaných zařízení</p>
-						<p className="process-count">
-							{"1000+".split("").map((char, index) => {
-								return (
-									<span key={index} className="char">
-										{char}
-									</span>
-								);
-							})}
-						</p>
-					</div>
+		<div className="about-us" id="about-us">
+			<h2 className="about-us__title">{t("about_us.title")}</h2>
+			<div className="about-us__card">
+				<div>
+					<p>{t("about_us.card1_title")}</p>
+					<p className="about-us__counter">
+						{"50+".split("").map((char, index) => {
+							return (
+								<span key={index} className="about-us__counter-char">
+									{char}
+								</span>
+							);
+						})}
+					</p>
+				</div>
+				<div>
+					<p>{t("about_us.card2_title")} 12,500,000 CZK</p>
+					<p className="about-us__counter">
+						{"72".split("").map((char, index) => {
+							return (
+								<span key={index} className="about-us__counter-char">
+									{char}
+								</span>
+							);
+						})}
+					</p>
+				</div>
+				<div>
+					<p>{t("about_us.card3_title")}</p>
+					<p className="about-us__counter">
+						{"12".split("").map((char, index) => {
+							return (
+								<span key={index} className="about-us__counter-char">
+									{char}
+								</span>
+							);
+						})}
+					</p>
+				</div>
+				<div>
+					<p>{t("about_us.card4_title")}</p>
+					<p className="about-us__counter">
+						{"1000+".split("").map((char, index) => {
+							return (
+								<span key={index} className="about-us__counter-char">
+									{char}
+								</span>
+							);
+						})}
+					</p>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

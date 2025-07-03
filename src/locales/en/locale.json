@@ -35,5 +35,13 @@
 		"card3_sec_title": "Certified technicians handle everything",
 		"card4_title": "Maximize Savings",
 		"card4_sec_title": "AI starts cutting your costs immediately"
+	},
+
+	"about_us": {
+		"title": "About us in numbers",
+		"card1_title": "installations per year",
+		"card2_title": "housing associations already saved",
+		"card3_title": "years of experience",
+		"card4_title": "supported devices"
 	}
 }

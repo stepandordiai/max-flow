@@ -39,21 +39,6 @@ const HowItWorks = () => {
 				}
 			});
 		});
-
-		let delay = 300;
-
-		document.querySelectorAll(".process-count").forEach((count) => {
-			document.addEventListener("scroll", () => {
-				const countRect = count.getBoundingClientRect();
-				if (countRect.bottom < window.innerHeight) {
-					count.querySelectorAll(".char").forEach((char, index) => {
-						setTimeout(() => {
-							char.classList.add("char--active");
-						}, delay + 300 * index);
-					});
-				}
-			});
-		});
 	}, []);
 
 	useEffect(() => {
