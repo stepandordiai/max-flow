@@ -3,7 +3,7 @@
 	"product": "Product",
 	"how_it_works_title": "How it works",
 	"financing": "Financing",
-	"contact": "Contact",
+	"contact_title": "Contact",
 	"want_a_quote": "Want a quote",
 	"scroll_to_explore": "Scroll to explore",
 
@@ -43,5 +43,19 @@
 		"card2_title": "housing associations already saved",
 		"card3_title": "years of experience",
 		"card4_title": "supported devices"
+	},
+
+	"contact": {
+		"info": "Contact information",
+		"sec_info": "Fill up the form and our Team will get back to you within 24 hours",
+		"call_us": "Call us",
+		"chat_to_us": "Chat to us",
+		"visit_us": "Visit us",
+		"social_media": "Social media",
+		"first_name": "First Name",
+		"last_name": "Last name",
+		"tel": "Phone number",
+		"message": "Message",
+		"send": "Send message"
 	}
 }

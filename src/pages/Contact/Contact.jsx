@@ -1,9 +1,12 @@
 import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import arrowDownIcon from "/icons/down-arrow.png";
 import "./Contact.scss";
 
 const Contact = () => {
+	const { t } = useTranslation();
+
 	const countriesData = [
 		{
 			name: "CZ",
@@ -101,20 +104,18 @@ const Contact = () => {
 	return (
 		<>
 			<Helmet>
-				<title>MaxFlow | Contact</title>
+				<title>MaxFlow | {t("contact_title")}</title>
 				<link rel="canonical" href="https://maxflow.cz/contact" />
 			</Helmet>
 			<main className="contact">
 				<div className="contact__info">
 					<div>
-						<h2 className="contact__info-title">Contact information</h2>
-						<p style={{ fontWeight: 300 }}>
-							Fill up the form and our Team will get back to you within 24 hours
-						</p>
+						<h2 className="contact__info-title">{t("contact.info")}</h2>
+						<p style={{ fontWeight: 300 }}>{t("contact.sec_info")}</p>
 					</div>
 					<div className="contact__info-details">
 						<div>
-							<p style={{ marginBottom: 5 }}>Call us</p>
+							<p style={{ marginBottom: 5 }}>{t("contact.call_us")}</p>
 							<a
 								className="contact__info-details-link"
 								href="tel:+420777957290"
@@ -124,7 +125,7 @@ const Contact = () => {
 							</a>
 						</div>
 						<div>
-							<p style={{ marginBottom: 5 }}>Chat to us</p>
+							<p style={{ marginBottom: 5 }}>{t("contact.chat_to_us")}</p>
 							<a
 								className="contact__info-details-link"
 								href="mailto:info@fvestavby.cz"
@@ -134,7 +135,7 @@ const Contact = () => {
 							</a>
 						</div>
 						<div>
-							<p style={{ marginBottom: 5 }}>Visit us</p>
+							<p style={{ marginBottom: 5 }}>{t("contact.visit_us")}</p>
 							<a
 								className="contact__info-details-link"
 								href="https://maps.app.goo.gl/oKDKtZXyS9CcB43q9"
@@ -146,7 +147,7 @@ const Contact = () => {
 						</div>
 					</div>
 					<div>
-						<p style={{ marginBottom: 5 }}>Social media</p>
+						<p style={{ marginBottom: 5 }}>{t("contact.social_media")}</p>
 						<div className="contact__info-socials">
 							<a
 								className="contact__info-socials-link"
@@ -183,7 +184,7 @@ const Contact = () => {
 				>
 					<div className="contact__form-container">
 						<div className="contact__form-input-container">
-							<label htmlFor="firstName">First Name</label>
+							<label htmlFor="firstName">{t("contact.first_name")}</label>
 							<input
 								className="input js-input"
 								id="firstName"
@@ -192,7 +193,7 @@ const Contact = () => {
 							/>
 						</div>
 						<div className="contact__form-input-container">
-							<label htmlFor="lastName">Last Name</label>
+							<label htmlFor="lastName">{t("contact.last_name")}</label>
 							<input className="input js-input" id="lastName" type="text" />
 						</div>
 					</div>
@@ -201,7 +202,7 @@ const Contact = () => {
 						<input className="input js-input" id="email" type="email" />
 					</div>
 					<div className="contact__form-input-container">
-						<label htmlFor="tel">Phone Number</label>
+						<label htmlFor="tel">{t("contact.tel")}</label>
 
 						<div className="custom-input-container">
 							<div className="custom-select">
@@ -266,7 +267,7 @@ const Contact = () => {
 						</div>
 					</div>
 					<div className="contact__form-input-container area-container">
-						<label htmlFor="message">Message</label>
+						<label htmlFor="message">{t("contact.message")}</label>
 						<textarea
 							className="input js-input"
 							name=""
@@ -274,7 +275,7 @@ const Contact = () => {
 						></textarea>
 					</div>
 					<button className="contact__form-btn" type="submit">
-						Send message
+						{t("contact.send")}
 					</button>
 				</form>
 			</main>

@@ -3,7 +3,7 @@
 	"product": "Produkt",
 	"how_it_works_title": "Ako to funguje",
 	"financing": "Financovanie",
-	"contact": "Kontakt",
+	"contact_title": "Kontakt",
 	"want_a_quote": "Chcem ponuku",
 	"scroll_to_explore": "Preskúmajte zrolovaním",
 
@@ -43,5 +43,19 @@
 		"card2_title": "bytové družstvá už zachránené",
 		"card3_title": "roky skúseností",
 		"card4_title": "podporované zariadenia"
+	},
+
+	"contact": {
+		"info": "Kontaktné informácie",
+		"sec_info": "Vyplňte formulár a náš tím sa vám ozve do 24 hodín",
+		"call_us": "Zavolajte nám",
+		"chat_to_us": "Kontaktujte nás v chate",
+		"visit_us": "Navštívte nás",
+		"social_media": "Sociálne médiá",
+		"first_name": "Kresťanské meno",
+		"last_name": "Príjmenie",
+		"tel": "Telefónne číslo",
+		"message": "Správa",
+		"send": "Odoslať správu"
 	}
 }
