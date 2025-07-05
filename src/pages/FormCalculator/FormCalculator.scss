@@ -1,10 +1,11 @@
+@use "./../../scss/mixins" as *;
+
 .form-calculator {
-	background: #000;
+	// background: rgba(255, 255, 255, 0.1);
+	border: 3px dashed white;
 	padding: 15px;
 	border-radius: 10px;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
+	@include flex-start-center;
 	flex-direction: column;
 }
 
@@ -12,15 +13,28 @@
 	font-size: clamp(2rem, 4vw, 4rem) !important;
 	font-weight: 400;
 	color: #fff;
+	margin-bottom: 20px;
 }
 
 .form {
 	width: 50%;
+	display: flex;
+	flex-direction: column;
+	row-gap: 15px;
+}
+
+.form-calculator__form-container {
+	border: 3px solid rgba(255, 255, 255, 0.1);
+	padding: 10px;
+	border-radius: 5px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 .form-calculator__input-container {
 	display: flex;
-	flex-direction: column;
+	gap: 3px;
 }
 
 .form-calculator__input {
@@ -32,5 +46,30 @@
 
 	&:focus {
 		border: 3px solid rgba(255, 255, 255, 1);
+	}
+}
+
+.form-calculator__input-text-container {
+	display: flex;
+	flex-direction: column;
+	row-gap: 5px;
+}
+
+.form-calculator__btn {
+	background: #000;
+	padding: 10px;
+	border-radius: 5px;
+	align-self: flex-end;
+}
+
+@media screen and (width < 900px) {
+	.form {
+		width: 75%;
+	}
+}
+
+@media screen and (width < 600px) {
+	.form {
+		width: 100%;
 	}
 }

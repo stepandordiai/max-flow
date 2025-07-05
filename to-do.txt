@@ -1,0 +1,2 @@
+add interactive calculator maybe
+update lng for contact
