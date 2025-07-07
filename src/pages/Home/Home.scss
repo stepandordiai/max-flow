@@ -61,7 +61,7 @@
 
 .home__bg {
 	position: absolute;
-	width: 800px;
+	width: 500px;
 	z-index: -1;
 	bottom: 0;
 }
@@ -82,7 +82,7 @@
 	transform: translateX(-50%);
 	height: 50px;
 	width: 3px;
-	background: rgba(255, 255, 255, 0.1);
+	background: rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
 	transition: all 0.3s;
 }
@@ -98,12 +98,13 @@
 	top: 0;
 	width: 100%;
 	height: 0%;
-	background: #fff;
+	background: #000;
 	animation: animateScroll 2s infinite;
 }
 
 .scroll::after {
 	content: attr(data-value);
+	color: #000;
 	position: absolute;
 	width: max-content;
 	top: 0;
@@ -131,7 +132,7 @@
 	text-align: end;
 	align-self: flex-end;
 	gap: 25px;
-	background: rgba(255, 255, 255, 0.1);
+	background: rgba(0, 0, 0, 0.1);
 	padding: 15px;
 	-webkit-backdrop-filter: blur(5px);
 	backdrop-filter: blur(5px);

@@ -26,6 +26,28 @@ const Home = () => {
 
 	console.log(inputs);
 
+	const yearConsumption = inputs.houseUnits * 1000 * 1000 * 0.43;
+
+	const uspora = (yearConsumption * inputs.purchasePrice) / 1000;
+
+	const usporaAll =
+		(inputs.houseUnits *
+			1000000 *
+			0.43 *
+			(inputs.purchasePrice - inputs.electricityPrice)) /
+		1000000;
+
+	const usporaBut = usporaAll / 35;
+
+	const cena = inputs.houseUnits * 35000 + inputs.batterySize * 15000;
+
+	const year = cena / 2 / usporaAll;
+
+	console.log(yearConsumption);
+	console.log(uspora);
+	console.log(usporaAll);
+	console.log(usporaBut);
+
 	useEffect(() => {
 		document.addEventListener("scroll", () => {
 			const scrollTop = document.documentElement.scrollTop;
@@ -45,7 +67,11 @@ const Home = () => {
 			</Helmet>
 			<main className="home">
 				<div className="home__top">
-					<img className="home__bg" src={bgImg} alt="" />
+					<img
+						className="home__bg"
+						src="https://www.ikomunita.cz/templates/default/img/Bytovy_dum.svg"
+						alt=""
+					/>
 					<h1 className="home__top-title">{t("home_title")}</h1>
 					<div className="home__top-container">
 						<h2>
@@ -61,7 +87,7 @@ const Home = () => {
 							</NavLink>
 						</div>
 					</div>
-					<div className="scroll" data-value={t("home_scroll")}></div>
+					<div className="scroll" data-value={t("scroll_to_explore")}></div>
 				</div>
 				<div className="calc">
 					<p style={{ fontSize: "1.5rem" }}>Kalkulačka</p>
@@ -124,6 +150,64 @@ const Home = () => {
 							<span>0</span>
 							<span>40</span>
 							<span>80</span>
+						</div>
+					</div>
+					<div
+						style={{
+							display: "flex",
+							flexDirection: "column",
+							width: "100%",
+							background: "white",
+							color: "black",
+							padding: 15,
+							borderRadius: 5,
+						}}
+					>
+						<p style={{ fontSize: "1.5rem", fontWeight: 500 }}>
+							MaxFlow 360 &deg;
+						</p>
+						<div
+							style={{
+								display: "flex",
+								justifyContent: "space-between",
+								flexWrap: "wrap",
+								gap: 30,
+							}}
+						>
+							<div>
+								<p>
+									Velikost fotovoltaiky: <strong>{inputs.houseUnits}</strong>{" "}
+									kWp
+								</p>
+								<p>
+									Velikost baterie: <strong>{inputs.batterySize}</strong> kWh
+								</p>
+								<p>Procento využití FVE: %</p>
+							</div>
+							<div>
+								<p>
+									Úspora na dům: <strong>{usporaAll}</strong> Kč
+								</p>
+								<p>
+									Úspora na byt: <strong>{usporaBut.toFixed(0)}</strong> Kč
+								</p>
+							</div>
+							<div>
+								<p>
+									Cena před dotací: <strong>{cena}</strong>
+								</p>
+								<p>
+									Dotace: <strong>{cena / 2}</strong>
+								</p>
+							</div>
+							<div>
+								<p>
+									Cena po odečtení dotace Kč: <strong>{cena / 2}</strong>
+								</p>
+								<p>
+									Návratnost investice: let: <strong>{year.toFixed(1)}</strong>
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
