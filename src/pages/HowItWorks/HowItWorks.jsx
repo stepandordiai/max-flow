@@ -3,6 +3,10 @@ import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import ContactUs from "../../components/ContactUs/ContactUs";
+import animation from "/audit.png";
+import animation2 from "/accord.png";
+import animation3 from "/maintenance.png";
+import animation4 from "/piggy-bank.png";
 import "./HowItWorks.scss";
 
 const HowItWorks = () => {
@@ -83,7 +87,12 @@ const HowItWorks = () => {
 								marginTop: 10,
 							}}
 						></div> */}
-							<p>{t("how_it_works.card1_sec_title")}.</p>
+							<div style={{ alignSelf: "flex-end", textAlign: "end" }}>
+								<img width={150} src={animation} alt="" />
+								<div style={{ marginTop: 10 }}>
+									{t("how_it_works.card1_sec_title")}.
+								</div>
+							</div>
 						</div>
 						<div className="process__card process__card2">
 							<p>{t("how_it_works.card2_title")}</p>
@@ -95,7 +104,12 @@ const HowItWorks = () => {
 								marginTop: 10,
 							}}
 						></div> */}
-							<p>{t("how_it_works.card2_sec_title")}.</p>
+							<div style={{ alignSelf: "flex-end", textAlign: "end" }}>
+								<img width={150} src={animation2} alt="" />
+								<div style={{ marginTop: 10 }}>
+									{t("how_it_works.card2_sec_title")}.
+								</div>
+							</div>
 						</div>
 						<div className="process__card process__card3">
 							<p>{t("how_it_works.card3_title")}</p>
@@ -107,7 +121,12 @@ const HowItWorks = () => {
 								marginTop: 10,
 							}}
 						></div> */}
-							<p>{t("how_it_works.card3_sec_title")}.</p>
+							<div style={{ alignSelf: "flex-end", textAlign: "end" }}>
+								<img width={150} src={animation3} alt="" />
+								<div style={{ marginTop: 10 }}>
+									{t("how_it_works.card3_sec_title")}.
+								</div>
+							</div>
 						</div>
 						<div className="process__card process__card4">
 							<p>{t("how_it_works.card4_title")}</p>
@@ -119,7 +138,12 @@ const HowItWorks = () => {
 								marginTop: 10,
 							}}
 						></div> */}
-							<p>{t("how_it_works.card4_sec_title")}.</p>
+							<div style={{ alignSelf: "flex-end", textAlign: "end" }}>
+								<img width={150} src={animation4} alt="" />
+								<div style={{ marginTop: 10 }}>
+									{t("how_it_works.card4_sec_title")}.
+								</div>
+							</div>
 						</div>
 						<div className="process">
 							<div className="process__inner"></div>

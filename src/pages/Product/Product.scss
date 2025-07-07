@@ -30,6 +30,27 @@ h3 {
 	}
 }
 
+.sect-1 {
+	background: rgba(255, 63, 63, 0.504) !important;
+}
+
+.sect-2 {
+	background: rgba(91, 224, 89, 0.581) !important;
+}
+
+.product__top-container {
+	min-height: calc(100vh - 95px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.product__top-container-inner {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
 @media screen and (width < 896px) {
 	.product__section1-container {
 		background: rgba(255, 255, 255, 0.1);
