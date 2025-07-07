@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Partners from "../../components/Partners/Partners";
 import Benefits from "../../components/Benefits/Benefits";
 import AboutUs from "../../components/AboutUs/AboutUs";
@@ -10,6 +10,21 @@ import "./Home.scss";
 
 const Home = () => {
 	const { t } = useTranslation();
+
+	const [inputs, setInputs] = useState({
+		houseUnits: 35,
+		purchasePrice: 8340,
+		electricityPrice: 1500,
+		batterySize: 35,
+	});
+
+	const handleInputsOnChange = (e) => {
+		const { name, value } = e.target;
+
+		setInputs((prev) => ({ ...prev, [name]: value }));
+	};
+
+	console.log(inputs);
 
 	useEffect(() => {
 		document.addEventListener("scroll", () => {
@@ -47,6 +62,70 @@ const Home = () => {
 						</div>
 					</div>
 					<div className="scroll" data-value={t("home_scroll")}></div>
+				</div>
+				<div className="calc">
+					<p style={{ fontSize: "1.5rem" }}>Kalkulačka</p>
+					<div>
+						<label htmlFor="">
+							Počet bytových jednotek <strong>{inputs.houseUnits}</strong>
+						</label>
+						<input
+							onChange={handleInputsOnChange}
+							value={inputs.houseUnits}
+							name="houseUnits"
+							className="calc__input"
+							type="text"
+							placeholder=""
+						/>
+					</div>
+					<div>
+						<label htmlFor="">
+							Nákupní cena elektřiny (MWh){" "}
+							<strong>{inputs.purchasePrice}</strong>
+						</label>
+						<input
+							onChange={handleInputsOnChange}
+							value={inputs.purchasePrice}
+							name="purchasePrice"
+							className="calc__input"
+							type="text"
+							placeholder=""
+						/>
+					</div>
+					<div>
+						<label htmlFor="">
+							Výkupní cena elektřiny (MWh){" "}
+							<strong>{inputs.electricityPrice}</strong>
+						</label>
+						<input
+							onChange={handleInputsOnChange}
+							value={inputs.electricityPrice}
+							name="electricityPrice"
+							className="calc__input"
+							type="text"
+							placeholder=""
+						/>
+					</div>
+					<div className="calc__range-container">
+						<label htmlFor="">
+							Velikost baterií <strong>{inputs.batterySize}</strong>
+						</label>
+						<input
+							onChange={handleInputsOnChange}
+							value={inputs.batterySize}
+							name="batterySize"
+							type="range"
+							min={0}
+							max={80}
+							step={5}
+							id=""
+						/>
+						<div>
+							<span>0</span>
+							<span>40</span>
+							<span>80</span>
+						</div>
+					</div>
 				</div>
 				<AboutUs />
 				<Benefits />

@@ -1,7 +1,6 @@
 @use "./../../scss/mixins" as *;
 
 .form-calculator {
-	// background: rgba(255, 255, 255, 0.1);
 	border: 3px dashed white;
 	padding: 15px;
 	border-radius: 10px;
@@ -45,7 +44,7 @@
 	transition: all 0.3s;
 
 	&:focus {
-		border: 3px solid rgba(255, 255, 255, 1);
+		border: 3px solid #fff;
 	}
 }
 
