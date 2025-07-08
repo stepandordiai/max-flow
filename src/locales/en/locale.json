@@ -57,5 +57,21 @@
 		"tel": "Phone number",
 		"message": "Message",
 		"send": "Send message"
+	},
+
+	"calculator": {
+		"title": "How much it costs and how much you save",
+		"input1": "Number of housing units",
+		"input2": "Purchase price of electricity",
+		"input3": "Electricity purchase price",
+		"input4": "Battery size",
+		"txt1": "Photovoltaic size",
+		"txt2": "Percentage of use",
+		"txt3": "Saving for a house",
+		"txt4": "Saving for an apartment",
+		"txt5": "Price before subsidy",
+		"txt6": "Subsidy",
+		"txt7": "Price after deduction of subsidy",
+		"txt8": "Return on investment"
 	}
 }

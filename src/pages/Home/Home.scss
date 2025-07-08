@@ -1,46 +1,9 @@
 @use "./../../scss/mixins" as *;
 
-.calc {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	gap: 5px;
-	border: 3px dashed #fff;
-	border-radius: 10px;
-	padding: 15px;
-}
-
-::placeholder {
-	color: #fff;
-}
-
-.calc__input {
-	border: 3px solid rgba(255, 255, 255, 0.1);
-	padding: 10px;
-	border-radius: 5px;
-	width: 100%;
-
-	&:focus {
-		border: 3px solid #fff;
-	}
-}
-
-.calc__range-container {
-	display: flex;
-	flex-direction: column;
-
-	div {
-		display: flex;
-		justify-content: space-between;
-	}
-}
-
 .home {
 	display: flex;
 	flex-direction: column;
 	row-gap: 70px;
-	// opacity: 0;
-	// animation: animateHome 0.3s forwards;
 }
 
 @keyframes animateHome {

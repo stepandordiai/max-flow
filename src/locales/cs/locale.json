@@ -57,5 +57,21 @@
 		"tel": "Telefonní číslo",
 		"message": "Zpráva",
 		"send": "Odeslat zprávu"
+	},
+
+	"calculator": {
+		"title": "Kolik to stojí a kolik ušetříte",
+		"input1": "Počet bytových jednotek",
+		"input2": "Nákupní cena elektřiny",
+		"input3": "Výkupní cena elektřiny",
+		"input4": "Velikost baterií",
+		"txt1": "Velikost fotovoltaiky",
+		"txt2": "Procento využití",
+		"txt3": "Úspora na dům",
+		"txt4": "Úspora na byt",
+		"txt5": "Cena před dotací",
+		"txt6": "Dotace",
+		"txt7": "Cena po odečtení dotace",
+		"txt8": "Návratnost investice"
 	}
 }

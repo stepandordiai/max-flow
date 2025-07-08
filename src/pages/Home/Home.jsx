@@ -7,46 +7,10 @@ import Benefits from "../../components/Benefits/Benefits";
 import AboutUs from "../../components/AboutUs/AboutUs";
 import bgImg from "/bg2.png";
 import "./Home.scss";
+import Calculator from "../../components/Calculator/Calculator";
 
 const Home = () => {
 	const { t } = useTranslation();
-
-	const [inputs, setInputs] = useState({
-		houseUnits: 35,
-		purchasePrice: 8340,
-		electricityPrice: 1500,
-		batterySize: 35,
-	});
-
-	const handleInputsOnChange = (e) => {
-		const { name, value } = e.target;
-
-		setInputs((prev) => ({ ...prev, [name]: value }));
-	};
-
-	console.log(inputs);
-
-	const yearConsumption = inputs.houseUnits * 1000 * 1000 * 0.43;
-
-	const uspora = (yearConsumption * inputs.purchasePrice) / 1000;
-
-	const usporaAll =
-		(inputs.houseUnits *
-			1000000 *
-			0.43 *
-			(inputs.purchasePrice - inputs.electricityPrice)) /
-		1000000;
-
-	const usporaBut = usporaAll / 35;
-
-	const cena = inputs.houseUnits * 35000 + inputs.batterySize * 15000;
-
-	const year = cena / 2 / usporaAll;
-
-	console.log(yearConsumption);
-	console.log(uspora);
-	console.log(usporaAll);
-	console.log(usporaBut);
 
 	useEffect(() => {
 		document.addEventListener("scroll", () => {
@@ -89,130 +53,9 @@ const Home = () => {
 					</div>
 					<div className="scroll" data-value={t("scroll_to_explore")}></div>
 				</div>
-				<div className="calc">
-					<p style={{ fontSize: "1.5rem" }}>Kalkulačka</p>
-					<div>
-						<label htmlFor="">
-							Počet bytových jednotek <strong>{inputs.houseUnits}</strong>
-						</label>
-						<input
-							onChange={handleInputsOnChange}
-							value={inputs.houseUnits}
-							name="houseUnits"
-							className="calc__input"
-							type="text"
-							placeholder=""
-						/>
-					</div>
-					<div>
-						<label htmlFor="">
-							Nákupní cena elektřiny (MWh){" "}
-							<strong>{inputs.purchasePrice}</strong>
-						</label>
-						<input
-							onChange={handleInputsOnChange}
-							value={inputs.purchasePrice}
-							name="purchasePrice"
-							className="calc__input"
-							type="text"
-							placeholder=""
-						/>
-					</div>
-					<div>
-						<label htmlFor="">
-							Výkupní cena elektřiny (MWh){" "}
-							<strong>{inputs.electricityPrice}</strong>
-						</label>
-						<input
-							onChange={handleInputsOnChange}
-							value={inputs.electricityPrice}
-							name="electricityPrice"
-							className="calc__input"
-							type="text"
-							placeholder=""
-						/>
-					</div>
-					<div className="calc__range-container">
-						<label htmlFor="">
-							Velikost baterií <strong>{inputs.batterySize}</strong>
-						</label>
-						<input
-							onChange={handleInputsOnChange}
-							value={inputs.batterySize}
-							name="batterySize"
-							type="range"
-							min={0}
-							max={80}
-							step={5}
-							id=""
-						/>
-						<div>
-							<span>0</span>
-							<span>40</span>
-							<span>80</span>
-						</div>
-					</div>
-					<div
-						style={{
-							display: "flex",
-							flexDirection: "column",
-							width: "100%",
-							background: "white",
-							color: "black",
-							padding: 15,
-							borderRadius: 5,
-						}}
-					>
-						<p style={{ fontSize: "1.5rem", fontWeight: 500 }}>
-							MaxFlow 360 &deg;
-						</p>
-						<div
-							style={{
-								display: "flex",
-								justifyContent: "space-between",
-								flexWrap: "wrap",
-								gap: 30,
-							}}
-						>
-							<div>
-								<p>
-									Velikost fotovoltaiky: <strong>{inputs.houseUnits}</strong>{" "}
-									kWp
-								</p>
-								<p>
-									Velikost baterie: <strong>{inputs.batterySize}</strong> kWh
-								</p>
-								<p>Procento využití FVE: %</p>
-							</div>
-							<div>
-								<p>
-									Úspora na dům: <strong>{usporaAll}</strong> Kč
-								</p>
-								<p>
-									Úspora na byt: <strong>{usporaBut.toFixed(0)}</strong> Kč
-								</p>
-							</div>
-							<div>
-								<p>
-									Cena před dotací: <strong>{cena}</strong>
-								</p>
-								<p>
-									Dotace: <strong>{cena / 2}</strong>
-								</p>
-							</div>
-							<div>
-								<p>
-									Cena po odečtení dotace Kč: <strong>{cena / 2}</strong>
-								</p>
-								<p>
-									Návratnost investice: let: <strong>{year.toFixed(1)}</strong>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
 				<AboutUs />
 				<Benefits />
+				<Calculator />
 				<Partners />
 			</main>
 		</>
