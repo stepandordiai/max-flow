@@ -69,7 +69,7 @@ const Menu = () => {
 						}
 						to={"/contact"}
 					>
-						{t("contact")}
+						{t("contact_title")}
 					</NavLink>
 				</nav>
 				<NavLink className="menu__btn" to="/contact">

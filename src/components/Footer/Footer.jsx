@@ -53,7 +53,7 @@ const Footer = () => {
 								{t("financing")}
 							</NavLink>
 							<NavLink className={styles["footer__nav-link"]}>
-								{t("contact")}
+								{t("contact_title")}
 							</NavLink>
 						</nav>
 					</div>

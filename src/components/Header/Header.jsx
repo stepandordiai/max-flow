@@ -72,7 +72,7 @@ const Header = () => {
 						to={"/contact"}
 						className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
 					>
-						{t("contact")}
+						{t("contact_title")}
 					</NavLink>
 				</nav>
 				<div className="header__right-container">

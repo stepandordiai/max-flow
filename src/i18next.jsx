@@ -2,9 +2,9 @@ import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
-import cs from "./locales/cs/locale.json";
-import sk from "./locales/sk/locale.json";
-import en from "./locales/en/locale.json";
+import cs from "./assets/locales/cs/locale.json";
+import sk from "./assets/locales/sk/locale.json";
+import en from "./assets/locales/en/locale.json";
 
 export default i18next
 	.use(initReactI18next)
