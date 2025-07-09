@@ -27,13 +27,19 @@
 	padding: 10px;
 	border-radius: 5px;
 	width: 100%;
-	display: flex;
-	flex-direction: column;
 }
 
 .form-calculator__input-container {
 	display: flex;
-	gap: 3px;
+	// flex-direction: column;
+	align-items: center; /* center horizontally */
+	// justify-content: center; /* center vertically */
+	gap: 0.5rem; /* space between input and label */
+	// text-align: center;
+
+	label {
+		// display: grid;
+	}
 }
 
 .form-calculator__input {
