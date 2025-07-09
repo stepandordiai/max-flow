@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
+import Range from "../Range/Range";
 import "./Calculator.scss";
 
 const Calculator = () => {
@@ -35,24 +36,8 @@ const Calculator = () => {
 
 	const year = cena / 2 / usporaAll;
 
-	useEffect(() => {
-		const ranger = document.querySelector(".range");
+	console.log(inputs.batterySize);
 
-		const value = 35;
-		const max = 80;
-		const percent = (value / max) * 100;
-
-		// Initial range width
-		const bgRange = document.querySelector(".bg-range");
-		bgRange.style.width = `${percent}%`;
-
-		ranger.addEventListener("input", (e) => {
-			const value = e.target.value;
-			// TODO:
-			const percent = (value / e.target.max) * 100;
-			document.querySelector(".bg-range").style.width = percent + "%";
-		});
-	}, []);
 	return (
 		<div className="calculator">
 			<h2 className="calculator__title">{t("calculator.title")}</h2>
@@ -109,56 +94,13 @@ const Calculator = () => {
 						/>
 					</div>
 				</div>
-				<div className="calculator__range-wrapper">
-					<label
-						style={{
-							width: "100%",
-							display: "flex",
-							justifyContent: "space-between",
-							alignItems: "center",
-						}}
-						htmlFor="calculator__input4"
-					>
-						<span>{t("calculator.input4")}</span>
-						<span>
-							<span style={{ fontWeight: 600 }}>{inputs.batterySize}</span> kWh
-						</span>
-					</label>
-					<div className="calculator__range-container">
-						<div className="bg-range"></div>
-						<input
-							onChange={handleInputsOnChange}
-							className="range"
-							value={inputs.batterySize}
-							name="batterySize"
-							type="range"
-							min={0}
-							max={80}
-							step={1}
-							id="calculator__input4"
-						/>
-					</div>
-					<div
-						style={{
-							position: "relative",
-							display: "flex",
-							justifyContent: "space-between",
-							fontWeight: 600,
-						}}
-					>
-						<span>0</span>
-						<span
-							style={{
-								position: "absolute",
-								left: "50%",
-								transform: "translateX(-50%)",
-							}}
-						>
-							40
-						</span>
-						<span>80</span>
-					</div>
-				</div>
+				<Range
+					handleInputsOnChange={handleInputsOnChange}
+					value={inputs.batterySize}
+					maxValue={80}
+					name={"batterySize"}
+					label={t("calculator.input4")}
+				/>
 			</div>
 			<div className="calculator__bottom-wrapper">
 				<div className="calculator__bottom-container">

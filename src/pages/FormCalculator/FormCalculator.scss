@@ -29,6 +29,11 @@
 	width: 100%;
 }
 
+.form-calculator__range-container {
+	display: flex;
+	gap: 15px;
+}
+
 .form-calculator__input-container {
 	display: flex;
 	// flex-direction: column;
@@ -70,6 +75,12 @@
 @media screen and (width < 900px) {
 	.form {
 		width: 75%;
+	}
+}
+
+@media screen and (width < 8960px) {
+	.form-calculator__range-container {
+		flex-direction: column;
 	}
 }
 

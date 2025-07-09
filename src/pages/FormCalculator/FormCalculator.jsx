@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./FormCalculator.scss";
+import Range from "../../components/Range/Range";
 import Checkbox from "../../components/Checkbox/Checkbox";
 
 const FormCalculator = () => {
@@ -19,6 +20,8 @@ const FormCalculator = () => {
 		tel: "",
 	});
 
+	// console.log(inputs.housingUnits);
+
 	const handleChange = (e) => {
 		const { name, type, value, checked } = e.target;
 
@@ -27,8 +30,6 @@ const FormCalculator = () => {
 			[name]: type === "checkbox" ? (checked ? value : "") : value,
 		}));
 	};
-
-	console.log(inputs.roofType);
 
 	return (
 		<div className="form-calculator">
@@ -41,51 +42,21 @@ const FormCalculator = () => {
 				method="POST"
 			>
 				<p>Basic information about the house</p>
-				<div
-					style={{ display: "flex", justifyContent: "space-between", gap: 15 }}
-				>
-					<div className="form-calculator__form-container">
-						<label style={{ marginBottom: 5 }} htmlFor="">
-							Number of housing units
-						</label>
-						<input
-							style={{ width: "100%" }}
-							onChange={handleChange}
-							type="range"
-							name="housingUnits"
-							min={0}
-							max={100}
-							step={1}
-							value={inputs.housingUnits}
-							id=""
-						/>
-						<div style={{ display: "flex", justifyContent: "space-between" }}>
-							<span>0</span>
-							<span>50</span>
-							<span>100</span>
-						</div>
-					</div>
-					<div className="form-calculator__form-container">
-						<label htmlFor="" style={{ marginBottom: 5 }}>
-							Number of entrances
-						</label>
-						<input
-							style={{ width: "100%" }}
-							onChange={handleChange}
-							type="range"
-							name="entrances"
-							min={0}
-							max={10}
-							step={1}
-							value={inputs.entrances}
-							id=""
-						/>
-						<div style={{ display: "flex", justifyContent: "space-between" }}>
-							<span>0</span>
-							<span>5</span>
-							<span>10</span>
-						</div>
-					</div>
+				<div className="form-calculator__range-container">
+					<Range
+						handleInputsOnChange={handleChange}
+						value={inputs.housingUnits}
+						name={"housingUnits"}
+						maxValue={100}
+						label={"Housing units"}
+					/>
+					<Range
+						handleInputsOnChange={handleChange}
+						value={inputs.entrances}
+						name={"entrances"}
+						maxValue={10}
+						label={"Entrances"}
+					/>
 				</div>
 				<div className="form-calculator__form-container">
 					<p style={{ marginBottom: 10 }}>Roof type</p>

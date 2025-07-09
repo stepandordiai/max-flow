@@ -1,0 +1,43 @@
+.calculator__range-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.calculator__range-container {
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+	height: 40px;
+}
+
+.range {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 10px;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.range::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	height: 40px;
+	// FIXME:
+	width: 40px;
+	box-shadow: none;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.bg-range {
+	background: #fff;
+	position: absolute;
+	height: 60px;
+	width: 0%;
+	pointer-events: none;
+}
