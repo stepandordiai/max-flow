@@ -47,13 +47,12 @@
 .process__outer {
 	position: relative;
 	width: 100%;
-	min-height: 1400px;
 }
 
 .process {
 	position: relative;
 	width: 10px;
-	min-height: 1400px;
+	min-height: 1290px;
 	background: rgba(255, 255, 255, 0.1);
 	margin: auto;
 	border-radius: 5px;
@@ -79,7 +78,7 @@
 .process__card2 {
 	position: absolute;
 	left: 0;
-	top: 25%;
+	top: calc(300px + 30px);
 	width: calc(50% - 20px);
 	background: rgba(255, 255, 255, 0.1);
 	padding: 10px;
@@ -88,7 +87,7 @@
 
 .process__card3 {
 	position: absolute;
-	top: 50%;
+	top: calc(600px + 60px);
 	right: 0;
 	width: calc(50% - 20px);
 	background: rgba(255, 255, 255, 0.1);
@@ -98,7 +97,7 @@
 
 .process__card4 {
 	position: absolute;
-	top: 75%;
+	top: calc(900px + 90px);
 	left: 0;
 	width: calc(50% - 20px);
 	background: rgba(255, 255, 255, 0.1);

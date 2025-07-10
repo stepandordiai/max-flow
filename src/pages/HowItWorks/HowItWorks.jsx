@@ -62,13 +62,13 @@ const HowItWorks = () => {
 	return (
 		<>
 			<Helmet>
-				<title>MaxFlow | {t("how_it_works_title")}</title>
+				<title>{t("how_it_works_title")} | MaxFlow</title>
 				<link rel="canonical" href="https://maxflow.cz/how-it-works" />
 			</Helmet>
 			<div className="how-it-works">
 				<div>
 					<div className="how-it-works__top">
-						<h2 className="process__title">{t("how_it_works_title")}</h2>
+						<h1 className="process__title">{t("how_it_works_title")}</h1>
 					</div>
 					<div className="process__outer" id="process">
 						<div className="process__outer-bottom">
@@ -79,16 +79,8 @@ const HowItWorks = () => {
 
 						<div className="process__card process__card1">
 							<p>{t("how_it_works.card1_title")}</p>
-							{/* <div
-							style={{
-								width: "100%",
-								borderBottom: "3px dashed white",
-								marginBottom: 10,
-								marginTop: 10,
-							}}
-						></div> */}
 							<div style={{ alignSelf: "flex-end", textAlign: "end" }}>
-								<img width={150} src={animation} alt="" />
+								<img width={100} src={animation} alt="" loading="lazy" />
 								<div style={{ marginTop: 10 }}>
 									{t("how_it_works.card1_sec_title")}.
 								</div>
@@ -96,16 +88,8 @@ const HowItWorks = () => {
 						</div>
 						<div className="process__card process__card2">
 							<p>{t("how_it_works.card2_title")}</p>
-							{/* <div
-							style={{
-								width: "100%",
-								borderBottom: "3px dashed white",
-								marginBottom: 10,
-								marginTop: 10,
-							}}
-						></div> */}
 							<div style={{ alignSelf: "flex-end", textAlign: "end" }}>
-								<img width={150} src={animation2} alt="" />
+								<img width={100} src={animation2} alt="" loading="lazy" />
 								<div style={{ marginTop: 10 }}>
 									{t("how_it_works.card2_sec_title")}.
 								</div>
@@ -113,16 +97,8 @@ const HowItWorks = () => {
 						</div>
 						<div className="process__card process__card3">
 							<p>{t("how_it_works.card3_title")}</p>
-							{/* <div
-							style={{
-								width: "100%",
-								borderBottom: "3px dashed white",
-								marginBottom: 10,
-								marginTop: 10,
-							}}
-						></div> */}
 							<div style={{ alignSelf: "flex-end", textAlign: "end" }}>
-								<img width={150} src={animation3} alt="" />
+								<img width={100} src={animation3} alt="" loading="lazy" />
 								<div style={{ marginTop: 10 }}>
 									{t("how_it_works.card3_sec_title")}.
 								</div>
@@ -130,16 +106,8 @@ const HowItWorks = () => {
 						</div>
 						<div className="process__card process__card4">
 							<p>{t("how_it_works.card4_title")}</p>
-							{/* <div
-							style={{
-								width: "100%",
-								borderBottom: "3px dashed white",
-								marginBottom: 10,
-								marginTop: 10,
-							}}
-						></div> */}
 							<div style={{ alignSelf: "flex-end", textAlign: "end" }}>
-								<img width={150} src={animation4} alt="" />
+								<img width={100} src={animation4} alt="" loading="lazy" />
 								<div style={{ marginTop: 10 }}>
 									{t("how_it_works.card4_sec_title")}.
 								</div>
@@ -151,12 +119,10 @@ const HowItWorks = () => {
 					</div>
 				</div>
 				<ContactUs>
-					<p className="contact-us__title">
-						Want to know how much you’ll save?
-					</p>
+					<p className="contact-us__title">Chcete vědět, kolik ušetřite?</p>
 					<div>
 						<NavLink className="contact-us__link" to={"/form-calculator"}>
-							<span>Use our quick savings calculator</span>
+							<span>Spočítejte si to v naší kalkulačce</span>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								height="20px"
