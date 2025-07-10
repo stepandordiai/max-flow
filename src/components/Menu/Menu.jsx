@@ -16,7 +16,6 @@ const Menu = () => {
 					.classList.remove("burger-2--active");
 
 				document.querySelector(".menu").classList.remove("menu--active");
-
 				document
 					.querySelector(".menu__inner")
 					.classList.remove("menu__inner--active");
@@ -24,8 +23,8 @@ const Menu = () => {
 		});
 	}, []);
 
-	const inactiveMenuLink = "menu__link";
-	const activeMenuLink = "menu__link menu__link--active";
+	const inactiveMenuLink = "menu__nav-link";
+	const activeMenuLink = "menu__nav-link menu__nav-link--active";
 
 	return (
 		<div className="menu">
@@ -72,7 +71,7 @@ const Menu = () => {
 						{t("contact_title")}
 					</NavLink>
 				</nav>
-				<NavLink className="menu__btn" to="/contact">
+				<NavLink className="menu__link" to="/contact">
 					<span>Chci nabídku</span>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
