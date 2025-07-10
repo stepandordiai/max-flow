@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
-import styles from "./Footer.module.scss";
 import { useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
 	const { t } = useTranslation();
@@ -40,19 +40,22 @@ const Footer = () => {
 					</button>
 					<div className={styles["footer__nav-wrapper"]}>
 						<nav className={styles["footer__nav"]}>
-							<NavLink className={styles["footer__nav-link"]}>
+							<NavLink className={styles["footer__nav-link"]} to="/">
 								{t("home")}
 							</NavLink>
-							<NavLink className={styles["footer__nav-link"]}>
+							<NavLink className={styles["footer__nav-link"]} to="/product">
 								{t("product")}
 							</NavLink>
-							<NavLink className={styles["footer__nav-link"]}>
+							<NavLink
+								className={styles["footer__nav-link"]}
+								to="/how-it-works"
+							>
 								{t("how_it_works_title")}
 							</NavLink>
-							<NavLink className={styles["footer__nav-link"]}>
+							<NavLink className={styles["footer__nav-link"]} to="/financing">
 								{t("financing")}
 							</NavLink>
-							<NavLink className={styles["footer__nav-link"]}>
+							<NavLink className={styles["footer__nav-link"]} to="/contact">
 								{t("contact_title")}
 							</NavLink>
 						</nav>
@@ -70,28 +73,28 @@ const Footer = () => {
 								smooth
 								className={styles["footer__nav-link"]}
 							>
-								About us in numbers
+								{t("about_us.title")}
 							</HashLink>
 							<HashLink
 								to="/#benefits"
 								smooth
 								className={styles["footer__nav-link"]}
 							>
-								Advantages
+								{t("benefits.title")}
 							</HashLink>
 							<HashLink
-								to={"/#process"}
+								to="/#calculator"
 								smooth
 								className={styles["footer__nav-link"]}
 							>
-								How system works
+								{t("calculator.title")}
 							</HashLink>
 							<HashLink
 								to={"/#partners"}
 								smooth
 								className={styles["footer__nav-link"]}
 							>
-								Partners
+								{t("partners.title")}
 							</HashLink>
 						</nav>
 					</div>
@@ -102,7 +105,7 @@ const Footer = () => {
 						<span className={styles["footer__nav-btn-icon"]}></span>
 					</button>
 					<div className={styles["footer__nav-wrapper"]}>
-						<nav className={styles["footer__nav"]}>
+						<div className={styles["footer__nav"]}>
 							<HashLink
 								to={"/product#product-section-1"}
 								smooth
@@ -117,38 +120,52 @@ const Footer = () => {
 							>
 								MaxFlow 360° Cloud Platform
 							</HashLink>
-						</nav>
+						</div>
 					</div>
 				</div>
 				<div className={styles["footer__top-contact-us-container"]}>
 					<div>
-						<p className={styles["footer__nav-title"]}>Call us</p>
-						<nav className={styles["footer__nav"]}>
-							<NavLink className={styles["footer__nav-link"]}>
-								+420 722 001 016
-							</NavLink>
-						</nav>
+						<p className={styles["footer__nav-title"]}>
+							{t("contact.call_us")}
+						</p>
+						<div className={styles["footer__nav"]}>
+							<a
+								className={styles["footer__nav-link"]}
+								href="tel:+420728803703"
+							>
+								+420 728 803 703
+							</a>
+						</div>
 					</div>
 					<div>
-						<p className={styles["footer__nav-title"]}>Write to us</p>
-						<nav className={styles["footer__nav"]}>
-							<NavLink className={styles["footer__nav-link"]}>
-								info@fvestavby.cz
-							</NavLink>
-						</nav>
+						<p className={styles["footer__nav-title"]}>
+							{t("contact.chat_to_us")}
+						</p>
+						<a
+							className={styles["footer__nav-link"]}
+							href="mailto:info@fvestavby.cz"
+						>
+							info@fvestavby.cz
+						</a>
 					</div>
 					<div>
-						<p className={styles["footer__nav-title"]}>Visit our office</p>
-						<nav className={styles["footer__nav"]}>
-							<NavLink className={styles["footer__nav-link"]}>
-								Pod Hroby 271 Kolín IV
-							</NavLink>
-						</nav>
+						<p className={styles["footer__nav-title"]}>
+							{t("contact.visit_us")}
+						</p>
+						<a
+							className={styles["footer__nav-link"]}
+							href="https://maps.app.goo.gl/UBXCPbrrCNxUSXNY8"
+							target="_blank"
+						>
+							Pod Hroby 271 Kolín IV
+						</a>
 					</div>
 				</div>
 			</div>
 			<div>
-				<p className={styles["footer__nav-title"]}>Follow us</p>
+				<p className={styles["footer__nav-title"]}>
+					{t("contact.social_media")}
+				</p>
 				<div className={styles["footer__middle-socials"]}>
 					<a
 						className={styles["footer__socials-link"]}
@@ -179,7 +196,7 @@ const Footer = () => {
 			<div className={styles["footer__bottom"]}>
 				<div>
 					<p>&copy; 2025 MaxFlow</p>
-					<p>All rights reserved</p>
+					<p>{t("all_rights_reserved")}</p>
 				</div>
 				<p className="footer__creator">
 					Site by{" "}

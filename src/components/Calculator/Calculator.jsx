@@ -36,10 +36,8 @@ const Calculator = () => {
 
 	const year = cena / 2 / usporaAll;
 
-	console.log(inputs.batterySize);
-
 	return (
-		<div className="calculator">
+		<div className="calculator" id="calculator">
 			<h2 className="calculator__title">{t("calculator.title")}</h2>
 			<div className="calculator__inner">
 				<div className="calculator__inputs-container">

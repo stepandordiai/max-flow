@@ -6,6 +6,7 @@
 	"contact_title": "Kontakt",
 	"want_a_quote": "Chci nabídku",
 	"scroll_to_explore": "Prozkoumejte",
+	"all_rights_reserved": "Všechna práva vyhrazena",
 
 	"home_title": "Vaše SVJ může platit za energii až o 80 % méně – díky chytrému řízení energie s",
 	"home_sec_title": "Nainstalujeme vám fotovoltaiku na klíč, zajistíme dotace a postaráme se o vše – od projektu po vyúčtování. Už žádné složité rozdělování nákladů mezi sousedy!",
@@ -20,6 +21,22 @@
 		"card2_sec_title": "Žádné hádky o energii - AI přesně rozdělí náklady mezi všechny byty",
 		"card3_title": "Dotace až 50%",
 		"card3_sec_title": "Pomůžeme Vám získat státni podporu - ušetřite statisice"
+	},
+
+	"calculator": {
+		"title": "Kolik to stojí a kolik ušetříte",
+		"input1": "Počet bytových jednotek",
+		"input2": "Nákupní cena elektřiny",
+		"input3": "Výkupní cena elektřiny",
+		"input4": "Velikost baterií",
+		"txt1": "Velikost fotovoltaiky",
+		"txt2": "Procento využití",
+		"txt3": "Úspora na dům",
+		"txt4": "Úspora na byt",
+		"txt5": "Cena před dotací",
+		"txt6": "Dotace",
+		"txt7": "Cena po odečtení dotace",
+		"txt8": "Návratnost investice"
 	},
 
 	"partners": {
@@ -57,21 +74,5 @@
 		"tel": "Telefonní číslo",
 		"message": "Zpráva",
 		"send": "Odeslat zprávu"
-	},
-
-	"calculator": {
-		"title": "Kolik to stojí a kolik ušetříte",
-		"input1": "Počet bytových jednotek",
-		"input2": "Nákupní cena elektřiny",
-		"input3": "Výkupní cena elektřiny",
-		"input4": "Velikost baterií",
-		"txt1": "Velikost fotovoltaiky",
-		"txt2": "Procento využití",
-		"txt3": "Úspora na dům",
-		"txt4": "Úspora na byt",
-		"txt5": "Cena před dotací",
-		"txt6": "Dotace",
-		"txt7": "Cena po odečtení dotace",
-		"txt8": "Návratnost investice"
 	}
 }
