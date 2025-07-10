@@ -63,9 +63,8 @@ const HowItWorks = () => {
 		<>
 			<Helmet>
 				<title>{t("how_it_works_title")} | MaxFlow</title>
-				<link rel="canonical" href="https://maxflow.cz/how-it-works" />
 			</Helmet>
-			<div className="how-it-works">
+			<main className="how-it-works">
 				<div>
 					<div className="how-it-works__top">
 						<h1 className="process__title">{t("how_it_works_title")}</h1>
@@ -135,7 +134,7 @@ const HowItWorks = () => {
 						</NavLink>
 					</div>
 				</ContactUs>
-			</div>
+			</main>
 		</>
 	);
 };

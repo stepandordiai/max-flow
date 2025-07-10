@@ -104,13 +104,13 @@ const Contact = () => {
 	return (
 		<>
 			<Helmet>
-				<title>MaxFlow | {t("contact_title")}</title>
+				<title>{t("contact_title")} | MaxFlow</title>
 				<link rel="canonical" href="https://maxflow.cz/contact" />
 			</Helmet>
 			<main className="contact">
 				<div className="contact__info">
 					<div>
-						<h2 className="contact__info-title">{t("contact.info")}</h2>
+						<h1 className="contact__info-title">{t("contact.info")}</h1>
 						<p style={{ fontWeight: 300 }}>{t("contact.sec_info")}</p>
 					</div>
 					<div className="contact__info-details">

@@ -6,12 +6,9 @@
 	"contact_title": "Kontakt",
 	"want_a_quote": "Chci nabídku",
 	"scroll_to_explore": "Prozkoumejte",
-	"all_rights_reserved": "Všechna práva vyhrazena",
-
 	"home_title": "Vaše SVJ může platit za energii až o 80 % méně – díky chytrému řízení energie s",
 	"home_sec_title": "Nainstalujeme vám fotovoltaiku na klíč, zajistíme dotace a postaráme se o vše – od projektu po vyúčtování. Už žádné složité rozdělování nákladů mezi sousedy!",
-	"home_btn": "Jak přesně to funguje",
-	"home_sec_btn": "Chci ušetřit",
+	"all_rights_reserved": "Všechna práva vyhrazena",
 
 	"benefits": {
 		"title": "Výhody",
@@ -74,5 +71,43 @@
 		"tel": "Telefonní číslo",
 		"message": "Zpráva",
 		"send": "Odeslat zprávu"
+	},
+
+	"form_calculator": {
+		"title": "Kalkulačka pro svj",
+		"sec_title_1": "Základní informace o domě",
+		"label_1": "Počet bytových jednotek",
+		"label_2": "Počet vchodů",
+		"label_3": "Typ střechy",
+		"label_3_check_1": "Byt",
+		"label_3_check_2": "Šikmý",
+		"label_3_check_3": "Kombinovaný",
+		"label_4": "Orientace střechy",
+		"label_4_check_1": "Severní",
+		"label_4_check_2": "Jižní",
+		"label_4_check_3": "Východní",
+		"label_4_check_4": "Západ",
+		"sec_title_2": "Spotřeba elektřiny",
+		"label_5": "Roční spotřeba domácnosti",
+		"label_5_check_1": "Nevím",
+		"label_5_check_2": "Já vím",
+		"label_6": "Aktuální cena elektřiny",
+		"label_6_check_1": "Neznámý",
+		"label_6_check_2": "Já vím",
+		"sec_title_3": "Stínění a stav střechy",
+		"label_7": "Má střecha nějaké stínění",
+		"label_7_check_1": "Ano (mírné)",
+		"label_7_check_2": "Ano (silné)",
+		"label_7_check_3": "Ne (ideální podmínky)",
+		"label_8": "Stav střechy",
+		"label_8_check_1": "Nové / v dobrém stavu",
+		"label_8_check_2": "Rekonstrukce bude nutná",
+		"sec_title_4": "Zájem o další prvky",
+		"label_9": "Úložiště baterie",
+		"label_9_check_1": "Ano",
+		"label_9_check_2": "Žádný",
+		"label_10": "Dotace",
+		"label_10_check_1": "Ano, mám zájem",
+		"label_10_check_2": "Žádný"
 	}
 }

@@ -1,14 +1,19 @@
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 import "./Financing.scss";
 
 const Financing = () => {
+	const { t } = useTranslation();
+
 	return (
 		<>
 			<Helmet>
-				<title>MaxFlow | Financing</title>
+				<title>{t("financing")} | MaxFlow</title>
 				<link rel="canonical" href="https://maxflow.cz/financing" />
 			</Helmet>
-			<h1>Financing</h1>
+			<main>
+				<h1>Financing</h1>
+			</main>
 		</>
 	);
 };

@@ -6,12 +6,9 @@
 	"contact_title": "Kontakt",
 	"want_a_quote": "Chcem ponuku",
 	"scroll_to_explore": "Preskúmajte zrolovaním",
-	"all_rights_reserved": "Všetky práva vyhradené",
-
 	"home_title": "Šikovná energia pre SVJ - Ušetrite až 80% nákladov",
 	"home_sec_title": "Fotovoltaika s AI riadením a cloudovou platformou",
-	"home_btn": "Ako to funguje",
-	"home_sec_btn": "Nezáväzná kalkulácia",
+	"all_rights_reserved": "Všetky práva vyhradené",
 
 	"benefits": {
 		"title": "Výhody",
@@ -74,5 +71,43 @@
 		"txt6": "Dotácia",
 		"txt7": "Cena po odpočítaní dotácie",
 		"txt8": "Návratnosť investície"
+	},
+
+	"form_calculator": {
+		"title": "Kalkulačka pre svj",
+		"sec_title_1": "Základné informácie o dome",
+		"label_1": "Počet bytových jednotiek",
+		"label_2": "Počet vchodov",
+		"label_3": "Typ strechy",
+		"label_3_check_1": "Plochý",
+		"label_3_check_2": "Šikmé",
+		"label_3_check_3": "Kombinované",
+		"label_4": "Orientácia strechy",
+		"label_4_check_1": "Sever",
+		"label_4_check_2": "Juh",
+		"label_4_check_3": "Východ",
+		"label_4_check_4": "Západ",
+		"sec_title_2": "Spotreba elektriny",
+		"label_5": "Ročná spotreba domu",
+		"label_5_check_1": "Neviem",
+		"label_5_check_2": "Viem",
+		"label_6": "Aktuálna cena elektriny",
+		"label_6_check_1": "Neznámy",
+		"label_6_check_2": "Viem",
+		"sec_title_3": "Tienenie a stav strechy",
+		"label_7": "Má strecha nejaké tienenie",
+		"label_7_check_1": "Áno (mierne)",
+		"label_7_check_2": "Áno (silné)",
+		"label_7_check_3": "Nie (ideálne podmienky)",
+		"label_8": "Stav strechy",
+		"label_8_check_1": "Nové / v dobrom stave",
+		"label_8_check_2": "Rekonštrukcia bude potrebná",
+		"sec_title_4": "Záujem o iné prvky",
+		"label_9": "Úložisko batérie",
+		"label_9_check_1": "Áno",
+		"label_9_check_2": "Nie",
+		"label_10": "Dotácie",
+		"label_10_check_1": "Áno, mám záujem",
+		"label_10_check_2": "Nie"
 	}
 }

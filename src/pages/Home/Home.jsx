@@ -25,10 +25,7 @@ const Home = () => {
 
 	return (
 		<>
-			<Helmet>
-				{/* <title>{t("home_title")} | MaxFlow</title> */}
-				<link rel="canonical" href="https://maxflow.cz/" />
-			</Helmet>
+			<Helmet>{/* <title>{t("home_title")} | MaxFlow</title> */}</Helmet>
 			<main className="home">
 				<div className="home__top">
 					<h1 className="home__top-title">
@@ -38,10 +35,10 @@ const Home = () => {
 						<h2 className="home__top-container-title">{t("home_sec_title")}</h2>
 						<div className="home__top-btn-container">
 							<NavLink className="home__link" to={"/how-it-works"}>
-								{t("home_btn")}?
+								{t("how_it_works_title")}?
 							</NavLink>
 							<NavLink className="home__link" to={"/form-calculator"}>
-								<span>{t("home_sec_btn")}</span>
+								<span>{t("form_calculator.title")}</span>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									height="20px"

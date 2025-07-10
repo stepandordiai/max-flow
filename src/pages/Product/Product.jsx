@@ -1,13 +1,15 @@
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 import "./Product.scss";
 import bg from "/bg3.svg";
 
 const Product = () => {
+	const { t } = useTranslation();
+
 	return (
 		<>
 			<Helmet>
-				<title>Product | MaxFlow</title>
-				<link rel="canonical" href="https://maxflow.cz/product" />
+				<title>{t("product")} | MaxFlow</title>
 			</Helmet>
 			<main className="product">
 				<div>

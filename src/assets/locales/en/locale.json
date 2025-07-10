@@ -6,12 +6,9 @@
 	"contact_title": "Contact",
 	"want_a_quote": "Want a quote",
 	"scroll_to_explore": "Scroll to explore",
-	"all_rights_reserved": "All rights reserved",
-
 	"home_title": "Smart energy for SVJ - Save up to 80% of costs",
 	"home_sec_title": "Photovoltaics with AI control and cloud platform",
-	"home_btn": "How does it work",
-	"home_sec_btn": "Non-binding calculation",
+	"all_rights_reserved": "All rights reserved",
 
 	"benefits": {
 		"title": "Benefits",
@@ -74,5 +71,43 @@
 		"txt6": "Subsidy",
 		"txt7": "Price after deduction of subsidy",
 		"txt8": "Return on investment"
+	},
+
+	"form_calculator": {
+		"title": "Calculator form for svj",
+		"sec_title_1": "Basic information about the house",
+		"label_1": "Number of housing units",
+		"label_2": "Number of entrances",
+		"label_3": "Roof type",
+		"label_3_check_1": "Flat",
+		"label_3_check_2": "Oblique",
+		"label_3_check_3": "Combined",
+		"label_4": "Roof orientation",
+		"label_4_check_1": "North",
+		"label_4_check_2": "South",
+		"label_4_check_3": "East",
+		"label_4_check_4": "West",
+		"sec_title_2": "Electricity consumption",
+		"label_5": "Annual house consumption",
+		"label_5_check_1": "Don't know",
+		"label_5_check_2": "I know",
+		"label_6": "Current electricity price",
+		"label_6_check_1": "Unknown",
+		"label_6_check_2": "I know",
+		"sec_title_3": "Shielding and roof condition",
+		"label_7": "Does the roof have any shielding",
+		"label_7_check_1": "Yes (mild)",
+		"label_7_check_2": "Yes (strong)",
+		"label_7_check_3": "No (ideal conditions)",
+		"label_8": "Roof condition",
+		"label_8_check_1": "New / in good condition",
+		"label_8_check_2": "Reconstruction will be necessary",
+		"sec_title_4": "Interest in other elements",
+		"label_9": "Battery storage",
+		"label_9_check_1": "Yes",
+		"label_9_check_2": "No",
+		"label_10": "Subsidies",
+		"label_10_check_1": "Yes, I am interested",
+		"label_10_check_2": "No"
 	}
 }
