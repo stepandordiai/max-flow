@@ -7,7 +7,7 @@ const Menu = () => {
 	const { t } = useTranslation();
 
 	useEffect(() => {
-		const menuLinks = document.querySelectorAll(".menu__link");
+		const menuLinks = document.querySelectorAll(".menu__nav-link");
 
 		menuLinks.forEach((link) => {
 			link.addEventListener("click", () => {
