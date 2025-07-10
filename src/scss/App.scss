@@ -13,6 +13,11 @@ body {
 	padding: 95px 25px 25px 25px;
 }
 
+.body--active {
+	overflow: hidden;
+	height: 100%;
+}
+
 a {
 	color: #fff;
 }
