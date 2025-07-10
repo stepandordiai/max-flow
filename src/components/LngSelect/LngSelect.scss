@@ -1,11 +1,11 @@
 @use "./../../scss/mixins" as *;
 
-.lang-select {
+.lng-select {
 	position: relative;
 	z-index: 100;
 }
 
-.lang-select__btn {
+.lng-select__btn {
 	@include flex-center;
 	column-gap: 5px;
 	padding: 10px;
@@ -15,22 +15,18 @@
 
 .lng-select__btn-icon {
 	pointer-events: none;
-	transition: all 0.3s;
+	transition: transform 0.3s;
 }
 
 .lng-select__btn-icon--active {
 	transform: rotateX(180deg);
 }
 
-.lang-select__btn--active {
-	background: var(--accent-clr);
-}
-
-.lang-select__btn-value {
+.lng-select__btn-value {
 	pointer-events: none;
 }
 
-.lang-select__list {
+.lng-select__list {
 	position: absolute;
 	left: 50%;
 	transform: translate(-50%, 0);
@@ -38,26 +34,25 @@
 	padding: 5px;
 	border-radius: 5px;
 	background: #fff;
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+	margin-top: 3px;
 	opacity: 0;
 	pointer-events: none;
-	transition: opacity 0.3s, transform 0.3s;
+	transition: opacity 0.3s;
 }
 
-.lang-select__list--visible {
+.lng-select__list--visible {
 	opacity: 1;
 	pointer-events: all;
 }
 
-.lang-select__option {
+.lng-select__option {
 	@include flex-center;
 	padding: 10px;
-	border-radius: inherit;
+	border-radius: 2.5px;
 	color: #000;
 	cursor: pointer;
-	transition: all 0.3s;
+	transition: background-color 0.3s, color 0.3s;
 
 	&:hover {
 		background: var(--accent-bg-clr);
@@ -65,11 +60,7 @@
 	}
 }
 
-.lang-select__option--active {
+.lng-select__option--active {
 	background: var(--accent-bg-clr);
 	color: var(--bg-clr);
-}
-
-.lang-select__input {
-	display: none;
 }

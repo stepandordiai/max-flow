@@ -13,71 +13,67 @@ const LngSelect = () => {
 		getStorage();
 	};
 	useEffect(() => {
-		document.querySelectorAll(".lang-select").forEach((select) => {
-			const selectBtn = select.querySelector(".lang-select__btn");
-			const selectList = select.querySelector(".lang-select__list");
-			const selectOptions = selectList.querySelectorAll(".lang-select__option");
-			const selectBtnIcon = select.querySelector(".lng-select__btn-icon");
-			const selectBtnTxt = select.querySelector(".lang-select__btn-value");
+		const selectBtn = document.querySelector(".lng-select__btn");
+		const selectList = document.querySelector(".lng-select__list");
+		const selectOptions = selectList.querySelectorAll(".lng-select__option");
+		const selectBtnIcon = document.querySelector(".lng-select__btn-icon");
+		const selectBtnTxt = document.querySelector(".lng-select__btn-value");
 
-			selectBtn.addEventListener("click", () => {
-				selectList.classList.add("lang-select__list--visible");
-				selectBtn.classList.add("lan-select__btn--active");
-				selectBtnIcon.classList.add("lng-select__btn-icon--active");
-			});
+		selectBtn.addEventListener("click", () => {
+			selectList.classList.toggle("lng-select__list--visible");
+			selectBtn.classList.toggle("lng-select__btn--active");
+			selectBtnIcon.classList.toggle("lng-select__btn-icon--active");
+		});
 
-			selectOptions.forEach((option) => {
-				option.addEventListener("click", (e) => {
-					e.stopPropagation();
-					selectBtnTxt.textContent = option.textContent;
-					handleChangeLanguage(option.dataset.value || "cs");
-					selectBtn.classList.remove("lang-select__btn--active");
-					selectList.classList.remove("lang-select__list--visible");
-					selectBtnIcon.classList.remove("lng-select__btn-icon--active");
-					for (let i = 0; i < selectOptions.length; i++) {
-						selectOptions[i].classList.remove("lang-select__option--active");
-					}
-					if (option.dataset.value === getStorage()) {
-						option.classList.add("lang-select__option--active");
-					}
-				});
-			});
-
-			document.addEventListener("click", (e) => {
-				if (e.target !== selectBtn) {
-					selectBtn.classList.remove("lang-select__btn--active");
-					selectList.classList.remove("lang-select__list--visible");
-					selectBtnIcon.classList.remove("lng-select__btn-icon--active");
+		selectOptions.forEach((option) => {
+			option.addEventListener("click", (e) => {
+				e.stopPropagation();
+				selectBtnTxt.textContent = option.textContent;
+				handleChangeLanguage(option.dataset.value || "cs");
+				selectBtn.classList.remove("lng-select__btn--active");
+				selectList.classList.remove("lng-select__list--visible");
+				selectBtnIcon.classList.remove("lng-select__btn-icon--active");
+				for (let i = 0; i < selectOptions.length; i++) {
+					selectOptions[i].classList.remove("lng-select__option--active");
+				}
+				if (option.dataset.value === getStorage()) {
+					option.classList.add("lng-select__option--active");
 				}
 			});
+		});
 
-			const handleLngSelectBtn = (code = "CZ") => {
-				return code;
-			};
-
-			switch (getStorage()) {
-				case "cs":
-					selectBtnTxt.innerText = handleLngSelectBtn("CZ");
-					break;
-				case "sk":
-					selectBtnTxt.innerText = handleLngSelectBtn("SK");
-
-					break;
-				case "en":
-					selectBtnTxt.innerText = handleLngSelectBtn("EN");
-
-					break;
+		document.addEventListener("click", (e) => {
+			if (e.target !== selectBtn) {
+				selectBtn.classList.remove("lng-select__btn--active");
+				selectList.classList.remove("lng-select__list--visible");
+				selectBtnIcon.classList.remove("lng-select__btn-icon--active");
 			}
 		});
+
+		const handleLngSelectBtn = (code = "CZ") => {
+			return code;
+		};
+
+		switch (getStorage()) {
+			case "cs":
+				selectBtnTxt.innerText = handleLngSelectBtn("CZ");
+				break;
+			case "sk":
+				selectBtnTxt.innerText = handleLngSelectBtn("SK");
+				break;
+			case "en":
+				selectBtnTxt.innerText = handleLngSelectBtn("EN");
+				break;
+		}
 	}, []);
 
-	const inactiveLngOption = "lang-select__option";
-	const activeLngOption = "lang-select__option lang-select__option--active";
+	const inactiveLngOption = "lng-select__option";
+	const activeLngOption = "lng-select__option lng-select__option--active";
 
 	return (
-		<div className="lang-select">
-			<button className="lang-select__btn">
-				<span className="lang-select__btn-value">CZ</span>
+		<div className="lng-select">
+			<button className="lng-select__btn">
+				<span className="lng-select__btn-value">CZ</span>
 				<img
 					className="lng-select__btn-icon"
 					src={downArrowIcon}
@@ -86,7 +82,7 @@ const LngSelect = () => {
 					alt=""
 				/>
 			</button>
-			<ul className="lang-select__list">
+			<ul className="lng-select__list">
 				<li
 					className={
 						getStorage() === "cs" ? activeLngOption : inactiveLngOption
