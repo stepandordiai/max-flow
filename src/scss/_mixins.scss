@@ -16,6 +16,12 @@
 	align-items: flex-start;
 }
 
+@mixin flex-evenly-start {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-start;
+}
+
 @mixin flex-between-center {
 	display: flex;
 	justify-content: space-between;

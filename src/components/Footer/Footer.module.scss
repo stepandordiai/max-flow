@@ -5,17 +5,15 @@
 	border-radius: 10px;
 	color: #000;
 	display: flex;
-	flex-direction: column;
 	justify-content: space-between;
+	flex-direction: column;
 	gap: 15px;
 	padding: 15px;
 	margin-top: 25px;
 }
 
 .footer__top {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: flex-start;
+	@include flex-evenly-start;
 	row-gap: 15px;
 	flex-wrap: wrap;
 }
@@ -27,11 +25,17 @@
 	margin-bottom: 5px;
 }
 
+.footer__nav-title {
+	font-weight: 600;
+	pointer-events: none;
+}
+
 .footer__nav-btn-icon {
 	position: relative;
 	display: none;
 	width: 20px;
 	aspect-ratio: 1/1;
+	pointer-events: none;
 
 	&::before {
 		content: "";
@@ -56,10 +60,6 @@
 		transform: translate(-50%, -50%) rotate(90deg);
 		transition: all 0.3s;
 	}
-}
-
-.footer__nav-title {
-	font-weight: 600;
 }
 
 .footer__nav {
