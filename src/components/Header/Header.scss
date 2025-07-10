@@ -6,8 +6,8 @@
 	left: 0;
 	z-index: 100;
 	width: 100%;
-	@include flex-between-center;
 	min-height: 70px;
+	@include flex-between-center;
 	padding: 0 25px;
 	background: var(--bg-clr);
 	opacity: 0;
@@ -20,26 +20,8 @@
 	}
 }
 
-.header__divider {
-	position: absolute;
-	width: calc(100% - 50px);
-	height: 3px;
-	bottom: 0;
-	border-radius: 1.5px;
-	background: rgba(255, 255, 255, 0.1);
-	overflow: hidden;
-}
-
-.header__divider-inner {
-	width: 0%;
-	background: #fff;
-	height: 100%;
-}
-
 .header__logo {
 	font-size: 1.5rem;
-	@include flex-center;
-	gap: 5px;
 }
 
 .header__nav {
@@ -52,7 +34,7 @@
 	border-radius: 5px;
 	background: rgba(255, 255, 255, 0.1);
 	color: #fff;
-	transition: all 0.3s;
+	transition: background-color 0.3s, color 0.3s;
 
 	&:hover {
 		background: #fff;
@@ -65,52 +47,34 @@
 	color: #000;
 }
 
-.header__nav-link-with-dd {
-	position: relative;
-}
-
-.header__nav-link-dd {
-	position: absolute;
-	background: white;
-	padding: 5px;
-	border-radius: 5px;
-	bottom: 0;
-	left: 50%;
-	transform: translate(-50%, 100%);
-	color: #000;
-	pointer-events: none;
-	opacity: 0;
-
-	P {
-		&:hover {
-			color: var(--bg-clr);
-			background: var(--accent-bg-clr);
-		}
-		padding: 5px;
-		border-radius: 2.5px;
-	}
-}
-
-.header__btn {
-	@include flex-center;
-	gap: 5px;
-	background: rgba(0, 0, 0);
-	padding: 10px;
-	border-radius: 5px;
-	color: #fff;
-}
-
 .header__right-container {
 	@include flex-center;
 	column-gap: 3px;
 }
 
-.socials {
-	display: flex;
-	flex-direction: column;
-	a {
-		color: #fff;
-	}
+.header__btn {
+	@include flex-center;
+	column-gap: 3px;
+	background: #000;
+	padding: 10px;
+	border-radius: 5px;
+	color: #fff;
+}
+
+.header__progress-divider {
+	position: absolute;
+	bottom: 0;
+	width: calc(100% - 50px);
+	height: 3px;
+	border-radius: 1.5px;
+	background: rgba(255, 255, 255, 0.1);
+	overflow: hidden;
+}
+
+.header__progress-divider-inner {
+	width: 0%;
+	background: #fff;
+	height: 100%;
 }
 
 @media screen and (width <= 896px) {
@@ -118,7 +82,7 @@
 		padding: 0 15px;
 	}
 
-	.header__divider {
+	.header__progress-divider {
 		width: calc(100% - 30px);
 	}
 }

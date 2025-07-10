@@ -1,9 +1,8 @@
 import { useTranslation } from "react-i18next";
 import BurgerBtn from "../BurgerBtn/BurgerBtn";
 import { NavLink } from "react-router-dom";
-// import logoIcon2 from "/Group 214.png";
 import { useEffect } from "react";
-import LangSelect from "../LngSelect/LngSelect";
+import LngSelect from "../LngSelect/LngSelect";
 import "./Header.scss";
 
 const Header = () => {
@@ -13,26 +12,29 @@ const Header = () => {
 	const activeLink = "header__nav-link header__nav-link--active";
 
 	useEffect(() => {
-		const windowHeight = document.documentElement.clientHeight;
-
-		document.addEventListener("scroll", () => {
-			const scrollTop = document.documentElement.scrollTop;
+		const handleHeaderProgress = () => {
 			const scrollHeight = document.documentElement.scrollHeight;
+			const windowHeight = document.documentElement.clientHeight;
 			const calcHeight = scrollHeight - windowHeight;
-
+			const scrollTop = document.documentElement.scrollTop;
 			const positionHeight = Math.min((scrollTop * 100) / calcHeight, 100);
+			const progressBar = document.querySelector(
+				".header__progress-divider-inner"
+			);
+			progressBar.style.width = `${positionHeight}%`;
+		};
 
-			document.querySelector(
-				".header__divider-inner"
-			).style.width = `${positionHeight}%`;
-		});
+		document.addEventListener("scroll", handleHeaderProgress);
+
+		return () => {
+			document.removeEventListener("scroll", handleHeaderProgress);
+		};
 	}, []);
 	return (
 		<>
 			<header className="header">
 				<NavLink className="header__logo" to={"/"}>
-					{/* <img width={40} src={logoIcon2} alt="MaxFlow Logo" /> */}
-					<span>MaxFlow 360&deg;</span>
+					MaxFlow 360&deg;
 				</NavLink>
 				<nav className="header__nav">
 					<NavLink
@@ -43,18 +45,9 @@ const Header = () => {
 					</NavLink>
 					<NavLink
 						to={"/product"}
-						className={({ isActive }) =>
-							isActive
-								? activeLink + " header__nav-link-with-dd"
-								: inactiveLink + " header__nav-link-with-dd"
-						}
+						className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
 					>
 						{t("product")}
-						<div className="header__nav-link-dd">
-							<p>SVJ</p>
-							<p>Solaris</p>
-							<p>Info</p>
-						</div>
 					</NavLink>
 					<NavLink
 						to={"/how-it-works"}
@@ -76,7 +69,7 @@ const Header = () => {
 					</NavLink>
 				</nav>
 				<div className="header__right-container">
-					<LangSelect />
+					<LngSelect />
 					<NavLink className="header__btn" to="/contact">
 						<span>{t("want_a_quote")}</span>
 						<svg
@@ -91,8 +84,8 @@ const Header = () => {
 					</NavLink>
 					<BurgerBtn />
 				</div>
-				<div className="header__divider">
-					<div className="header__divider-inner"></div>
+				<div className="header__progress-divider">
+					<div className="header__progress-divider-inner"></div>
 				</div>
 			</header>
 		</>
