@@ -117,3 +117,7 @@ legend {
 input[type="file"] {
 	max-width: 100%;
 }
+
+button[type="submit"] {
+	font-weight: inherit;
+}
