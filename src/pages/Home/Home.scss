@@ -22,26 +22,19 @@
 	padding-bottom: 95px;
 }
 
-.home__bg {
-	position: absolute;
-	width: 400px;
-	z-index: -1;
-	bottom: 0;
-}
-
 .home__top-title {
-	font-size: clamp(2.5rem, 4vw, 5rem);
-	font-weight: 500;
+	font-size: clamp(2rem, 4vw, 4rem);
+	font-weight: 600;
 }
 
 .home__top-container {
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: flex-end;
+	flex-direction: column;
 	text-align: end;
 	align-self: flex-end;
-	gap: 25px;
+	row-gap: 15px;
 	background: rgba(255, 255, 255, 0.1);
 	max-width: 500px;
 	padding: 15px;
@@ -54,15 +47,10 @@
 	font-size: clamp(1rem, 4vw, 1.25rem) !important;
 }
 
-h1 {
-	font-size: clamp(2rem, 4vw, 5rem);
-	font-weight: 500;
-}
-
-.home__btn-container {
+.home__top-btn-container {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: flex-end;
+	flex-wrap: wrap;
 	gap: 3px;
 }
 
@@ -86,7 +74,14 @@ h1 {
 	}
 }
 
-.scroll {
+.home__bg {
+	position: absolute;
+	width: 400px;
+	z-index: -1;
+	bottom: 0;
+}
+
+.home__top-scroll {
 	position: absolute;
 	bottom: 0;
 	left: 50%;
@@ -97,12 +92,12 @@ h1 {
 	transition: opacity 0.3s;
 }
 
-.scroll--active {
+.home__top-scroll--active {
 	opacity: 0;
 	pointer-events: none;
 }
 
-.scroll::before {
+.home__top-scroll::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -112,7 +107,7 @@ h1 {
 	animation: animateScroll 2s infinite;
 }
 
-.scroll::after {
+.home__top-scroll::after {
 	content: attr(data-value);
 	color: #ffffff;
 	position: absolute;
@@ -132,9 +127,5 @@ h1 {
 	.home__top {
 		min-height: calc(100svh - 85px);
 		padding-bottom: 85px;
-	}
-
-	.home__top-container {
-		gap: 15px;
 	}
 }

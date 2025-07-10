@@ -14,10 +14,11 @@ const Home = () => {
 	useEffect(() => {
 		document.addEventListener("scroll", () => {
 			const scrollTop = document.documentElement.scrollTop;
+			const homeTopScroll = document.querySelector(".home__top-scroll");
 			if (scrollTop > 0) {
-				document.querySelector(".scroll").classList.add("scroll--active");
+				homeTopScroll.classList.add("home__top-scroll--active");
 			} else {
-				document.querySelector(".scroll").classList.remove("scroll--active");
+				homeTopScroll.classList.remove("home__top-scroll--active");
 			}
 		});
 	}, []);
@@ -25,26 +26,21 @@ const Home = () => {
 	return (
 		<>
 			<Helmet>
-				<title>{t("home_title")} | MaxFlow</title>
+				{/* <title>{t("home_title")} | MaxFlow</title> */}
 				<link rel="canonical" href="https://maxflow.cz/" />
 			</Helmet>
 			<main className="home">
 				<div className="home__top">
-					<img
-						className="home__bg"
-						src="https://www.ikomunita.cz/templates/default/img/Bytovy_dum.svg"
-						alt=""
-					/>
 					<h1 className="home__top-title">
 						{t("home_title")} MaxFlow 360 &deg;
 					</h1>
 					<div className="home__top-container">
 						<h2 className="home__top-container-title">{t("home_sec_title")}</h2>
-						<div className="home__btn-container">
-							<NavLink className={"home__link"} to={"/how-it-works"}>
+						<div className="home__top-btn-container">
+							<NavLink className="home__link" to={"/how-it-works"}>
 								{t("home_btn")}?
 							</NavLink>
-							<NavLink className={"home__link"} to={"/form-calculator"}>
+							<NavLink className="home__link" to={"/form-calculator"}>
 								<span>{t("home_sec_btn")}</span>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +54,15 @@ const Home = () => {
 							</NavLink>
 						</div>
 					</div>
-					<div className="scroll" data-value={t("scroll_to_explore")}></div>
+					<img
+						className="home__bg"
+						src="https://www.ikomunita.cz/templates/default/img/Bytovy_dum.svg"
+						alt=""
+					/>
+					<div
+						className="home__top-scroll"
+						data-value={t("scroll_to_explore")}
+					></div>
 				</div>
 				<AboutUs />
 				<Benefits />
