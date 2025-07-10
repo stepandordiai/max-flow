@@ -27,8 +27,22 @@ const Footer = () => {
 					styles["footer__nav-btn-icon--active"]
 				);
 			});
+
+			document.addEventListener("click", (e) => {
+				if (e.target !== btn) {
+					footerNavWrapper[index].classList.remove(
+						styles["footer__nav-wrapper--active"]
+					);
+					footerNavBtnIcon[index].classList.remove(
+						styles["footer__nav-btn-icon--active"]
+					);
+				}
+			});
 		});
 	}, []);
+
+	const inactiveFooterNavLink = `${styles["footer__nav-link"]}`;
+	const activeFooterNavLink = `${styles["footer__nav-link"]} ${styles["footer__nav-link--active"]}`;
 
 	return (
 		<footer className={styles["footer"]}>
@@ -40,22 +54,44 @@ const Footer = () => {
 					</button>
 					<div className={styles["footer__nav-wrapper"]}>
 						<nav className={styles["footer__nav"]}>
-							<NavLink className={styles["footer__nav-link"]} to="/">
+							<NavLink
+								className={({ isActive }) =>
+									isActive ? activeFooterNavLink : inactiveFooterNavLink
+								}
+								to="/"
+							>
 								{t("home")}
 							</NavLink>
-							<NavLink className={styles["footer__nav-link"]} to="/product">
+							<NavLink
+								className={({ isActive }) =>
+									isActive ? activeFooterNavLink : inactiveFooterNavLink
+								}
+								to="/product"
+							>
 								{t("product")}
 							</NavLink>
 							<NavLink
-								className={styles["footer__nav-link"]}
+								className={({ isActive }) =>
+									isActive ? activeFooterNavLink : inactiveFooterNavLink
+								}
 								to="/how-it-works"
 							>
 								{t("how_it_works_title")}
 							</NavLink>
-							<NavLink className={styles["footer__nav-link"]} to="/financing">
+							<NavLink
+								className={({ isActive }) =>
+									isActive ? activeFooterNavLink : inactiveFooterNavLink
+								}
+								to="/financing"
+							>
 								{t("financing")}
 							</NavLink>
-							<NavLink className={styles["footer__nav-link"]} to="/contact">
+							<NavLink
+								className={({ isActive }) =>
+									isActive ? activeFooterNavLink : inactiveFooterNavLink
+								}
+								to="/contact"
+							>
 								{t("contact_title")}
 							</NavLink>
 						</nav>

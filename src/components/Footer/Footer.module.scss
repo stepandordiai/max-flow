@@ -81,10 +81,13 @@
 	}
 }
 
+.footer__nav-link--active {
+	background: var(--accent-bg-clr) !important;
+	color: var(--bg-clr) !important;
+}
+
 .footer__socials-link {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@include flex-center;
 	column-gap: 3px;
 	color: #000;
 	padding: 5px;
