@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import "./Product.scss";
 import bg from "/bg3.svg";
 
