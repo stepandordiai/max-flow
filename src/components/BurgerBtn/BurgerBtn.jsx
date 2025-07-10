@@ -7,14 +7,8 @@ const BurgerBtn = () => {
 		document
 			.querySelector(".menu__inner")
 			.classList.toggle("menu__inner--active");
-
-		document.body.classList.toggle("body--active");
 	}
-	return (
-		<>
-			<div onClick={toggleBurger2} className="burger-2"></div>
-		</>
-	);
+	return <div onClick={toggleBurger2} className="burger-2"></div>;
 };
 
 export default BurgerBtn;
