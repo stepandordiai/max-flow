@@ -14,12 +14,12 @@
 
 	"benefits": {
 		"title": "Výhody",
-		"card1_title": "Maximální úspora",
-		"card1_sec_title": "Vlastní spotřeba >80% energie",
-		"card2_title": "Inteligentní řízení",
-		"card2_sec_title": "AI optimalizace toku energie",
-		"card3_title": "Bezstarostný provoz",
-		"card3_sec_title": "Vše řídí"
+		"card1_title": "Vlastní energie za 0 Kč",
+		"card1_sec_title": "Náš systém zajistí, že 80-90% vaší spotřeby pokryjete zdarma ze slunce",
+		"card2_title": "Automatické vyúčtování",
+		"card2_sec_title": "Žádné hádky o energii - AI přesně rozdělí náklady mezi všechny byty",
+		"card3_title": "Dotace až 50%",
+		"card3_sec_title": "Pomůžeme Vám získat státni podporu - ušetřite statisice"
 	},
 
 	"partners": {
