@@ -1,13 +1,12 @@
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Partners from "../../components/Partners/Partners";
 import Benefits from "../../components/Benefits/Benefits";
 import AboutUs from "../../components/AboutUs/AboutUs";
-import bgImg from "/bg2.png";
-import "./Home.scss";
 import Calculator from "../../components/Calculator/Calculator";
+import "./Home.scss";
 
 const Home = () => {
 	const { t } = useTranslation();
@@ -26,7 +25,7 @@ const Home = () => {
 	return (
 		<>
 			<Helmet>
-				<title>MaxFlow | {t("home_title")}</title>
+				<title>{t("home_title")} | MaxFlow</title>
 				<link rel="canonical" href="https://maxflow.cz/" />
 			</Helmet>
 			<main className="home">
@@ -36,18 +35,26 @@ const Home = () => {
 						src="https://www.ikomunita.cz/templates/default/img/Bytovy_dum.svg"
 						alt=""
 					/>
-					<h1 className="home__top-title">{t("home_title")}</h1>
+					<h1 className="home__top-title">
+						{t("home_title")} MaxFlow 360 &deg;
+					</h1>
 					<div className="home__top-container">
-						<h2>
-							{t("home_sec_title")}{" "}
-							<span style={{ fontWeight: 500 }}>MaxFlow 360°</span>
-						</h2>
+						<h2 className="home__top-container-title">{t("home_sec_title")}</h2>
 						<div className="home__btn-container">
 							<NavLink className={"home__link"} to={"/how-it-works"}>
 								{t("home_btn")}?
 							</NavLink>
 							<NavLink className={"home__link"} to={"/form-calculator"}>
-								{t("home_sec_btn")}
+								<span>{t("home_sec_btn")}</span>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									height="20px"
+									viewBox="0 -960 960 960"
+									width="20px"
+									fill="#ffffff"
+								>
+									<path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+								</svg>
 							</NavLink>
 						</div>
 					</div>
