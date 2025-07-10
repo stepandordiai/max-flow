@@ -17,7 +17,7 @@ const Product = () => {
 						<div className="product__top-container-inner">
 							<div>
 								<h1>Product</h1>
-								<h2 className="product__section1-title" id="product-section-1">
+								<h2 className="product__sec-title" id="product-section-1">
 									Pro SVJ
 								</h2>
 							</div>
@@ -100,7 +100,9 @@ const Product = () => {
 				</div>
 
 				<div>
-					<h2 id="product-section-2">MaxFlow 360&deg; Cloud</h2>
+					<h2 className="product__sec-title" id="product-section-2">
+						MaxFlow 360&deg; Cloud
+					</h2>
 					<p style={{ marginBottom: 25 }}>
 						Všechny údaje o energii přehledně na jednom místě – kdykoli a
 						kdekoli

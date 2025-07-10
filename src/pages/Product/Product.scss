@@ -6,8 +6,9 @@ h3 {
 	font-size: clamp(1.25rem, 4vw, 2rem) !important;
 }
 
-.product__section1-title {
-	font-size: 1.5rem;
+.product__sec-title {
+	font-size: clamp(2rem, 4vw, 4rem);
+	font-weight: 600;
 }
 
 .product__section1-container {

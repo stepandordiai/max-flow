@@ -29,14 +29,21 @@ const Contact = () => {
 	const [inputValue, setInputValue] = useState(countriesData[0].code);
 	const [currentCode, setCurrentCode] = useState(countriesData[0].code);
 
+	const handleCodeInputValue = (e) => {
+		let currentValue = e.target.value;
+
+		if (!currentValue.startsWith(currentCode)) {
+			currentValue = currentCode;
+			setInputValue(currentValue);
+		}
+
+		setInputValue(currentValue);
+	};
+
 	useEffect(() => {
 		const inputs = document.querySelectorAll(".js-input");
 		const customContainer = document.querySelector(".custom-input-container");
 		const customInput = document.querySelector(".custom-input");
-
-		const newCode = countriesData.find(
-			(country) => country.name === countryName
-		);
 
 		// Toggle active classList depending on wether input is empty or not
 		inputs.forEach((input) => {
@@ -57,6 +64,10 @@ const Contact = () => {
 				customContainer.classList.remove("input--active");
 			}
 		});
+
+		const newCode = countriesData.find(
+			(country) => country.name === countryName
+		);
 
 		setInputValue(newCode.code);
 		setCurrentCode(newCode.code);
@@ -90,22 +101,10 @@ const Contact = () => {
 		});
 	}, []);
 
-	const handleCodeInputValue = (e) => {
-		setInputValue(e.target.value);
-
-		let currentValue = e.target.value;
-
-		if (!currentValue.startsWith(currentCode)) {
-			currentValue = currentCode;
-			setInputValue(currentValue);
-		}
-	};
-
 	return (
 		<>
 			<Helmet>
 				<title>{t("contact_title")} | MaxFlow</title>
-				<link rel="canonical" href="https://maxflow.cz/contact" />
 			</Helmet>
 			<main className="contact">
 				<div className="contact__info">
@@ -118,10 +117,10 @@ const Contact = () => {
 							<p style={{ marginBottom: 5 }}>{t("contact.call_us")}</p>
 							<a
 								className="contact__info-details-link"
-								href="tel:+420777957290"
+								href="tel:+420728803703"
 							>
 								<i className="fa-solid fa-phone"></i>
-								<span>+420 777 957 290</span>
+								<span>+420 728 803 703</span>
 							</a>
 						</div>
 						<div>
@@ -138,7 +137,7 @@ const Contact = () => {
 							<p style={{ marginBottom: 5 }}>{t("contact.visit_us")}</p>
 							<a
 								className="contact__info-details-link"
-								href="https://maps.app.goo.gl/oKDKtZXyS9CcB43q9"
+								href="https://maps.app.goo.gl/UBXCPbrrCNxUSXNY8"
 								target="_blank"
 							>
 								<i className="fa-solid fa-map-location-dot"></i>
@@ -177,9 +176,8 @@ const Contact = () => {
 					</div>
 				</div>
 				<form
-					action={"mailto:stepandordiai@gmail.com"}
+					action="https://formsubmit.co/info@fvestavby.cz"
 					method="post"
-					datatype="text/plain"
 					className="contact__form"
 				>
 					<div className="contact__form-container">
@@ -194,12 +192,22 @@ const Contact = () => {
 						</div>
 						<div className="contact__form-input-container">
 							<label htmlFor="lastName">{t("contact.last_name")}</label>
-							<input className="input js-input" id="lastName" type="text" />
+							<input
+								className="input js-input"
+								id="lastName"
+								name="lastName"
+								type="text"
+							/>
 						</div>
 					</div>
 					<div className="contact__form-input-container">
 						<label htmlFor="email">Email</label>
-						<input className="input js-input" id="email" type="email" />
+						<input
+							className="input js-input"
+							id="email"
+							name="email"
+							type="email"
+						/>
 					</div>
 					<div className="contact__form-input-container">
 						<label htmlFor="tel">{t("contact.tel")}</label>
@@ -270,7 +278,7 @@ const Contact = () => {
 						<label htmlFor="message">{t("contact.message")}</label>
 						<textarea
 							className="input js-input"
-							name=""
+							name="message"
 							id="message"
 						></textarea>
 					</div>

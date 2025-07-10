@@ -10,8 +10,11 @@
 }
 
 .calculator__title {
+	// font-size: clamp(2rem, 4vw, 4rem) !important;
+	// color: #fff;
+	// padding: 25px 0;
 	font-size: clamp(2rem, 4vw, 4rem) !important;
-	color: #fff;
+	font-weight: 500;
 	padding: 25px 0;
 	text-align: center;
 }
