@@ -8,27 +8,45 @@ const Benefits = () => {
 	const { t } = useTranslation();
 
 	return (
-		<div>
+		<div className="benefits">
 			<h2 className="benefits__title" id="benefits">
 				{t("benefits.title")}
 			</h2>
-			<div className="benefits-container">
-				<div className="benefits">
-					<img width={100} height={100} src={saveMoneyIcon} alt="" />
+			<div className="benefits-grid">
+				<div className="benefits__card">
+					<img
+						width={100}
+						height={100}
+						src={saveMoneyIcon}
+						alt=""
+						loading="lazy"
+					/>
 					<div>
 						<p>{t("benefits.card1_title")}</p>
 						<p>{t("benefits.card1_sec_title")}.</p>
 					</div>
 				</div>
-				<div className="benefits">
-					<img width={100} height={100} src={homeAutomationIcon} alt="" />
+				<div className="benefits__card">
+					<img
+						width={100}
+						height={100}
+						src={homeAutomationIcon}
+						alt=""
+						loading="lazy"
+					/>
 					<div>
 						<p>{t("benefits.card2_title")}</p>
 						<p>{t("benefits.card2_sec_title")}.</p>
 					</div>
 				</div>
-				<div className="benefits">
-					<img width={100} height={100} src={executionIcon} alt="" />
+				<div className="benefits__card">
+					<img
+						width={100}
+						height={100}
+						src={executionIcon}
+						alt=""
+						loading="lazy"
+					/>
 					<div>
 						<p>{t("benefits.card3_title")}</p>
 						<p>{t("benefits.card3_sec_title")} MaxFlow 360°.</p>
