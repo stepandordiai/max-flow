@@ -176,7 +176,7 @@ const Contact = () => {
 					</div>
 				</div>
 				<form
-					action="https://formsubmit.co/info@fvestavby.cz"
+					action="https://formspree.io/f/mqalzwov"
 					method="post"
 					className="contact__form"
 				>

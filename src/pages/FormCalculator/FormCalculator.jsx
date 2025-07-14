@@ -42,8 +42,8 @@ const FormCalculator = () => {
 				<h1 className="form-calculator__title">{t("form_calculator.title")}</h1>
 				<form
 					className="form"
-					action="https://formspree.io/f/xovddpld"
-					method="POST"
+					action="https://formspree.io/f/mqalzwov"
+					method="post"
 				>
 					<p>{t("form_calculator.sec_title_1")}</p>
 					<div className="form-calculator__range-container">
