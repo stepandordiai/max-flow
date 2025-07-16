@@ -25,7 +25,9 @@ const Home = () => {
 
 	return (
 		<>
-			<Helmet>{/* <title>{t("home_title")} | MaxFlow</title> */}</Helmet>
+			<Helmet>
+				<title>MaxFlow</title>
+			</Helmet>
 			<main className="home">
 				<div className="home__top">
 					<h1 className="home__top-title">

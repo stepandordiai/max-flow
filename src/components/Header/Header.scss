@@ -87,7 +87,7 @@
 	}
 }
 
-@media screen and (width < 896px) {
+@media screen and (width < 1000px) {
 	.header__nav {
 		display: none;
 	}
@@ -96,6 +96,12 @@
 		display: none;
 	}
 
+	.header__right-container {
+		column-gap: 25px;
+	}
+}
+
+@media screen and (width < 896px) {
 	.header__right-container {
 		column-gap: 15px;
 	}

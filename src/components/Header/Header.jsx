@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import BurgerBtn from "../BurgerBtn/BurgerBtn";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import LngSelect from "../LngSelect/LngSelect";
 import "./Header.scss";
@@ -8,16 +8,19 @@ import "./Header.scss";
 const Header = () => {
 	const { t } = useTranslation();
 
+	const { pathname } = useLocation();
+
 	const inactiveLink = "header__nav-link";
 	const activeLink = "header__nav-link header__nav-link--active";
 
 	useEffect(() => {
+		let positionHeight = 0;
 		const handleHeaderProgress = () => {
 			const scrollHeight = document.documentElement.scrollHeight;
 			const windowHeight = document.documentElement.clientHeight;
 			const calcHeight = scrollHeight - windowHeight;
 			const scrollTop = document.documentElement.scrollTop;
-			const positionHeight = Math.min((scrollTop * 100) / calcHeight, 100);
+			positionHeight = Math.min((scrollTop * 100) / calcHeight, 100);
 			const progressBar = document.querySelector(
 				".header__progress-divider-inner"
 			);
@@ -29,7 +32,7 @@ const Header = () => {
 		return () => {
 			document.removeEventListener("scroll", handleHeaderProgress);
 		};
-	}, []);
+	}, [pathname]);
 	return (
 		<>
 			<header className="header">
@@ -60,6 +63,12 @@ const Header = () => {
 						className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
 					>
 						{t("financing")}
+					</NavLink>
+					<NavLink
+						to={"/testimonials"}
+						className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
+					>
+						{t("testimonials_title")}
 					</NavLink>
 					<NavLink
 						to={"/contact"}

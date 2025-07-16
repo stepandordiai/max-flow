@@ -66,13 +66,21 @@ const Menu = () => {
 						className={({ isActive }) =>
 							isActive ? activeMenuLink : inactiveMenuLink
 						}
+						to={"/testimonials"}
+					>
+						{t("testimonials_title")}
+					</NavLink>
+					<NavLink
+						className={({ isActive }) =>
+							isActive ? activeMenuLink : inactiveMenuLink
+						}
 						to={"/contact"}
 					>
 						{t("contact_title")}
 					</NavLink>
 				</nav>
 				<NavLink className="menu__link" to="/contact">
-					<span>Chci nabídku</span>
+					<span>{t("want_a_quote")}</span>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						height="20px"

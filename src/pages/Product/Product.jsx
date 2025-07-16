@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
-import "./Product.scss";
 import bg from "/bg3.svg";
+import "./Product.scss";
 
 const Product = () => {
 	const { t } = useTranslation();
@@ -16,7 +16,7 @@ const Product = () => {
 					<div className="product__top-container">
 						<div className="product__top-container-inner">
 							<div>
-								<h1>Product</h1>
+								<h1>{t("product")}</h1>
 								<h2 className="product__sec-title" id="product-section-1">
 									Pro SVJ
 								</h2>

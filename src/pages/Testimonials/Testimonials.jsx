@@ -1,20 +1,20 @@
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
-import "./Financing.scss";
+import styles from "./Testimonials.module.scss";
 
-const Financing = () => {
+const Testimonials = () => {
 	const { t } = useTranslation();
 
 	return (
 		<>
 			<Helmet>
-				<title>{t("financing")} | MaxFlow</title>
+				<title>{t("testimonials_title")} | MaxFlow</title>
 			</Helmet>
 			<main>
-				<h1>{t("financing")}</h1>
+				<h1>{t("testimonials_title")}</h1>
 			</main>
 		</>
 	);
 };
 
-export default Financing;
+export default Testimonials;
