@@ -1,0 +1,10 @@
+.testimonials {
+	opacity: 0;
+	animation: animateTestimonials 0.5s forwards;
+}
+
+@keyframes animateTestimonials {
+	to {
+		opacity: 1;
+	}
+}

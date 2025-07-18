@@ -10,7 +10,7 @@ const Financing = () => {
 			<Helmet>
 				<title>{t("financing")} | MaxFlow</title>
 			</Helmet>
-			<main>
+			<main className="financing">
 				<h1>{t("financing")}</h1>
 			</main>
 		</>

@@ -1,3 +1,14 @@
+.product {
+	opacity: 0;
+	animation: animateProduct 0.5s forwards;
+}
+
+@keyframes animateProduct {
+	to {
+		opacity: 1;
+	}
+}
+
 h2 {
 	font-size: clamp(1.5rem, 5vw, 3rem) !important;
 }

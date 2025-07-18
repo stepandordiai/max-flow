@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
-import styles from "./Testimonials.module.scss";
+import "./Testimonials.scss";
 
 const Testimonials = () => {
 	const { t } = useTranslation();
@@ -10,7 +10,7 @@ const Testimonials = () => {
 			<Helmet>
 				<title>{t("testimonials_title")} | MaxFlow</title>
 			</Helmet>
-			<main>
+			<main className="testimonials">
 				<h1>{t("testimonials_title")}</h1>
 			</main>
 		</>

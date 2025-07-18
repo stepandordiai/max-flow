@@ -25,6 +25,8 @@
 .home__top-title {
 	font-size: clamp(2rem, 4vw, 4rem);
 	font-weight: 600;
+	opacity: 0;
+	animation: animateHome 0.5s forwards;
 }
 
 .home__top-container {
@@ -41,6 +43,8 @@
 	-webkit-backdrop-filter: blur(5px);
 	backdrop-filter: blur(5px);
 	border-radius: 10px;
+	opacity: 0;
+	animation: animateHome 0.5s forwards;
 }
 
 .home__top-container-title {
@@ -79,6 +83,8 @@
 	width: 400px;
 	z-index: -1;
 	bottom: 0;
+	opacity: 0;
+	animation: animateHome 0.5s forwards;
 }
 
 .home__top-scroll {

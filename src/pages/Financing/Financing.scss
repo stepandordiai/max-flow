@@ -1,0 +1,10 @@
+.financing {
+	opacity: 0;
+	animation: animateFinancing 0.5s forwards;
+}
+
+@keyframes animateFinancing {
+	to {
+		opacity: 1;
+	}
+}
