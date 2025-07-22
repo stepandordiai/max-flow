@@ -9,7 +9,6 @@
 	"scroll_to_explore": "Prozkoumejte",
 	"home_title": "Vaše SVJ může platit za energii až o 80 % méně – díky chytrému řízení energie s",
 	"home_sec_title": "Nainstalujeme vám fotovoltaiku na klíč, zajistíme dotace a postaráme se o vše – od projektu po vyúčtování. Už žádné složité rozdělování nákladů mezi sousedy!",
-	"all_rights_reserved": "Všechna práva vyhrazena",
 
 	"benefits": {
 		"title": "Výhody",
@@ -113,5 +112,10 @@
 		"label_10": "Dotace",
 		"label_10_check_1": "Ano, mám zájem",
 		"label_10_check_2": "Žádný"
+	},
+
+	"footer": {
+		"navigation": "Navigace",
+		"all_rights_reserved": "Všechna práva vyhrazena"
 	}
 }

@@ -9,7 +9,6 @@
 	"scroll_to_explore": "Scroll to explore",
 	"home_title": "Smart energy for SVJ - Save up to 80% of costs",
 	"home_sec_title": "Photovoltaics with AI control and cloud platform",
-	"all_rights_reserved": "All rights reserved",
 
 	"benefits": {
 		"title": "Benefits",
@@ -113,5 +112,10 @@
 		"label_10": "Subsidies",
 		"label_10_check_1": "Yes, I am interested",
 		"label_10_check_2": "No"
+	},
+
+	"footer": {
+		"navigation": "Navigation",
+		"all_rights_reserved": "All rights reserved"
 	}
 }

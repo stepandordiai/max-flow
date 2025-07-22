@@ -9,7 +9,6 @@
 	"scroll_to_explore": "Preskúmajte zrolovaním",
 	"home_title": "Šikovná energia pre SVJ - Ušetrite až 80% nákladov",
 	"home_sec_title": "Fotovoltaika s AI riadením a cloudovou platformou",
-	"all_rights_reserved": "Všetky práva vyhradené",
 
 	"benefits": {
 		"title": "Výhody",
@@ -113,5 +112,10 @@
 		"label_10": "Dotácie",
 		"label_10_check_1": "Áno, mám záujem",
 		"label_10_check_2": "Nie"
+	},
+
+	"footer": {
+		"navigation": "Navigácia",
+		"all_rights_reserved": "Všetky práva vyhradené"
 	}
 }
