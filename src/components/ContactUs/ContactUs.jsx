@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import isTouchDevice from "../../utils/isTouchDevice";
 import "./ContactUs.scss";
 
 const ContactUs = ({ children }) => {
@@ -10,6 +11,7 @@ const ContactUs = ({ children }) => {
 		let element = null;
 
 		work.addEventListener("mousemove", (e) => {
+			if (isTouchDevice()) return;
 			const projectRect = work.getBoundingClientRect();
 
 			// Check if the element already exists
@@ -40,28 +42,22 @@ const ContactUs = ({ children }) => {
 		});
 
 		work.addEventListener("mouseleave", () => {
+			if (isTouchDevice()) return;
 			if (element) {
-				// element.remove();
-				// element = null; // Reset element
 				element.classList.remove("div-element--active");
 			}
 		});
 
 		work.addEventListener("click", () => {
+			if (isTouchDevice()) return;
 			if (element) {
-				// element.remove();
-				// element = null; // Reset element
 				element.classList.remove("div-element--active");
-				navigate("/contact");
+				navigate("/form-calculator");
 			}
 		});
 	});
 
-	return (
-		<div className="contact-us" to={"/contact"}>
-			{children}
-		</div>
-	);
+	return <div className="contact-us">{children}</div>;
 };
 
 export default ContactUs;
