@@ -24,17 +24,16 @@
 	padding: 10px;
 	border-radius: 5px;
 	transition: all 0.3s;
+
+	&:hover {
+		background: #fff;
+		color: #000;
+	}
 }
 
 .how-it-works__scroll--active {
 	opacity: 0;
 	pointer-events: none;
-}
-
-.process__outer-bottom {
-	width: 100%;
-	position: absolute;
-	height: 50svh;
 }
 
 .process__title {
@@ -45,6 +44,13 @@
 .process__outer {
 	position: relative;
 	width: 100%;
+	scroll-margin-top: 95px;
+}
+
+.process__outer-bottom {
+	width: 100%;
+	position: absolute;
+	height: 50svh;
 }
 
 .process {
@@ -125,6 +131,12 @@
 .process__card--active {
 	opacity: 1;
 	pointer-events: all;
+}
+
+@media screen and (width <= 896px) {
+	.process__outer {
+		scroll-margin-top: 85px;
+	}
 }
 
 @media screen and (width < 860px) {

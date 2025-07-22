@@ -8,6 +8,7 @@ import animation2 from "/accord.png";
 import animation3 from "/maintenance.png";
 import animation4 from "/piggy-bank.png";
 import "./HowItWorks.scss";
+import { HashLink } from "react-router-hash-link";
 
 const HowItWorks = () => {
 	const { t } = useTranslation();
@@ -67,13 +68,14 @@ const HowItWorks = () => {
 			<main className="how-it-works">
 				<div>
 					<div className="how-it-works__top">
-						<h1 className="process__title">{t("how_it_works_title")}</h1>
+						<h1>{t("how_it_works_title")}</h1>
+						<h2 className="process__title">Fotovoltaika s MaxFlow 360&deg;</h2>
 					</div>
 					<div className="process__outer" id="process">
 						<div className="process__outer-bottom">
-							<a href="#process" className="how-it-works__scroll">
+							<HashLink to={"#process"} smooth className="how-it-works__scroll">
 								{t("scroll_to_explore")}
-							</a>
+							</HashLink>
 						</div>
 
 						<div className="process__card process__card1">
