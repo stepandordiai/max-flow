@@ -55,7 +55,10 @@
 		"last_name": "Príjmenie",
 		"tel": "Telefónne číslo",
 		"message": "Správa",
-		"send": "Odoslať správu"
+		"send": "Odoslať správu",
+		"opening_hours": "Otváracia doba",
+		"monday": "Pondelok",
+		"saturday": "Sobota"
 	},
 
 	"calculator": {

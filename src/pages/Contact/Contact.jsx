@@ -144,6 +144,12 @@ const Contact = () => {
 								<span>Pod Hroby 271 Kolín IV</span>
 							</a>
 						</div>
+						<div>
+							<p style={{ marginBottom: 5 }}>{t("contact.opening_hours")}</p>
+							<p style={{ fontWeight: 300 }}>
+								{t("contact.monday")} - {t("contact.saturday")}: 8:00 - 17:00
+							</p>
+						</div>
 					</div>
 					<div>
 						<p style={{ marginBottom: 5 }}>{t("contact.social_media")}</p>
@@ -175,117 +181,120 @@ const Contact = () => {
 						</div>
 					</div>
 				</div>
-				<form
-					action="https://formspree.io/f/mqalzwov"
-					method="post"
-					className="contact__form"
-				>
-					<div className="contact__form-container">
-						<div className="contact__form-input-container">
-							<label htmlFor="firstName">{t("contact.first_name")}</label>
-							<input
-								className="input js-input"
-								id="firstName"
-								name="firstName"
-								type="text"
-							/>
-						</div>
-						<div className="contact__form-input-container">
-							<label htmlFor="lastName">{t("contact.last_name")}</label>
-							<input
-								className="input js-input"
-								id="lastName"
-								name="lastName"
-								type="text"
-							/>
-						</div>
-					</div>
-					<div className="contact__form-input-container">
-						<label htmlFor="email">Email</label>
-						<input
-							className="input js-input"
-							id="email"
-							name="email"
-							type="email"
-						/>
-					</div>
-					<div className="contact__form-input-container">
-						<label htmlFor="tel">{t("contact.tel")}</label>
-
-						<div className="custom-input-container">
-							<div className="custom-select">
-								<button className="custom-select-btn">
-									<img
-										style={{ pointerEvents: "none" }}
-										className="custom-select-btn-flag"
-										width={20}
-										src={countriesData[0].flag}
-										alt=""
-									/>
-									<span
-										style={{ pointerEvents: "none" }}
-										className="custom-select-btn-txt"
-									>
-										CZ
-									</span>
-									<img
-										style={{ pointerEvents: "none" }}
-										width={20}
-										src={arrowDownIcon}
-										alt=""
-									/>
-								</button>
-								<div className="custom-select-dd">
-									{countriesData.map((country, index) => {
-										return (
-											<div
-												key={index}
-												style={{
-													display: "flex",
-													justifyContent: "center",
-													alignItems: "center",
-													gap: 5,
-												}}
-												className="custom-select-option"
-												data-value={country.name}
-												data-flag={country.flag}
-											>
-												<img
-													style={{ pointerEvents: "none" }}
-													width={20}
-													src={country.flag}
-													alt=""
-												/>
-												<span style={{ pointerEvents: "none" }}>
-													{country.name}
-												</span>
-											</div>
-										);
-									})}
-								</div>
+				<div className="contact__form-wrapper">
+					<p className="contact__form-wrapper-title">Kontaktní formulář</p>
+					<form
+						action="https://formspree.io/f/mqalzwov"
+						method="post"
+						className="contact__form"
+					>
+						<div className="contact__form-container">
+							<div className="contact__form-input-container">
+								<label htmlFor="firstName">{t("contact.first_name")}</label>
+								<input
+									className="input js-input"
+									id="firstName"
+									name="firstName"
+									type="text"
+								/>
 							</div>
+							<div className="contact__form-input-container">
+								<label htmlFor="lastName">{t("contact.last_name")}</label>
+								<input
+									className="input js-input"
+									id="lastName"
+									name="lastName"
+									type="text"
+								/>
+							</div>
+						</div>
+						<div className="contact__form-input-container">
+							<label htmlFor="email">Email</label>
 							<input
-								className="js-code-input custom-input"
-								id="tel"
-								value={inputValue}
-								onChange={(e) => handleCodeInputValue(e)}
-								type="tel"
-								name="tel"
+								className="input js-input"
+								id="email"
+								name="email"
+								type="email"
 							/>
 						</div>
-					</div>
-					<div className="contact__form-input-container area-container">
-						<label htmlFor="message">{t("contact.message")}</label>
-						<textarea
-							className="input js-input"
-							name="message"
-							id="message"
-						></textarea>
-					</div>
-					<button className="contact__form-btn" type="submit">
-						{t("contact.send")}
-					</button>
-				</form>
+						<div className="contact__form-input-container">
+							<label htmlFor="tel">{t("contact.tel")}</label>
+
+							<div className="custom-input-container">
+								<div className="custom-select">
+									<button className="custom-select-btn">
+										<img
+											style={{ pointerEvents: "none" }}
+											className="custom-select-btn-flag"
+											width={20}
+											src={countriesData[0].flag}
+											alt=""
+										/>
+										<span
+											style={{ pointerEvents: "none" }}
+											className="custom-select-btn-txt"
+										>
+											CZ
+										</span>
+										<img
+											style={{ pointerEvents: "none" }}
+											width={20}
+											src={arrowDownIcon}
+											alt=""
+										/>
+									</button>
+									<div className="custom-select-dd">
+										{countriesData.map((country, index) => {
+											return (
+												<div
+													key={index}
+													style={{
+														display: "flex",
+														justifyContent: "center",
+														alignItems: "center",
+														gap: 5,
+													}}
+													className="custom-select-option"
+													data-value={country.name}
+													data-flag={country.flag}
+												>
+													<img
+														style={{ pointerEvents: "none" }}
+														width={20}
+														src={country.flag}
+														alt=""
+													/>
+													<span style={{ pointerEvents: "none" }}>
+														{country.name}
+													</span>
+												</div>
+											);
+										})}
+									</div>
+								</div>
+								<input
+									className="js-code-input custom-input"
+									id="tel"
+									value={inputValue}
+									onChange={(e) => handleCodeInputValue(e)}
+									type="tel"
+									name="tel"
+								/>
+							</div>
+						</div>
+						<div className="contact__form-input-container area-container">
+							<label htmlFor="message">{t("contact.message")}</label>
+							<textarea
+								className="input js-input"
+								name="message"
+								id="message"
+							></textarea>
+						</div>
+						<button className="contact__form-btn" type="submit">
+							{t("contact.send")}
+						</button>
+					</form>
+				</div>
 			</main>
 		</>
 	);

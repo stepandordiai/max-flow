@@ -55,7 +55,10 @@
 		"last_name": "Last name",
 		"tel": "Phone number",
 		"message": "Message",
-		"send": "Send message"
+		"send": "Send message",
+		"opening_hours": "Opening hours",
+		"monday": "Monday",
+		"saturday": "Saturday"
 	},
 
 	"calculator": {
