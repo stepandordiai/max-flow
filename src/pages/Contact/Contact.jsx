@@ -104,7 +104,7 @@ const Contact = () => {
 	return (
 		<>
 			<Helmet>
-				<title>{t("contact_title")} | MaxFlow</title>
+				<title>{t("contact_title")} | MaxFlow 360&deg;</title>
 			</Helmet>
 			<main className="contact">
 				<div className="contact__info">

@@ -8,7 +8,7 @@ const Financing = () => {
 	return (
 		<>
 			<Helmet>
-				<title>{t("financing")} | MaxFlow</title>
+				<title>{t("financing")} | MaxFlow 360&deg;</title>
 			</Helmet>
 			<main className="financing">
 				<h1>{t("financing")}</h1>

@@ -9,7 +9,7 @@ const Product = () => {
 	return (
 		<>
 			<Helmet>
-				<title>{t("product")} | MaxFlow</title>
+				<title>{t("product")} | MaxFlow 360&deg;</title>
 			</Helmet>
 			<main className="product">
 				<div>

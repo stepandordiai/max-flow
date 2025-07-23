@@ -36,7 +36,7 @@ const FormCalculator = () => {
 	return (
 		<>
 			<Helmet>
-				<title>{t("form_calculator.title")} | MaxFlow</title>
+				<title>{t("form_calculator.title")} | MaxFlow 360&deg;</title>
 			</Helmet>
 			<main className="form-calculator">
 				<h1 className="form-calculator__title">{t("form_calculator.title")}</h1>
