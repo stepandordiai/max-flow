@@ -10,7 +10,6 @@ import Footer from "./components/Footer/Footer";
 import ScrollToTop from "./utils/ScrollToTop";
 import "./i18next";
 import FormCalculator from "./pages/FormCalculator/FormCalculator";
-import Testimonials from "./pages/Testimonials/Testimonials";
 import "./scss/App.scss";
 
 function App() {
@@ -23,7 +22,6 @@ function App() {
 				<Route path="/product" element={<Product />} />
 				<Route path="/how-it-works" element={<HowItWorks />} />
 				<Route path="/financing" element={<Financing />} />
-				<Route path="/testimonials" element={<Testimonials />} />
 				<Route path="/contact" element={<Contact />} />
 				<Route path="/form-calculator" element={<FormCalculator />} />
 			</Routes>

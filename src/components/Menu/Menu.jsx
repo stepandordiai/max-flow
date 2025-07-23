@@ -66,14 +66,6 @@ const Menu = () => {
 						className={({ isActive }) =>
 							isActive ? activeMenuLink : inactiveMenuLink
 						}
-						to={"/testimonials"}
-					>
-						{t("testimonials_title")}
-					</NavLink>
-					<NavLink
-						className={({ isActive }) =>
-							isActive ? activeMenuLink : inactiveMenuLink
-						}
 						to={"/contact"}
 					>
 						{t("contact_title")}

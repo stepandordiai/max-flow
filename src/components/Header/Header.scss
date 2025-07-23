@@ -21,7 +21,14 @@
 }
 
 .header__logo {
-	font-size: 1.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+
+	span {
+		font-size: 1.5rem;
+	}
 }
 
 .header__nav {
@@ -104,5 +111,13 @@
 @media screen and (width < 896px) {
 	.header__right-container {
 		column-gap: 15px;
+	}
+}
+
+@media screen and (width < 350px) {
+	.header__logo {
+		span {
+			display: none;
+		}
 	}
 }

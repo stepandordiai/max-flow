@@ -82,14 +82,6 @@ const Footer = () => {
 								className={({ isActive }) =>
 									isActive ? activeFooterNavLink : inactiveFooterNavLink
 								}
-								to="/testimonials"
-							>
-								{t("testimonials_title")}
-							</NavLink>
-							<NavLink
-								className={({ isActive }) =>
-									isActive ? activeFooterNavLink : inactiveFooterNavLink
-								}
 								to="/contact"
 							>
 								{t("contact_title")}

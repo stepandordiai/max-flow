@@ -3,6 +3,7 @@ import BurgerBtn from "../BurgerBtn/BurgerBtn";
 import { NavLink, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import LngSelect from "../LngSelect/LngSelect";
+import logo from "/max-flow-logo-v1.png";
 import "./Header.scss";
 
 const Header = () => {
@@ -36,42 +37,37 @@ const Header = () => {
 	return (
 		<>
 			<header className="header">
-				<NavLink className="header__logo" to={"/"}>
-					MaxFlow 360&deg;
+				<NavLink className="header__logo" to="/">
+					<img src={logo} width={25} height={25} alt="" />
+					<span>MaxFlow 360&deg;</span>
 				</NavLink>
 				<nav className="header__nav">
 					<NavLink
-						to={"/"}
+						to="/"
 						className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
 					>
 						{t("home")}
 					</NavLink>
 					<NavLink
-						to={"/product"}
+						to="/product"
 						className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
 					>
 						{t("product")}
 					</NavLink>
 					<NavLink
-						to={"/how-it-works"}
+						to="/how-it-works"
 						className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
 					>
 						{t("how_it_works_title")}
 					</NavLink>
 					<NavLink
-						to={"/financing"}
+						to="/financing"
 						className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
 					>
 						{t("financing")}
 					</NavLink>
 					<NavLink
-						to={"/testimonials"}
-						className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
-					>
-						{t("testimonials_title")}
-					</NavLink>
-					<NavLink
-						to={"/contact"}
+						to="/contact"
 						className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
 					>
 						{t("contact_title")}
