@@ -75,7 +75,7 @@ const Header = () => {
 				</nav>
 				<div className="header__right-container">
 					<LngSelect />
-					<NavLink className="header__btn" to="/contact">
+					<NavLink className="header__btn" to="/form-calculator">
 						<span>{t("want_a_quote")}</span>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"

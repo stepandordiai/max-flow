@@ -21,6 +21,15 @@ const Menu = () => {
 					.classList.remove("menu__inner--active");
 			});
 		});
+
+		document.querySelector(".menu__link").addEventListener("click", () => {
+			document.querySelector(".burger-2").classList.remove("burger-2--active");
+
+			document.querySelector(".menu").classList.remove("menu--active");
+			document
+				.querySelector(".menu__inner")
+				.classList.remove("menu__inner--active");
+		});
 	}, []);
 
 	const inactiveMenuLink = "menu__nav-link";
@@ -71,7 +80,7 @@ const Menu = () => {
 						{t("contact_title")}
 					</NavLink>
 				</nav>
-				<NavLink className="menu__link" to="/contact">
+				<NavLink className="menu__link" to="/form-calculator">
 					<span>{t("want_a_quote")}</span>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

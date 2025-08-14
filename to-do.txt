@@ -1,2 +1,1 @@
-chci nabidku to kalkulator
 add notfound
