@@ -65,7 +65,7 @@ const HowItWorks = () => {
 							{t("how_it_works.desc")}
 						</p>
 						<div className="how-it-works__top-btn-container">
-							<HashLink to={"#process"} smooth className="how-it-works__link">
+							<HashLink to="#process" smooth className="how-it-works__link">
 								{t("how_it_works.read_more")}
 							</HashLink>
 							<NavLink className="how-it-works__link" to="/form-calculator">
@@ -151,7 +151,7 @@ const HowItWorks = () => {
 				<ContactUs>
 					<p className="contact-us__title">Chcete vědět, kolik ušetřite?</p>
 					<div>
-						<NavLink className="contact-us__link" to={"/form-calculator"}>
+						<HashLink className="contact-us__link" to="/#calculator">
 							<span>Spočítejte si to v naší kalkulačce</span>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -162,7 +162,7 @@ const HowItWorks = () => {
 							>
 								<path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
 							</svg>
-						</NavLink>
+						</HashLink>
 					</div>
 				</ContactUs>
 			</main>

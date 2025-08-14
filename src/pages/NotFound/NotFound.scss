@@ -1,0 +1,56 @@
+@use "./../../scss/mixins" as *;
+
+.not-found {
+	min-height: calc(100svh - 95px);
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	padding-bottom: 25px;
+}
+
+.not-found__title {
+	font-size: clamp(2rem, 4vw, 4rem) !important;
+	font-weight: 500;
+}
+
+.not-found__container {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	flex-direction: column;
+	text-align: end;
+	align-self: flex-end;
+	row-gap: 15px;
+	background: rgba(255, 255, 255, 0.1);
+	max-width: 500px;
+	padding: 15px;
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+	border-radius: 10px;
+	opacity: 0;
+	animation: animateHome 0.5s forwards;
+}
+
+.not-found__container-title {
+	font-size: clamp(1rem, 4vw, 1.25rem) !important;
+}
+
+.not-found__link {
+	padding: 10px;
+	border-radius: 5px;
+	background: #fff;
+	color: #000;
+	transition: background-color 0.3s, color 0.3s;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.1);
+		color: #fff;
+	}
+}
+
+@media screen and (width < 860px) {
+	.not-found {
+		min-height: calc(100svh - 85px);
+		padding-bottom: 15px;
+	}
+}
