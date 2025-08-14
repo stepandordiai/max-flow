@@ -24,21 +24,21 @@
 	},
 
 	"how_it_works": {
-		"title": "Save with",
-		"desc": "When implementing our MaxFlow 360° solution, SVJ will save by being able to do the complete administration itself, specifically for one apartment approx. 200 CZK per month for one apartment per year 2400",
-		"read_more": "Read more"
+		"title": "Ušetrite vďaka",
+		"desc": "Pri realizácii naším riešením MaxFlow 360° SVJ ušetrí na tom že si kompletnú správu môže robiť samostatne ročne na jeden byt cca 200 Kč na mesiac za jeden byt 2400",
+		"read_more": "Čistota viac"
 	},
 
 	"process": {
-		"title": "Process",
-		"card1_title": "Free analysis",
-		"card1_desc": "We will review your energy bills and propose a solution",
-		"card2_title": "Customized project",
-		"card2_desc": "We will prepare documentation for subsidies",
-		"card3_title": "Worry-free installation",
-		"card3_desc": "Everything will be done by certified technicians",
-		"card4_title": "Maximizing savings",
-		"card4_desc": "The AI system will start saving you money"
+		"title": "Proces",
+		"card1_title": "Bezplatná analýza",
+		"card1_desc": "Prehodnotíme vaše účty za energie a navrhneme riešenie",
+		"card2_title": "Projekt na mieru",
+		"card2_desc": "Pripravíme dokumentáciu pre dotácie",
+		"card3_title": "Bezstarostná inštalácia",
+		"card3_desc": "Všetko urobia certifikovaní technici",
+		"card4_title": "Maximalizácia úspor",
+		"card4_desc": "Systém umelej inteligencie vám začne šetriť peniaze"
 	},
 
 	"about_us": {

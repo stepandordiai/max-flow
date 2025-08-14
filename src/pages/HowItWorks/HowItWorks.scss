@@ -13,8 +13,7 @@
 }
 
 .how-it-works__top {
-	position: relative;
-	min-height: calc(100vh - 95px);
+	height: calc(100svh - 95px);
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
@@ -41,7 +40,7 @@
 	-webkit-backdrop-filter: blur(5px);
 	backdrop-filter: blur(5px);
 	border-radius: 10px;
-	margin-bottom: 15px;
+	margin-bottom: 25px;
 	opacity: 0;
 	animation: animateHome 0.5s forwards;
 }
@@ -81,8 +80,10 @@
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	z-index: -1;
-	max-width: 800px;
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+	object-position: right bottom;
 	opacity: 0;
 	animation: animateHowItWorks 0.5s forwards;
 }
@@ -204,7 +205,11 @@
 	}
 
 	.how-it-works__top {
-		min-height: calc(100vh - 85px);
+		height: calc(100svh - 85px);
+	}
+
+	.how-it-works__top-container {
+		margin-bottom: 15px;
 	}
 
 	.process-container {

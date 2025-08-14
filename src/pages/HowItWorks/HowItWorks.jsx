@@ -60,29 +60,35 @@ const HowItWorks = () => {
 							{t("how_it_works.title")} MaxFlow 360°
 						</h2>
 					</div>
-					<div className="how-it-works__top-container">
-						<p className="how-it-works__top-container-title">
-							{t("how_it_works.desc")}
-						</p>
-						<div className="how-it-works__top-btn-container">
-							<HashLink to="#process" smooth className="how-it-works__link">
-								{t("how_it_works.read_more")}
-							</HashLink>
-							<NavLink className="how-it-works__link" to="/form-calculator">
-								<span>{t("form_calculator.title")}</span>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									height="20px"
-									viewBox="0 -960 960 960"
-									width="20px"
-									fill="#ffffff"
-								>
-									<path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
-								</svg>
-							</NavLink>
+					<div
+						style={{ display: "flex", flexDirection: "column", flexGrow: 1 }}
+					>
+						<div style={{ height: "100%", position: "relative" }}>
+							<img className="how-it-works__img" src={img} alt="" />
+						</div>
+						<div className="how-it-works__top-container">
+							<p className="how-it-works__top-container-title">
+								{t("how_it_works.desc")}
+							</p>
+							<div className="how-it-works__top-btn-container">
+								<HashLink to="#process" smooth className="how-it-works__link">
+									{t("how_it_works.read_more")}
+								</HashLink>
+								<NavLink className="how-it-works__link" to="/form-calculator">
+									<span>{t("form_calculator.title")}</span>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										height="20px"
+										viewBox="0 -960 960 960"
+										width="20px"
+										fill="#ffffff"
+									>
+										<path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+									</svg>
+								</NavLink>
+							</div>
 						</div>
 					</div>
-					<img className="how-it-works__img" src={img} alt="" />
 				</div>
 				<div className="process-container">
 					<div className="process__top">
