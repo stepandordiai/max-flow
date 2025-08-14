@@ -1,14 +1,15 @@
-import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import ContactUs from "../../components/ContactUs/ContactUs";
+import { HashLink } from "react-router-hash-link";
 import animation from "/audit.png";
 import animation2 from "/accord.png";
 import animation3 from "/maintenance.png";
 import animation4 from "/piggy-bank.png";
+import img from "/img.png";
 import "./HowItWorks.scss";
-import { HashLink } from "react-router-hash-link";
 
 const HowItWorks = () => {
 	const { t } = useTranslation();
@@ -46,72 +47,100 @@ const HowItWorks = () => {
 		});
 	}, []);
 
-	useEffect(() => {
-		document.addEventListener("scroll", () => {
-			const scrollTop = document.documentElement.scrollTop;
-			if (scrollTop > 0) {
-				document
-					.querySelector(".how-it-works__scroll")
-					.classList.add("how-it-works__scroll--active");
-			} else {
-				document
-					.querySelector(".how-it-works__scroll")
-					.classList.remove("how-it-works__scroll--active");
-			}
-		});
-	}, []);
 	return (
 		<>
 			<Helmet>
 				<title>{t("how_it_works_title")} | MaxFlow 360&deg;</title>
 			</Helmet>
-			<main className="how-it-works">
-				<div>
-					<div className="how-it-works__top">
-						<h1>{t("how_it_works_title")}</h1>
-						<h2 className="process__title">Fotovoltaika s MaxFlow 360&deg;</h2>
+			<main>
+				<div className="how-it-works__top">
+					<div>
+						<h1 className="how-it-works__title">{t("how_it_works_title")}</h1>
+						<h2 className="how-it-works__top-title">
+							{t("how_it_works.title")} MaxFlow 360°
+						</h2>
 					</div>
-					<div className="process__outer" id="process">
-						<div className="process__outer-bottom">
-							<HashLink to={"#process"} smooth className="how-it-works__scroll">
-								{t("scroll_to_explore")}
+					<div className="how-it-works__top-container">
+						<p className="how-it-works__top-container-title">
+							{t("how_it_works.desc")}
+						</p>
+						<div className="how-it-works__top-btn-container">
+							<HashLink to={"#process"} smooth className="how-it-works__link">
+								{t("how_it_works.read_more")}
 							</HashLink>
+							<NavLink className="how-it-works__link" to="/form-calculator">
+								<span>{t("form_calculator.title")}</span>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									height="20px"
+									viewBox="0 -960 960 960"
+									width="20px"
+									fill="#ffffff"
+								>
+									<path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+								</svg>
+							</NavLink>
 						</div>
-
+					</div>
+					<img className="how-it-works__img" src={img} alt="" />
+				</div>
+				<div className="process-container">
+					<div className="process__top">
+						<h2 className="process__title" id="process">
+							{t("process.title")}
+						</h2>
+					</div>
+					<div className="process__outer">
 						<div className="process__card process__card1">
-							<p>{t("how_it_works.card1_title")}</p>
+							<p>{t("process.card1_title")}</p>
 							<div style={{ alignSelf: "flex-end", textAlign: "end" }}>
-								<img width={100} src={animation} alt="" loading="lazy" />
-								<div style={{ marginTop: 10 }}>
-									{t("how_it_works.card1_sec_title")}.
-								</div>
+								<img
+									width={100}
+									height={100}
+									src={animation}
+									alt=""
+									loading="lazy"
+								/>
+								<div style={{ marginTop: 10 }}>{t("process.card1_desc")}.</div>
 							</div>
 						</div>
 						<div className="process__card process__card2">
-							<p>{t("how_it_works.card2_title")}</p>
+							<p>{t("process.card2_title")}</p>
 							<div style={{ alignSelf: "flex-end", textAlign: "end" }}>
-								<img width={100} src={animation2} alt="" loading="lazy" />
-								<div style={{ marginTop: 10 }}>
-									{t("how_it_works.card2_sec_title")}.
-								</div>
+								<img
+									width={100}
+									height={100}
+									src={animation2}
+									alt=""
+									loading="lazy"
+								/>
+								<div style={{ marginTop: 10 }}>{t("process.card2_desc")}.</div>
 							</div>
 						</div>
 						<div className="process__card process__card3">
-							<p>{t("how_it_works.card3_title")}</p>
+							<p>{t("process.card3_title")}</p>
 							<div style={{ alignSelf: "flex-end", textAlign: "end" }}>
-								<img width={100} src={animation3} alt="" loading="lazy" />
-								<div style={{ marginTop: 10 }}>
-									{t("how_it_works.card3_sec_title")}.
-								</div>
+								<img
+									width={100}
+									height={100}
+									src={animation3}
+									alt=""
+									loading="lazy"
+								/>
+								<div style={{ marginTop: 10 }}>{t("process.card3_desc")}.</div>
 							</div>
 						</div>
 						<div className="process__card process__card4">
-							<p>{t("how_it_works.card4_title")}</p>
+							<p>{t("process.card4_title")}</p>
 							<div style={{ alignSelf: "flex-end", textAlign: "end" }}>
-								<img width={100} src={animation4} alt="" loading="lazy" />
-								<div style={{ marginTop: 10 }}>
-									{t("how_it_works.card4_sec_title")}.
-								</div>
+								<img
+									width={100}
+									height={100}
+									src={animation4}
+									alt=""
+									loading="lazy"
+								/>
+								<div style={{ marginTop: 10 }}>{t("process.card4_desc")}.</div>
 							</div>
 						</div>
 						<div className="process">

@@ -40,14 +40,21 @@
 	},
 
 	"how_it_works": {
-		"card1_title": "Analýza zdarma",
-		"card1_sec_title": "Projdeme Vaše účty za energie a navrhneme řešení",
-		"card2_title": "Projekt na míru",
-		"card2_sec_title": "Připravíme dokumentaci pro dotace",
-		"card3_title": "Instalace bez starostí",
-		"card3_sec_title": "Vše provedou certifikovaní technici",
-		"card4_title": "Maximalizace úspor",
-		"card4_sec_title": "AI systém začne šetřit Vaše peníze"
+		"title": "Ušetrite vďaka",
+		"desc": "Pri realizácii naším riešením MaxFlow 360 ° SVJ ušetrí na tom že si kompletnú správu môže robiť samo konkrétne na jeden byt cca 200 Sk na mesiac za jeden byt ročne 2400",
+		"read_more": "Čítať viac"
+	},
+
+	"process": {
+		"title": "Proces",
+		"card1_title": "Analýza zadarmo",
+		"card1_desc": "Prejdeme Vaše účty za energie a navrhneme riešenie",
+		"card2_title": "Projekt na mieru",
+		"card2_desc": "Pripravíme dokumentáciu pre dotácie",
+		"card3_title": "Inštalácia bez starostí",
+		"card3_desc": "Všetko vykonajú certifikovaní technici",
+		"card4_title": "Maximalizácia úspor",
+		"card4_desc": "AI systém začne šetriť Vaše peniaze"
 	},
 
 	"about_us": {

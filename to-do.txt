@@ -1,0 +1,3 @@
+update about us in numbers to milestones
+chci nabidku to kalkulator
+add notfound

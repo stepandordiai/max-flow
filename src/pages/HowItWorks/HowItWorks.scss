@@ -1,10 +1,4 @@
-.how-it-works {
-	display: flex;
-	flex-direction: column;
-	row-gap: 25px;
-	opacity: 0;
-	animation: animateHowItWorks 0.5s forwards;
-}
+@use "./../../scss/mixins" as *;
 
 @keyframes animateHowItWorks {
 	to {
@@ -12,39 +6,104 @@
 	}
 }
 
-.how-it-works__top {
-	height: calc(50svh - 95px);
+.how-it-works__title {
+	margin-bottom: 25px;
+	opacity: 0;
+	animation: animateHowItWorks 0.5s forwards;
 }
 
-.how-it-works__scroll {
-	position: absolute;
-	bottom: 25px;
-	right: 0;
+.how-it-works__top {
+	position: relative;
+	min-height: calc(100vh - 95px);
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+.how-it-works__top-title {
+	font-size: clamp(2rem, 4vw, 4rem) !important;
+	font-weight: 500;
+	opacity: 0;
+	animation: animateHowItWorks 0.5s forwards;
+}
+
+.how-it-works__top-container {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	flex-direction: column;
+	text-align: end;
+	align-self: flex-end;
+	row-gap: 15px;
 	background: rgba(255, 255, 255, 0.1);
+	max-width: 500px;
+	padding: 15px;
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+	border-radius: 10px;
+	margin-bottom: 15px;
+	opacity: 0;
+	animation: animateHome 0.5s forwards;
+}
+
+.how-it-works__top-container-title {
+	font-size: clamp(1rem, 4vw, 1.25rem);
+}
+
+.how-it-works__top-btn-container {
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	gap: 3px;
+}
+
+.how-it-works__link {
 	padding: 10px;
 	border-radius: 5px;
-	transition: all 0.3s;
+	background: #fff;
+	color: #000;
+	transition: background-color 0.3s, color 0.3s;
 
 	&:hover {
-		background: #fff;
-		color: #000;
+		background: rgba(255, 255, 255, 0.1);
+		color: #fff;
+	}
+
+	&:nth-of-type(2) {
+		background: #000;
+		color: #fff;
+		@include flex-center;
+		column-gap: 3px;
 	}
 }
 
-.how-it-works__scroll--active {
+.how-it-works__img {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+	max-width: 800px;
 	opacity: 0;
-	pointer-events: none;
+	animation: animateHowItWorks 0.5s forwards;
+}
+
+.process-container {
+	margin: 95px 0 25px;
+}
+
+.process__top {
+	height: calc(50svh - 95px);
 }
 
 .process__title {
-	font-size: clamp(2rem, 4vw, 4rem);
-	font-weight: 600;
+	font-size: clamp(2rem, 4vw, 4rem) !important;
+	font-weight: 500;
+	scroll-margin-top: 95px;
 }
 
 .process__outer {
 	position: relative;
 	width: 100%;
-	scroll-margin-top: 95px;
 }
 
 .process__outer-bottom {
@@ -134,17 +193,25 @@
 }
 
 @media screen and (width <= 896px) {
-	.process__outer {
+	.process__title {
 		scroll-margin-top: 85px;
 	}
 }
 
 @media screen and (width < 860px) {
-	.process__title {
-		padding: 15px 0;
+	.how-it-works__title {
+		margin-bottom: 15px;
 	}
 
 	.how-it-works__top {
+		min-height: calc(100vh - 85px);
+	}
+
+	.process-container {
+		margin: 85px 0 15px;
+	}
+
+	.process__top {
 		height: calc(50svh - 85px);
 	}
 
@@ -171,8 +238,10 @@
 		left: 20px;
 		width: calc(100% - 20px);
 	}
+}
 
-	.how-it-works__scroll {
-		bottom: 15px;
+@media screen and (width <= 830px) {
+	.how-it-works__img {
+		max-width: 100%;
 	}
 }

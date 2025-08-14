@@ -24,14 +24,21 @@
 	},
 
 	"how_it_works": {
-		"card1_title": "Free Energy Audit",
-		"card1_sec_title": "We analyze your bills and design a solution",
-		"card2_title": "Tailored Proposal",
-		"card2_sec_title": "Prepare subsidy documentation",
-		"card3_title": "Hassle-Free Installation",
-		"card3_sec_title": "Certified technicians handle everything",
-		"card4_title": "Maximize Savings",
-		"card4_sec_title": "AI starts cutting your costs immediately"
+		"title": "Save with",
+		"desc": "When implementing our MaxFlow 360° solution, SVJ will save by being able to do the complete administration itself, specifically for one apartment approx. 200 CZK per month for one apartment per year 2400",
+		"read_more": "Read more"
+	},
+
+	"process": {
+		"title": "Process",
+		"card1_title": "Free analysis",
+		"card1_desc": "We will review your energy bills and propose a solution",
+		"card2_title": "Customized project",
+		"card2_desc": "We will prepare documentation for subsidies",
+		"card3_title": "Worry-free installation",
+		"card3_desc": "Everything will be done by certified technicians",
+		"card4_title": "Maximizing savings",
+		"card4_desc": "The AI system will start saving you money"
 	},
 
 	"about_us": {
