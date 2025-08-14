@@ -6,8 +6,6 @@ const AboutUs = () => {
 	const { t } = useTranslation();
 
 	useEffect(() => {
-		let delay = 150;
-
 		document.querySelectorAll(".about-us__card-counter").forEach((count) => {
 			document.addEventListener("scroll", () => {
 				const countRect = count.getBoundingClientRect();
@@ -17,7 +15,7 @@ const AboutUs = () => {
 						.forEach((char, index) => {
 							setTimeout(() => {
 								char.classList.add("about-us__card-counter-char--active");
-							}, delay + 150 * index);
+							}, 150 * (index + 1));
 						});
 				}
 			});
@@ -26,7 +24,7 @@ const AboutUs = () => {
 
 	return (
 		<div className="about-us" id="about-us">
-			<h2 className="about-us__title">{t("about_us.title")}</h2>
+			<h2 className="about-us__title">MaxFlow 360° {t("about_us.title")}</h2>
 			<div className="about-us__cards">
 				<div className="about-us__card">
 					<p className="about-us__card-title">{t("about_us.card1_title")}</p>
