@@ -90,6 +90,127 @@
 	height: 100%;
 }
 
+// burger-btn
+
+.burger-btn {
+	position: relative;
+	width: 40px;
+	height: 0px;
+	padding: 20px 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.burger-btn::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	background: #fff;
+	translate: 0 -5px;
+	transition: translate 0.5s 0.5s, rotate 0.5s;
+}
+
+.burger-btn::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	background: #fff;
+	translate: 0 5px;
+	transition: translate 0.5s 0.5s, rotate 0.5s;
+}
+
+.burger-btn--active::before {
+	translate: 0px;
+	rotate: 45deg;
+	transition: translate 0.5s, rotate 0.5s 0.5s;
+}
+
+.burger-btn--active::after {
+	translate: 0px;
+	rotate: -45deg;
+	transition: translate 0.5s, rotate 0.5s 0.5s;
+}
+
+// menu
+
+.menu {
+	position: fixed;
+	top: 70px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	background: rgba(0, 0, 0, 0.1);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s;
+	overflow: scroll;
+}
+
+.menu--active {
+	opacity: 1;
+	pointer-events: all;
+	transition: opacity 0.3s;
+}
+
+.menu__inner {
+	min-height: calc(100dvh - 70px);
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	row-gap: 30px;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s;
+	padding: 0 15px 15px 15px;
+}
+
+.menu__inner--active {
+	opacity: 1 !important;
+	pointer-events: all !important;
+	transition: opacity 0.3s 0.6s;
+}
+
+.menu__nav {
+	display: flex;
+	flex-direction: column;
+}
+
+.menu__nav-link {
+	font-size: 1.5rem;
+	border-bottom: 3px dashed rgba(255, 255, 255, 0.1);
+	padding: 10px 0;
+	transition: border-bottom 0.3s;
+
+	&:hover {
+		border-bottom: 3px dashed #fff;
+	}
+}
+
+.menu__nav-link--active {
+	border-bottom: 3px dashed #fff;
+}
+
+.menu__link {
+	@include flex-center;
+	column-gap: 3px;
+	background: #000;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+@media screen and (width < 1000px) {
+	.burger-btn {
+		display: flex;
+	}
+}
+
 @media screen and (width <= 896px) {
 	.header {
 		padding: 0 15px;

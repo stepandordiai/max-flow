@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
-import BurgerBtn from "../BurgerBtn/BurgerBtn";
 import { NavLink, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import LngSelect from "../LngSelect/LngSelect";
 import logo from "/max-flow-logo-v1.png";
 import "./Header.scss";
@@ -10,6 +9,8 @@ const Header = () => {
 	const { t } = useTranslation();
 
 	const { pathname } = useLocation();
+
+	const [isMenuActive, setIsMenuActive] = useState(false);
 
 	const inactiveLink = "header__nav-link";
 	const activeLink = "header__nav-link header__nav-link--active";
@@ -46,9 +47,30 @@ const Header = () => {
 			}
 		});
 	}, []);
+
+	function toggleBurgerBtn() {
+		setIsMenuActive((prev) => !prev);
+	}
+
+	useEffect(() => {
+		const menuLinks = document.querySelectorAll(".menu__nav-link");
+
+		menuLinks.forEach((link) => {
+			link.addEventListener("click", () => {
+				setIsMenuActive(false);
+			});
+		});
+
+		document.querySelector(".menu__link").addEventListener("click", () => {
+			setIsMenuActive(false);
+		});
+	}, []);
+
+	const inactiveMenuLink = "menu__nav-link";
+	const activeMenuLink = "menu__nav-link menu__nav-link--active";
 	return (
 		<>
-			<header className="header">
+			<header className={isMenuActive ? "header header--active" : "header"}>
 				<NavLink className="header__logo" to="/">
 					<img src={logo} width={25} height={25} alt="" />
 					<span>MaxFlow 360&deg;</span>
@@ -99,12 +121,79 @@ const Header = () => {
 							<path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
 						</svg>
 					</NavLink>
-					<BurgerBtn />
+					<div
+						onClick={toggleBurgerBtn}
+						className={
+							isMenuActive ? "burger-btn burger-btn--active" : "burger-btn"
+						}
+					></div>
 				</div>
 				<div className="header__progress-divider">
 					<div className="header__progress-divider-inner"></div>
 				</div>
 			</header>
+			<div className={isMenuActive ? "menu menu--active" : "menu"}>
+				<div
+					className={
+						isMenuActive ? "menu__inner menu__inner--active" : "menu__inner"
+					}
+				>
+					<nav className="menu__nav">
+						<NavLink
+							className={({ isActive }) =>
+								isActive ? activeMenuLink : inactiveMenuLink
+							}
+							to={"/"}
+						>
+							{t("home")}
+						</NavLink>
+						<NavLink
+							className={({ isActive }) =>
+								isActive ? activeMenuLink : inactiveMenuLink
+							}
+							to={"/product"}
+						>
+							{t("product")}
+						</NavLink>
+						<NavLink
+							className={({ isActive }) =>
+								isActive ? activeMenuLink : inactiveMenuLink
+							}
+							to={"/how-it-works"}
+						>
+							{t("how_it_works_title")}
+						</NavLink>
+						<NavLink
+							className={({ isActive }) =>
+								isActive ? activeMenuLink : inactiveMenuLink
+							}
+							to={"/financing"}
+						>
+							{t("financing")}
+						</NavLink>
+						<NavLink
+							className={({ isActive }) =>
+								isActive ? activeMenuLink : inactiveMenuLink
+							}
+							to={"/contact"}
+						>
+							{t("contact_title")}
+						</NavLink>
+					</nav>
+					<NavLink className="menu__link" to="/form-calculator">
+						<span>{t("want_a_quote")}</span>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							height="20px"
+							viewBox="0 -960 960 960"
+							width="20px"
+							fill="#ffffff"
+						>
+							<path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+						</svg>
+					</NavLink>
+				</div>
+			</div>
 		</>
 	);
 };

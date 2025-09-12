@@ -5,7 +5,6 @@ import Product from "./pages/Product/Product";
 import HowItWorks from "./pages/HowItWorks/HowItWorks";
 import Financing from "./pages/Financing/Financing";
 import Contact from "./pages/Contact/Contact";
-import Menu from "./components/Menu/Menu";
 import Footer from "./components/Footer/Footer";
 import ScrollToTop from "./utils/ScrollToTop";
 import FormCalculator from "./pages/FormCalculator/FormCalculator";
@@ -17,7 +16,6 @@ function App() {
 	return (
 		<Router>
 			<Header />
-			<Menu />
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/product" element={<Product />} />
