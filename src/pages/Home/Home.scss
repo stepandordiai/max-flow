@@ -131,8 +131,8 @@
 	}
 }
 
-@media screen and (width <= 896px) {
+@media screen and (width < 808px) {
 	.home__top {
-		padding: 95px 25px 85px 25px;
+		padding: 95px 15px 85px 15px;
 	}
 }
