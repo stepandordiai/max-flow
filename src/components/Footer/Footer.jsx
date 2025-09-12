@@ -97,7 +97,7 @@ const Footer = () => {
 					<div className="footer__nav-wrapper">
 						<nav className="footer__nav">
 							<HashLink to="/#about-us" smooth className="footer__nav-link">
-								{t("about_us.title")}
+								MaxFlow 360° {t("about_us.title")}
 							</HashLink>
 							<HashLink to="/#benefits" smooth className="footer__nav-link">
 								{t("benefits.title")}
