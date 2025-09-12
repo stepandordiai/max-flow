@@ -1,11 +1,12 @@
-import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import Partners from "../../components/Partners/Partners";
 import Benefits from "../../components/Benefits/Benefits";
 import AboutUs from "../../components/AboutUs/AboutUs";
 import Calculator from "../../components/Calculator/Calculator";
+import video from "/video.mp4";
 import "./Home.scss";
 
 const Home = () => {
@@ -53,15 +54,18 @@ const Home = () => {
 							</NavLink>
 						</div>
 					</div>
-					<img
-						className="home__bg"
-						src="https://www.ikomunita.cz/templates/default/img/Bytovy_dum.svg"
-						alt=""
-					/>
 					<div
 						className="home__top-scroll"
 						data-value={t("scroll_to_explore")}
 					></div>
+					<video
+						className="home-top__video"
+						loop
+						playsInline
+						autoPlay
+						muted
+						src={video}
+					></video>
 				</div>
 				<AboutUs />
 				<Benefits />

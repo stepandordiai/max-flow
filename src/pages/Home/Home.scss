@@ -14,12 +14,23 @@
 
 .home__top {
 	position: relative;
-	min-height: calc(100svh - 95px);
+	min-height: 100svh;
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
 	width: 100%;
-	padding-bottom: 95px;
+	padding: 95px 25px 95px 25px;
+}
+
+.home-top__video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
 }
 
 .home__top-title {
@@ -78,15 +89,6 @@
 	}
 }
 
-.home__bg {
-	position: absolute;
-	width: 400px;
-	z-index: -1;
-	bottom: 0;
-	opacity: 0;
-	animation: animateHome 0.5s forwards;
-}
-
 .home__top-scroll {
 	position: absolute;
 	bottom: 0;
@@ -131,7 +133,6 @@
 
 @media screen and (width <= 896px) {
 	.home__top {
-		min-height: calc(100svh - 85px);
-		padding-bottom: 85px;
+		padding: 95px 25px 85px 25px;
 	}
 }

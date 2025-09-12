@@ -34,6 +34,18 @@ const Header = () => {
 			document.removeEventListener("scroll", handleHeaderProgress);
 		};
 	}, [pathname]);
+
+	useEffect(() => {
+		const header = document.querySelector(".header");
+
+		window.addEventListener("scroll", () => {
+			if (document.documentElement.scrollTop > 0) {
+				header.classList.add("header--active");
+			} else {
+				header.classList.remove("header--active");
+			}
+		});
+	}, []);
 	return (
 		<>
 			<header className="header">

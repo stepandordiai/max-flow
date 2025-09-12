@@ -9,7 +9,7 @@
 	flex-direction: column;
 	gap: 15px;
 	padding: 15px;
-	margin-top: 25px;
+	margin: 25px 25px 25px 25px;
 }
 
 .footer__top {
@@ -132,7 +132,7 @@
 
 @media screen and (width <= 896px) {
 	.footer {
-		margin-top: 15px;
+		margin: 15px 15px 15px 15px;
 	}
 
 	.footer__bottom {

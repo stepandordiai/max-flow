@@ -10,7 +10,7 @@ body {
 	font-family: "Outfit", sans-serif;
 	color: #fff;
 	background: var(--bg-clr);
-	padding: 95px 25px 25px 25px;
+	// padding: 95px 25px 25px 25px;
 }
 
 a {
@@ -19,6 +19,6 @@ a {
 
 @media screen and (width <= 896px) {
 	body {
-		padding: 85px 15px 15px 15px;
+		// padding: 85px 15px 15px 15px;
 	}
 }

@@ -9,9 +9,14 @@
 	min-height: 70px;
 	@include flex-between-center;
 	padding: 0 25px;
-	background: var(--bg-clr);
 	opacity: 0;
 	animation: animateHeader 0.3s forwards;
+	transition: all 0.3s;
+}
+
+.header--active {
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
 }
 
 @keyframes animateHeader {
