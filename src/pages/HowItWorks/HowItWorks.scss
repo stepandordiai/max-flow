@@ -1,5 +1,9 @@
 @use "./../../scss/mixins" as *;
 
+.how-it-works {
+	padding: 95px 25px 0 25px;
+}
+
 @keyframes animateHowItWorks {
 	to {
 		opacity: 1;
@@ -248,5 +252,11 @@
 @media screen and (width <= 830px) {
 	.how-it-works__img {
 		max-width: 100%;
+	}
+}
+
+@media screen and (width < 808px) {
+	.how-it-works {
+		padding: 85px 15px 0 15px;
 	}
 }

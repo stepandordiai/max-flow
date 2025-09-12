@@ -52,7 +52,7 @@ const HowItWorks = () => {
 			<Helmet>
 				<title>{t("how_it_works_title")} | MaxFlow 360&deg;</title>
 			</Helmet>
-			<main>
+			<main className="how-it-works">
 				<div className="how-it-works__top">
 					<div>
 						<h1 className="how-it-works__title">{t("how_it_works_title")}</h1>

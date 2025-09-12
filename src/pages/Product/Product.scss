@@ -1,6 +1,7 @@
 .product {
 	opacity: 0;
 	animation: animateProduct 0.5s forwards;
+	padding: 95px 25px 0px 25px;
 }
 
 @keyframes animateProduct {
@@ -126,5 +127,11 @@ h3 {
 			align-self: flex-end;
 			width: 100%;
 		}
+	}
+}
+
+@media screen and (width < 808px) {
+	.product {
+		padding: 85px 15px 0px 15px;
 	}
 }
