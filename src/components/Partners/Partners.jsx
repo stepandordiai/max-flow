@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import styles from "./Partners.module.scss";
+import "./Partners.scss";
 
 const Partners = () => {
 	const { t } = useTranslation();
@@ -61,12 +61,12 @@ const Partners = () => {
 	];
 
 	return (
-		<div className={styles["partners"]} id="partners">
-			<div className={styles["partners__title-container"]}>
-				<h2 className={styles["partners__title"]}>{t("partners.title")}</h2>
+		<div className="partners" id="partners">
+			<div className="partners__title-container">
+				<h2 className="partners__title">{t("partners.title")}</h2>
 			</div>
-			<div className={styles["partners__container"]}>
-				<div className={styles["partners__grid"]}>
+			<div className="partners__container">
+				<div className="partners__grid">
 					{partnersData.map((partner, index) => {
 						return (
 							<a key={index} href={partner.siteUrl} target="_blank">
