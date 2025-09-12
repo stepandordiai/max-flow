@@ -1,5 +1,5 @@
-import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
 import { useEffect, useState } from "react";
 import arrowDownIcon from "/icons/down-arrow.png";
 import "./Contact.scss";

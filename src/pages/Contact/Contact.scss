@@ -3,6 +3,7 @@
 .contact {
 	display: flex;
 	gap: 25px;
+	padding: 95px 25px 0 25px;
 	opacity: 0;
 	animation: animateContact 0.5s forwards;
 }
@@ -220,6 +221,12 @@ textarea {
 
 	.contact__form-wrapper {
 		min-height: calc(100svh - 100px);
+	}
+}
+
+@media screen and (width < 808px) {
+	.contact {
+		padding: 85px 15px 0 15px;
 	}
 }
 
