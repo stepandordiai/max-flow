@@ -8,9 +8,11 @@ const Menu = () => {
 
 	useEffect(() => {
 		const menuLinks = document.querySelectorAll(".menu__nav-link");
+		const header = document.querySelector(".header");
 
 		menuLinks.forEach((link) => {
 			link.addEventListener("click", () => {
+				header.classList.remove("header--active");
 				document
 					.querySelector(".burger-2")
 					.classList.remove("burger-2--active");
@@ -23,6 +25,7 @@ const Menu = () => {
 		});
 
 		document.querySelector(".menu__link").addEventListener("click", () => {
+			header.classList.remove("header--active");
 			document.querySelector(".burger-2").classList.remove("burger-2--active");
 
 			document.querySelector(".menu").classList.remove("menu--active");

@@ -2,6 +2,9 @@ import "./BurgerBtn.scss";
 
 const BurgerBtn = () => {
 	function toggleBurger2() {
+		const header = document.querySelector(".header");
+
+		header.classList.toggle("header--active");
 		document.querySelector(".burger-2").classList.toggle("burger-2--active");
 		document.querySelector(".menu").classList.toggle("menu--active");
 		document
