@@ -1,0 +1,67 @@
+.demo-banner {
+	position: relative;
+	background: #000;
+	color: #fff;
+	min-height: 200px;
+	padding: 15px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	width: 100%;
+
+	div {
+		text-align: end;
+		align-self: flex-end;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 15px;
+	}
+}
+
+.demo-banner__title {
+	font-size: 1.5rem !important;
+}
+
+.demo-banner__form {
+	display: flex;
+	column-gap: 3px;
+
+	button {
+		background: #fff;
+		color: #000;
+		padding: 0 10px;
+		border-radius: 5px;
+	}
+}
+
+.demo-banner__input {
+	padding: 10px;
+	border-radius: 5px;
+	transition: border 0.3s;
+}
+
+.white {
+	border: 3px solid rgba(255, 255, 255, 0.1);
+
+	&:focus {
+		border: 3px solid #fff;
+	}
+}
+
+.green {
+	border: 3px solid rgba(0, 255, 0, 0.5);
+
+	&:focus {
+		border: 3px solid #0f0;
+	}
+}
+
+.red {
+	border: 3px solid rgba(255, 0, 0, 0.5);
+
+	&:focus {
+		border: 3px solid #f00;
+	}
+}

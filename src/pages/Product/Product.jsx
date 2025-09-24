@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet-async";
+import DemoBanner from "../../components/DemoBanner/DemoBanner";
 import bg from "/bg3.svg";
 import "./Product.scss";
 
@@ -128,20 +129,7 @@ const Product = () => {
 						</ul>
 					</div>
 				</div>
-				<div className="product__demo">
-					<p className="contact-us__title">Vyzkoušejte si demo dashboardu</p>
-					<div>
-						<form className="product__demo-form" action="">
-							<input
-								className="product__demo-input"
-								type="text"
-								placeholder="example@company.com"
-							/>
-							<button type="submit">Send</button>
-						</form>
-						<p>Zadejte e-mail a pošleme vám přístup na 24 hodin.</p>
-					</div>
-				</div>
+				<DemoBanner />
 			</main>
 		</>
 	);

@@ -9,6 +9,7 @@ import Calculator from "../../components/Calculator/Calculator";
 import video from "/video.mp4";
 import macbookImg from "/macbook.png";
 import "./Home.scss";
+import DemoBanner from "../../components/DemoBanner/DemoBanner";
 
 const Home = () => {
 	const { t } = useTranslation();
@@ -74,23 +75,7 @@ const Home = () => {
 						Komplexní technologické centrum s MaxFlow Intelligence Systemem
 					</p>
 					<img src={macbookImg} alt="" loading="lazy" />
-					<div className="technology__demo">
-						<p className="contact-us__title">Vyzkoušejte si demo dashboardu</p>
-						<div>
-							<form
-								className="product__demo-form"
-								action="mailto:info@fvestavby.cz"
-							>
-								<input
-									className="product__demo-input"
-									type="email"
-									placeholder="example@company.com"
-								/>
-								<button type="submit">Send</button>
-							</form>
-							<p>Zadejte e-mail a pošleme vám přístup na 24 hodin.</p>
-						</div>
-					</div>
+					<DemoBanner />
 				</div>
 				<AboutUs />
 				<Benefits />
