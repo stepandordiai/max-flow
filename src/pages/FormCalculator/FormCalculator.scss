@@ -1,12 +1,15 @@
 @use "./../../scss/mixins" as *;
 
 .form-calculator {
+	margin: 95px 25px 0 25px;
+}
+
+.form-calculator-inner {
 	border: 3px dashed white;
 	padding: 15px;
 	border-radius: 10px;
 	@include flex-start-center;
 	flex-direction: column;
-	margin: 95px 25px 0 25px;
 }
 
 .form-calculator__title {

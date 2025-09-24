@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { useEffect, useState } from "react";
 import arrowDownIcon from "/icons/down-arrow.png";
 import "./Contact.scss";
+import Container from "../../components/Container/Container";
 
 const Contact = () => {
 	const { t } = useTranslation();
@@ -107,194 +108,201 @@ const Contact = () => {
 				<title>{t("contact_title")} | MaxFlow 360&deg;</title>
 			</Helmet>
 			<main className="contact">
-				<div className="contact__info">
-					<div>
-						<h1 className="contact__info-title">{t("contact.info")}</h1>
-						<p style={{ fontWeight: 300 }}>{t("contact.sec_info")}</p>
-					</div>
-					<div className="contact__info-details">
-						<div>
-							<p style={{ marginBottom: 5 }}>{t("contact.call_us")}</p>
-							<a
-								className="contact__info-details-link"
-								href="tel:+420728803703"
-							>
-								<i className="fa-solid fa-phone"></i>
-								<span>+420 728 803 703</span>
-							</a>
-						</div>
-						<div>
-							<p style={{ marginBottom: 5 }}>{t("contact.chat_to_us")}</p>
-							<a
-								className="contact__info-details-link"
-								href="mailto:info@fvestavby.cz"
-							>
-								<i className="fa-solid fa-envelope"></i>
-								<span>info@fvestavby.cz</span>
-							</a>
-						</div>
-						<div>
-							<p style={{ marginBottom: 5 }}>{t("contact.visit_us")}</p>
-							<a
-								className="contact__info-details-link"
-								href="https://maps.app.goo.gl/UBXCPbrrCNxUSXNY8"
-								target="_blank"
-							>
-								<i className="fa-solid fa-map-location-dot"></i>
-								<span>Pod Hroby 271 Kolín IV</span>
-							</a>
-						</div>
-						<div>
-							<p style={{ marginBottom: 5 }}>{t("contact.opening_hours")}</p>
-							<p style={{ fontWeight: 300 }}>
-								{t("contact.monday")} - {t("contact.saturday")}: 8:00 - 17:00
-							</p>
-						</div>
-					</div>
-					<div>
-						<p style={{ marginBottom: 5 }}>{t("contact.social_media")}</p>
-						<div className="contact__info-socials">
-							<a
-								className="contact__info-socials-link"
-								href="https://www.facebook.com/people/Fve-stavby/61576683235805/"
-								target="_blank"
-							>
-								<i className="fa-brands fa-facebook-f"></i>
-								<span>Facebook</span>
-							</a>
-							<a
-								className="contact__info-socials-link"
-								href="https://www.instagram.com/fvestavby/#"
-								target="_blank"
-							>
-								<i className="fa-brands fa-instagram"></i>
-								<span>Instagram</span>
-							</a>
-							<a
-								className="contact__info-socials-link"
-								href="https://www.tiktok.com/@fvestavby"
-								target="_blank"
-							>
-								<i className="fa-brands fa-tiktok"></i>
-								<span>TikTok</span>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div className="contact__form-wrapper">
-					<p className="contact__form-wrapper-title">Kontaktní formulář</p>
-					<form
-						action="https://formspree.io/f/mqalzwov"
-						method="post"
-						className="contact__form"
-					>
-						<div className="contact__form-container">
-							<div className="contact__form-input-container">
-								<label htmlFor="firstName">{t("contact.first_name")}</label>
-								<input
-									className="input js-input"
-									id="firstName"
-									name="firstName"
-									type="text"
-								/>
+				<Container>
+					<div className="contact-inner">
+						<div className="contact__info">
+							<div>
+								<h1 className="contact__info-title">{t("contact.info")}</h1>
+								<p style={{ fontWeight: 300 }}>{t("contact.sec_info")}</p>
 							</div>
-							<div className="contact__form-input-container">
-								<label htmlFor="lastName">{t("contact.last_name")}</label>
-								<input
-									className="input js-input"
-									id="lastName"
-									name="lastName"
-									type="text"
-								/>
+							<div className="contact__info-details">
+								<div>
+									<p style={{ marginBottom: 5 }}>{t("contact.call_us")}</p>
+									<a
+										className="contact__info-details-link"
+										href="tel:+420728803703"
+									>
+										<i className="fa-solid fa-phone"></i>
+										<span>+420 728 803 703</span>
+									</a>
+								</div>
+								<div>
+									<p style={{ marginBottom: 5 }}>{t("contact.chat_to_us")}</p>
+									<a
+										className="contact__info-details-link"
+										href="mailto:info@fvestavby.cz"
+									>
+										<i className="fa-solid fa-envelope"></i>
+										<span>info@fvestavby.cz</span>
+									</a>
+								</div>
+								<div>
+									<p style={{ marginBottom: 5 }}>{t("contact.visit_us")}</p>
+									<a
+										className="contact__info-details-link"
+										href="https://maps.app.goo.gl/UBXCPbrrCNxUSXNY8"
+										target="_blank"
+									>
+										<i className="fa-solid fa-map-location-dot"></i>
+										<span>Pod Hroby 271 Kolín IV</span>
+									</a>
+								</div>
+								<div>
+									<p style={{ marginBottom: 5 }}>
+										{t("contact.opening_hours")}
+									</p>
+									<p style={{ fontWeight: 300 }}>
+										{t("contact.monday")} - {t("contact.saturday")}: 8:00 -
+										17:00
+									</p>
+								</div>
+							</div>
+							<div>
+								<p style={{ marginBottom: 5 }}>{t("contact.social_media")}</p>
+								<div className="contact__info-socials">
+									<a
+										className="contact__info-socials-link"
+										href="https://www.facebook.com/people/Fve-stavby/61576683235805/"
+										target="_blank"
+									>
+										<i className="fa-brands fa-facebook-f"></i>
+										<span>Facebook</span>
+									</a>
+									<a
+										className="contact__info-socials-link"
+										href="https://www.instagram.com/fvestavby/#"
+										target="_blank"
+									>
+										<i className="fa-brands fa-instagram"></i>
+										<span>Instagram</span>
+									</a>
+									<a
+										className="contact__info-socials-link"
+										href="https://www.tiktok.com/@fvestavby"
+										target="_blank"
+									>
+										<i className="fa-brands fa-tiktok"></i>
+										<span>TikTok</span>
+									</a>
+								</div>
 							</div>
 						</div>
-						<div className="contact__form-input-container">
-							<label htmlFor="email">Email</label>
-							<input
-								className="input js-input"
-								id="email"
-								name="email"
-								type="email"
-							/>
-						</div>
-						<div className="contact__form-input-container">
-							<label htmlFor="tel">{t("contact.tel")}</label>
-
-							<div className="custom-input-container">
-								<div className="custom-select">
-									<button className="custom-select-btn">
-										<img
-											style={{ pointerEvents: "none" }}
-											className="custom-select-btn-flag"
-											width={20}
-											src={countriesData[0].flag}
-											alt=""
+						<div className="contact__form-wrapper">
+							<p className="contact__form-wrapper-title">Kontaktní formulář</p>
+							<form
+								action="https://formspree.io/f/mqalzwov"
+								method="post"
+								className="contact__form"
+							>
+								<div className="contact__form-container">
+									<div className="contact__form-input-container">
+										<label htmlFor="firstName">{t("contact.first_name")}</label>
+										<input
+											className="input js-input"
+											id="firstName"
+											name="firstName"
+											type="text"
 										/>
-										<span
-											style={{ pointerEvents: "none" }}
-											className="custom-select-btn-txt"
-										>
-											CZ
-										</span>
-										<img
-											style={{ pointerEvents: "none" }}
-											width={20}
-											src={arrowDownIcon}
-											alt=""
+									</div>
+									<div className="contact__form-input-container">
+										<label htmlFor="lastName">{t("contact.last_name")}</label>
+										<input
+											className="input js-input"
+											id="lastName"
+											name="lastName"
+											type="text"
 										/>
-									</button>
-									<div className="custom-select-dd">
-										{countriesData.map((country, index) => {
-											return (
-												<div
-													key={index}
-													style={{
-														display: "flex",
-														justifyContent: "center",
-														alignItems: "center",
-														gap: 5,
-													}}
-													className="custom-select-option"
-													data-value={country.name}
-													data-flag={country.flag}
-												>
-													<img
-														style={{ pointerEvents: "none" }}
-														width={20}
-														src={country.flag}
-														alt=""
-													/>
-													<span style={{ pointerEvents: "none" }}>
-														{country.name}
-													</span>
-												</div>
-											);
-										})}
 									</div>
 								</div>
-								<input
-									className="js-code-input custom-input"
-									id="tel"
-									value={inputValue}
-									onChange={(e) => handleCodeInputValue(e)}
-									type="tel"
-									name="tel"
-								/>
-							</div>
+								<div className="contact__form-input-container">
+									<label htmlFor="email">Email</label>
+									<input
+										className="input js-input"
+										id="email"
+										name="email"
+										type="email"
+									/>
+								</div>
+								<div className="contact__form-input-container">
+									<label htmlFor="tel">{t("contact.tel")}</label>
+
+									<div className="custom-input-container">
+										<div className="custom-select">
+											<button className="custom-select-btn">
+												<img
+													style={{ pointerEvents: "none" }}
+													className="custom-select-btn-flag"
+													width={20}
+													src={countriesData[0].flag}
+													alt=""
+												/>
+												<span
+													style={{ pointerEvents: "none" }}
+													className="custom-select-btn-txt"
+												>
+													CZ
+												</span>
+												<img
+													style={{ pointerEvents: "none" }}
+													width={20}
+													src={arrowDownIcon}
+													alt=""
+												/>
+											</button>
+											<div className="custom-select-dd">
+												{countriesData.map((country, index) => {
+													return (
+														<div
+															key={index}
+															style={{
+																display: "flex",
+																justifyContent: "center",
+																alignItems: "center",
+																gap: 5,
+															}}
+															className="custom-select-option"
+															data-value={country.name}
+															data-flag={country.flag}
+														>
+															<img
+																style={{ pointerEvents: "none" }}
+																width={20}
+																src={country.flag}
+																alt=""
+															/>
+															<span style={{ pointerEvents: "none" }}>
+																{country.name}
+															</span>
+														</div>
+													);
+												})}
+											</div>
+										</div>
+										<input
+											className="js-code-input custom-input"
+											id="tel"
+											value={inputValue}
+											onChange={(e) => handleCodeInputValue(e)}
+											type="tel"
+											name="tel"
+										/>
+									</div>
+								</div>
+								<div className="contact__form-input-container area-container">
+									<label htmlFor="message">{t("contact.message")}</label>
+									<textarea
+										className="input js-input"
+										name="message"
+										id="message"
+									></textarea>
+								</div>
+								<button className="contact__form-btn" type="submit">
+									{t("contact.send")}
+								</button>
+							</form>
 						</div>
-						<div className="contact__form-input-container area-container">
-							<label htmlFor="message">{t("contact.message")}</label>
-							<textarea
-								className="input js-input"
-								name="message"
-								id="message"
-							></textarea>
-						</div>
-						<button className="contact__form-btn" type="submit">
-							{t("contact.send")}
-						</button>
-					</form>
-				</div>
+					</div>
+				</Container>
 			</main>
 		</>
 	);

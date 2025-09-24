@@ -1,8 +1,6 @@
 @use "./../../scss/mixins" as *;
 
 .contact {
-	display: flex;
-	gap: 25px;
 	padding: 95px 25px 0 25px;
 	opacity: 0;
 	animation: animateContact 0.5s forwards;
@@ -12,6 +10,11 @@
 	to {
 		opacity: 1;
 	}
+}
+
+.contact-inner {
+	display: flex;
+	gap: 25px;
 }
 
 .contact__info {
@@ -231,7 +234,7 @@ textarea {
 }
 
 @media screen and (width <= 700px) {
-	.contact {
+	.contact-inner {
 		flex-direction: column;
 	}
 

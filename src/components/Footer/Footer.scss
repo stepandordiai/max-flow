@@ -4,12 +4,15 @@
 	background: #fff;
 	border-radius: 10px;
 	color: #000;
-	display: flex;
-	justify-content: space-between;
-	flex-direction: column;
 	gap: 15px;
 	padding: 15px;
 	margin: 25px 25px 25px 25px;
+}
+
+.footer-inner {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
 }
 
 .footer__top {
