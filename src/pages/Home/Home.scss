@@ -131,6 +131,53 @@
 	}
 }
 
+.technology {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 25px;
+	padding: 0 15px;
+
+	img {
+		width: 100%;
+		max-width: 800px;
+	}
+}
+
+.technology__title {
+	font-size: clamp(2rem, 4vw, 4rem) !important;
+	font-weight: 600;
+	align-self: flex-start;
+}
+
+.technology__desc {
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.technology__demo {
+	width: 100%;
+	position: relative;
+	background: #000;
+	color: #fff;
+	min-height: 200px;
+	padding: 15px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+
+	div {
+		text-align: end;
+		align-self: flex-end;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 15px;
+	}
+}
+
 @media screen and (width < 808px) {
 	.home__top {
 		padding: 95px 15px 85px 15px;

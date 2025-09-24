@@ -7,6 +7,7 @@ import Benefits from "../../components/Benefits/Benefits";
 import AboutUs from "../../components/AboutUs/AboutUs";
 import Calculator from "../../components/Calculator/Calculator";
 import video from "/video.mp4";
+import macbookImg from "/macbook.png";
 import "./Home.scss";
 
 const Home = () => {
@@ -66,6 +67,30 @@ const Home = () => {
 						muted
 						src={video}
 					></video>
+				</div>
+				<div className="technology">
+					<h2 className="technology__title">Technologie</h2>
+					<p className="technology__desc">
+						Komplexní technologické centrum s MaxFlow Intelligence Systemem
+					</p>
+					<img src={macbookImg} alt="" loading="lazy" />
+					<div className="technology__demo">
+						<p className="contact-us__title">Vyzkoušejte si demo dashboardu</p>
+						<div>
+							<form
+								className="product__demo-form"
+								action="mailto:info@fvestavby.cz"
+							>
+								<input
+									className="product__demo-input"
+									type="email"
+									placeholder="example@company.com"
+								/>
+								<button type="submit">Send</button>
+							</form>
+							<p>Zadejte e-mail a pošleme vám přístup na 24 hodin.</p>
+						</div>
+					</div>
 				</div>
 				<AboutUs />
 				<Benefits />
