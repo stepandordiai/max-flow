@@ -1,15 +1,15 @@
 @use "./../../scss/mixins" as *;
 
-.home {
-	display: flex;
-	flex-direction: column;
-	row-gap: 70px;
-}
-
 @keyframes animateHome {
 	to {
 		opacity: 1;
 	}
+}
+
+.home-inner {
+	display: flex;
+	flex-direction: column;
+	row-gap: 70px;
 }
 
 .home__top {
@@ -136,7 +136,7 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	gap: 25px;
+	row-gap: 15px;
 	padding: 0 15px;
 
 	img {
@@ -147,8 +147,9 @@
 
 .technology__title {
 	font-size: clamp(2rem, 4vw, 4rem) !important;
-	font-weight: 600;
+	font-weight: 500;
 	align-self: flex-start;
+	padding: 25px 0;
 }
 
 .technology__desc {
@@ -181,5 +182,9 @@
 @media screen and (width < 808px) {
 	.home__top {
 		padding: 95px 15px 85px 15px;
+	}
+
+	.technology__title {
+		padding: 15px 0;
 	}
 }
