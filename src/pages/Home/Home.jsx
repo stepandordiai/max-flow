@@ -74,7 +74,7 @@ const Home = () => {
 								src={video}
 							></video>
 						</div>
-						<div className="technology">
+						<div className="technology" id="technology">
 							<h2 className="technology__title">Technologie</h2>
 							<p className="technology__desc">
 								Komplexní technologické centrum s MaxFlow Intelligence Systemem

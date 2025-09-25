@@ -101,6 +101,13 @@ const Footer = () => {
 							</button>
 							<div className="footer__nav-wrapper">
 								<nav className="footer__nav">
+									<HashLink
+										to="/#technology"
+										smooth
+										className="footer__nav-link"
+									>
+										Technologie
+									</HashLink>
 									<HashLink to="/#about-us" smooth className="footer__nav-link">
 										MaxFlow 360° {t("about_us.title")}
 									</HashLink>
@@ -218,7 +225,7 @@ const Footer = () => {
 							<p>{t("footer.all_rights_reserved")}</p>
 						</div>
 						<p className="footer__creator">
-							Site by{" "}
+							{t("footer.site_by")}{" "}
 							<a
 								className="footer__creator-link"
 								href="https://heeeyooo.studio/"

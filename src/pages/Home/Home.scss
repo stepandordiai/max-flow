@@ -137,7 +137,8 @@
 	align-items: center;
 	flex-direction: column;
 	row-gap: 15px;
-	padding: 0 15px;
+	padding: 0 25px;
+	scroll-margin-top: 70px;
 
 	img {
 		width: 100%;
@@ -182,6 +183,10 @@
 @media screen and (width < 808px) {
 	.home__top {
 		padding: 95px 15px 85px 15px;
+	}
+
+	.technology {
+		padding: 0 15px;
 	}
 
 	.technology__title {

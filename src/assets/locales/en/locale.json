@@ -122,6 +122,7 @@
 
 	"footer": {
 		"navigation": "Navigation",
-		"all_rights_reserved": "All rights reserved"
+		"all_rights_reserved": "All rights reserved",
+		"site_by": "Site by"
 	}
 }
