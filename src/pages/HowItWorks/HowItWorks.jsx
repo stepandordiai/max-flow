@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import ContactUs from "../../components/ContactUs/ContactUs";
 import { HashLink } from "react-router-hash-link";
-import animation from "/audit.png";
-import animation2 from "/accord.png";
-import animation3 from "/maintenance.png";
-import animation4 from "/piggy-bank.png";
+import Container from "../../components/Container/Container";
+import animation from "/icons/audit.png";
+import animation2 from "/icons/accord.png";
+import animation3 from "/icons/maintenance.png";
+import animation4 from "/icons/piggy-bank.png";
 import img from "/img.png";
 import "./HowItWorks.scss";
-import Container from "../../components/Container/Container";
 
 const HowItWorks = () => {
 	const { t } = useTranslation();
@@ -102,13 +102,7 @@ const HowItWorks = () => {
 							<div className="process__card process__card1">
 								<p>{t("process.card1_title")}</p>
 								<div style={{ alignSelf: "flex-end", textAlign: "end" }}>
-									<img
-										width={100}
-										height={100}
-										src={animation}
-										alt=""
-										loading="lazy"
-									/>
+									<img width={100} height={100} src={animation} alt="" />
 									<div style={{ marginTop: 10 }}>
 										{t("process.card1_desc")}.
 									</div>
@@ -117,13 +111,7 @@ const HowItWorks = () => {
 							<div className="process__card process__card2">
 								<p>{t("process.card2_title")}</p>
 								<div style={{ alignSelf: "flex-end", textAlign: "end" }}>
-									<img
-										width={100}
-										height={100}
-										src={animation2}
-										alt=""
-										loading="lazy"
-									/>
+									<img width={100} height={100} src={animation2} alt="" />
 									<div style={{ marginTop: 10 }}>
 										{t("process.card2_desc")}.
 									</div>
@@ -132,13 +120,7 @@ const HowItWorks = () => {
 							<div className="process__card process__card3">
 								<p>{t("process.card3_title")}</p>
 								<div style={{ alignSelf: "flex-end", textAlign: "end" }}>
-									<img
-										width={100}
-										height={100}
-										src={animation3}
-										alt=""
-										loading="lazy"
-									/>
+									<img width={100} height={100} src={animation3} alt="" />
 									<div style={{ marginTop: 10 }}>
 										{t("process.card3_desc")}.
 									</div>
@@ -147,13 +129,7 @@ const HowItWorks = () => {
 							<div className="process__card process__card4">
 								<p>{t("process.card4_title")}</p>
 								<div style={{ alignSelf: "flex-end", textAlign: "end" }}>
-									<img
-										width={100}
-										height={100}
-										src={animation4}
-										alt=""
-										loading="lazy"
-									/>
+									<img width={100} height={100} src={animation4} alt="" />
 									<div style={{ marginTop: 10 }}>
 										{t("process.card4_desc")}.
 									</div>

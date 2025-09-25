@@ -6,11 +6,11 @@ import Partners from "../../components/Partners/Partners";
 import Benefits from "../../components/Benefits/Benefits";
 import AboutUs from "../../components/AboutUs/AboutUs";
 import Calculator from "../../components/Calculator/Calculator";
+import DemoBanner from "../../components/DemoBanner/DemoBanner";
+import Container from "../../components/Container/Container";
 import video from "/video.mp4";
 import macbookImg from "/macbook.png";
 import "./Home.scss";
-import DemoBanner from "../../components/DemoBanner/DemoBanner";
-import Container from "../../components/Container/Container";
 
 const Home = () => {
 	const { t } = useTranslation();
