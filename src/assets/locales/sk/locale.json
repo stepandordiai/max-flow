@@ -1,6 +1,6 @@
 {
 	"home": "Úvod",
-	"product": "Produkt",
+	"product_title": "Produkt",
 	"how_it_works_title": "Ako to funguje",
 	"financing": "Financovanie",
 	"contact_title": "Kontakt",
@@ -21,6 +21,32 @@
 
 	"partners": {
 		"title": "Naši partneri"
+	},
+
+	"product": {
+		"section1_title": "MaxFlow Inteligentný systém",
+		"section1_desc": "Konečne spravodlivé rozdelenie energií vo vašom dome – bez hádok a papierovania.",
+		"section2_title": "Riešenie",
+		"section2_item1": "MaxFlow 360° automaticky meria a rozdeľuje energiu na základe reálnej spotreby každého bytu.",
+		"section2_item2": "Naša cloudová platforma vám pripraví vyúčtovanie na pár kliknutí.",
+		"section2_item3": "Postaráme sa o celý proces za vás – od dotácií až po inštaláciu.",
+		"section3_title": "Prípadová štúdia",
+		"section3_desc": "Výsledky, ktoré hovoria samy za seba",
+		"section3_item1_title": "Pred zavedením MaxFlow",
+		"section3_item1_item1": "Platíte vysoké zálohy a neviete, kto energiu skutočne spotrebováva.",
+		"section3_item1_item2": "Susedia sa hádajú, komu účtovať prebytky.",
+		"section3_item1_item3": "Bojíte sa, že inštalácia FVE bude príliš zložitá?",
+		"section3_item2_title": "Po zavedení MaxFlow",
+		"section3_item2_item1": "Zníženie prebytkov energie o 65 %",
+		"section3_item2_item2": "Priemerná mesačná úspora 28 % na bežných účtoch za energiu",
+		"section3_item2_item3": "Návratnosť ich solárneho systému sa zlepšila z 11 na len 6,5 roka",
+		"section3_item2_item4": "Transparentné rozdelenie energie viedlo k menšiemu počtu sťažností a zvýšeniu spokojnosti obyvateľov",
+		"section4_title": "MaxFlow 360° cloudová platforma",
+		"section4_desc": "Všetky údaje o energii prehľadne na jednom mieste – kedykoľvek a kdekoľvek.",
+		"section4_item_title": "Vlastnosti",
+		"section4_item_item1": "Živý monitoring – Vidíte, koľko práve teraz vyrábate a spotrebúvate.",
+		"section4_item_item2": "AI predikcia – Systém vás upozorní, kedy predávať prebytky za najvýhodnejšiu cenu.",
+		"section4_item_item3": "Mobilná aplikácia – Správa energie z telefónu."
 	},
 
 	"how_it_works": {

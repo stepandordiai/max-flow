@@ -1,6 +1,6 @@
 {
 	"home": "Úvod",
-	"product": "Produkt",
+	"product_title": "Produkt",
 	"how_it_works_title": "Jak to funguje",
 	"financing": "Financování",
 	"contact_title": "Kontakt",
@@ -37,6 +37,32 @@
 
 	"partners": {
 		"title": "Naši partneři"
+	},
+
+	"product": {
+		"section1_title": "MaxFlow Inteligentní systém",
+		"section1_desc": "Konečně spravedlivé rozdělení energií ve vašem domě - bez hádek a papírování",
+		"section2_title": "Řešení",
+		"section2_item1": "MaxFlow 360 ° automaticky měří a rozděluje energii na základě reálné spotřeby každého bytu.",
+		"section2_item2": "Naše cloudová platforma vám připraví vyúčtování na pár kliknutí.",
+		"section2_item3": "Postaráme se o celý proces za vás – od dotací po instalaci.",
+		"section3_title": "Případová studie",
+		"section3_desc": "Výsledky, které mluví samy za sebe",
+		"section3_item1_title": "Před zavedením MaxFlow",
+		"section3_item1_item1": "Platíte vysoké zálohy a nevíte, kdo energii reálně spotřebovává",
+		"section3_item1_item2": "Sousedi se hádají, komu účtovat přebytky",
+		"section3_item1_item3": "Bojíte se, že instalace FVE bude příliš složitá",
+		"section3_item2_title": "Po zavedení MaxFlow",
+		"section3_item2_item1": "Snížení přebytků energie o 65 %",
+		"section3_item2_item2": "Průměrná měsíční úspora 28 % na běžných účtech za energii",
+		"section3_item2_item3": "Návratnost jejich solárního systému se zlepšila z 11 na pouhých 6,5 roku",
+		"section3_item2_item4": "Transparentní rozdělení energie vedlo k menšímu počtu stížností a zvýšení spokojenosti obyvatel",
+		"section4_title": "MaxFlow 360° cloudová platforma",
+		"section4_desc": "Všechny údaje o energii přehledně na jednom místě – kdykoli a kdekoli",
+		"section4_item_title": "Vlastnosti",
+		"section4_item_item1": "Živý monitoring - Vidíte, kolik právě teď vyrábíte a spotřebováváte.",
+		"section4_item_item2": "AI předpověď - Systém vás upozorní, kdy prodávat přebytky za nejvýhodnější cenu",
+		"section4_item_item3": "Mobilní aplikace - Správa energie z telefonu."
 	},
 
 	"how_it_works": {

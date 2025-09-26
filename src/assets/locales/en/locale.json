@@ -1,6 +1,6 @@
 {
 	"home": "Home",
-	"product": "Product",
+	"product_title": "Product",
 	"how_it_works_title": "How it works",
 	"financing": "Financing",
 	"contact_title": "Contact",
@@ -21,6 +21,32 @@
 
 	"partners": {
 		"title": "Our partners"
+	},
+
+	"product": {
+		"section1_title": "MaxFlow Intelligent System",
+		"section1_desc": "Finally, a fair distribution of energy in your home – without arguments and paperwork.",
+		"section2_title": "Solution",
+		"section2_item1": "MaxFlow 360° automatically measures and distributes energy based on the actual consumption of each apartment.",
+		"section2_item2": "Our cloud platform prepares your billing in just a few clicks.",
+		"section2_item3": "We take care of the entire process for you – from subsidies to installation.",
+		"section3_title": "Case Study",
+		"section3_desc": "Results that speak for themselves",
+		"section3_item1_title": "Before implementing MaxFlow",
+		"section3_item1_item1": "You pay high advance bills and don’t know who is actually consuming the energy.",
+		"section3_item1_item2": "Neighbors argue over who should be billed for the surplus.",
+		"section3_item1_item3": "Are you afraid that installing a PV system will be too complicated?",
+		"section3_item2_title": "After implementing MaxFlow",
+		"section3_item2_item1": "Reduced energy overflow by 65%",
+		"section3_item2_item2": "Average monthly savings of 28% on common energy bills",
+		"section3_item2_item3": "ROI on their solar system improved from 11 to just 6.5 years",
+		"section3_item2_item4": "Transparent energy allocation led to fewer complaints and improved resident satisfaction",
+		"section4_title": "MaxFlow 360° Cloud Platform",
+		"section4_desc": "All your energy data clearly in one place – anytime, anywhere.",
+		"section4_item_title": "Properties",
+		"section4_item_item1": "Live monitoring – See how much you are currently producing and consuming.",
+		"section4_item_item2": "AI Forecast – The system alerts you when to sell surpluses at the best price.",
+		"section4_item_item3": "Mobile App – Manage your energy from your phone."
 	},
 
 	"how_it_works": {
