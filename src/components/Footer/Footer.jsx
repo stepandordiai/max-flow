@@ -2,8 +2,8 @@ import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
-import "./Footer.scss";
 import Container from "../Container/Container";
+import "./Footer.scss";
 
 const Footer = () => {
 	const { t } = useTranslation();
@@ -65,7 +65,7 @@ const Footer = () => {
 										}
 										to="/product"
 									>
-										{t("product")}
+										{t("product_title")}
 									</NavLink>
 									<NavLink
 										className={({ isActive }) =>
@@ -133,7 +133,7 @@ const Footer = () => {
 						</div>
 						<div className="footer__nav-container">
 							<button className="footer__nav-btn">
-								<span className="footer__nav-title">{t("product")}</span>
+								<span className="footer__nav-title">{t("product_title")}</span>
 								<span className="footer__nav-btn-icon"></span>
 							</button>
 							<div className="footer__nav-wrapper">
@@ -143,14 +143,28 @@ const Footer = () => {
 										smooth
 										className="footer__nav-link"
 									>
-										Why MaxFlow 360°
+										{t("product.section1_title")}
 									</HashLink>
 									<HashLink
 										to="/product#product-section-2"
 										smooth
 										className="footer__nav-link"
 									>
-										MaxFlow 360° Cloud Platform
+										{t("product.section2_title")}
+									</HashLink>
+									<HashLink
+										to="/product#product-section-3"
+										smooth
+										className="footer__nav-link"
+									>
+										{t("product.section3_title")}
+									</HashLink>
+									<HashLink
+										to="/product#product-section-4"
+										smooth
+										className="footer__nav-link"
+									>
+										{t("product.section4_title")}
 									</HashLink>
 								</div>
 							</div>
