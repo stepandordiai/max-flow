@@ -13,8 +13,25 @@ const Header = () => {
 
 	const [isMenuActive, setIsMenuActive] = useState(false);
 
+	// TODO:
+	useEffect(() => {
+		setIsMenuActive(false);
+	}, [pathname, setIsMenuActive]);
+
+	// TODO:
+	useEffect(() => {
+		const handleKeyDown = (e) => {
+			if (e.key === "Escape") setIsMenuActive(false);
+		};
+		document.addEventListener("keydown", handleKeyDown);
+		return () => document.removeEventListener("keydown", handleKeyDown);
+	}, []);
+
 	const inactiveLink = "header__nav-link";
 	const activeLink = "header__nav-link header__nav-link--active";
+
+	const inactiveMenuLink = "menu__nav-link";
+	const activeMenuLink = "menu__nav-link menu__nav-link--active";
 
 	useEffect(() => {
 		let positionHeight = 0;
@@ -53,28 +70,16 @@ const Header = () => {
 		setIsMenuActive((prev) => !prev);
 	}
 
-	useEffect(() => {
-		const menuLinks = document.querySelectorAll(".menu__nav-link");
-
-		menuLinks.forEach((link) => {
-			link.addEventListener("click", () => {
-				setIsMenuActive(false);
-			});
-		});
-
-		document.querySelector(".menu__link").addEventListener("click", () => {
-			setIsMenuActive(false);
-		});
-	}, []);
-
-	const inactiveMenuLink = "menu__nav-link";
-	const activeMenuLink = "menu__nav-link menu__nav-link--active";
 	return (
 		<>
 			<header className={isMenuActive ? "header header--active" : "header"}>
 				<Container>
 					<div className="header-inner">
-						<NavLink className="header__logo" to="/">
+						<NavLink
+							onClick={() => setIsMenuActive(false)}
+							className="header__logo"
+							to="/"
+						>
 							<img src={logo} width={25} height={25} alt="" />
 							<span>MaxFlow 360&deg;</span>
 						</NavLink>
@@ -93,7 +98,7 @@ const Header = () => {
 									isActive ? activeLink : inactiveLink
 								}
 							>
-								{t("product")}
+								{t("product_title")}
 							</NavLink>
 							<NavLink
 								to="/how-it-works"
@@ -155,6 +160,7 @@ const Header = () => {
 				>
 					<nav className="menu__nav">
 						<NavLink
+							onClick={() => setIsMenuActive(false)}
 							className={({ isActive }) =>
 								isActive ? activeMenuLink : inactiveMenuLink
 							}
@@ -163,14 +169,16 @@ const Header = () => {
 							{t("home")}
 						</NavLink>
 						<NavLink
+							onClick={() => setIsMenuActive(false)}
 							className={({ isActive }) =>
 								isActive ? activeMenuLink : inactiveMenuLink
 							}
 							to={"/product"}
 						>
-							{t("product")}
+							{t("product_title")}
 						</NavLink>
 						<NavLink
+							onClick={() => setIsMenuActive(false)}
 							className={({ isActive }) =>
 								isActive ? activeMenuLink : inactiveMenuLink
 							}
@@ -179,6 +187,7 @@ const Header = () => {
 							{t("how_it_works_title")}
 						</NavLink>
 						<NavLink
+							onClick={() => setIsMenuActive(false)}
 							className={({ isActive }) =>
 								isActive ? activeMenuLink : inactiveMenuLink
 							}
@@ -187,6 +196,7 @@ const Header = () => {
 							{t("financing")}
 						</NavLink>
 						<NavLink
+							onClick={() => setIsMenuActive(false)}
 							className={({ isActive }) =>
 								isActive ? activeMenuLink : inactiveMenuLink
 							}
@@ -195,7 +205,11 @@ const Header = () => {
 							{t("contact_title")}
 						</NavLink>
 					</nav>
-					<NavLink className="menu__link" to="/form-calculator">
+					<NavLink
+						onClick={() => setIsMenuActive(false)}
+						className="menu__link"
+						to="/form-calculator"
+					>
 						<span>{t("want_a_quote")}</span>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
