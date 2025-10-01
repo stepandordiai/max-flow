@@ -239,7 +239,7 @@ const Footer = () => {
 							<p>{t("footer.all_rights_reserved")}</p>
 						</div>
 						<p className="footer__creator">
-							{t("footer.site_by")}{" "}
+							Website created by{" "}
 							<a
 								className="footer__creator-link"
 								href="https://heeeyooo.studio/"
