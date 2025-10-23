@@ -4,7 +4,6 @@ import "./DemoBanner.scss";
 const DemoBanner = () => {
 	const [email, setEmail] = useState("");
 
-	// TODO:
 	const checkEmail = () => {
 		if (email === "") return "white";
 		if (email && email.includes("@")) return "green";

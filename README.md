@@ -1,3 +1,5 @@
 # MaxFlow
 
-<img src="./public/screenshot/max-flow-ss-v3-c.png" alt="">
+June 2025
+
+![MaxFlow 360° hero screenshot](./public/screenshot/max-flow-ss-v3-c.png)

@@ -3,8 +3,8 @@ import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 import Range from "../../components/Range/Range";
 import Checkbox from "../../components/Checkbox/Checkbox";
-import "./FormCalculator.scss";
 import Container from "../../components/Container/Container";
+import "./FormCalculator.scss";
 
 const FormCalculator = () => {
 	const { t } = useTranslation();

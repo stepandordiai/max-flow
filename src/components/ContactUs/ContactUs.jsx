@@ -6,6 +6,7 @@ import "./ContactUs.scss";
 const ContactUs = ({ children }) => {
 	const navigate = useNavigate();
 
+	// FIXME:
 	useEffect(() => {
 		const work = document.querySelector(".contact-us");
 		let element = null;

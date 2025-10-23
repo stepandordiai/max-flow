@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Facebook",
+		"url": "https://www.facebook.com/profile.php?id=61576683235805",
+		"logoImg": "fa-brands fa-facebook-f"
+	},
+	{
+		"name": "Instagram",
+		"url": "https://www.instagram.com/fvestavby/",
+		"logoImg": "fa-brands fa-instagram"
+	},
+	{
+		"name": "TikTok",
+		"url": "https://www.tiktok.com/@fvestavby",
+		"logoImg": "fa-brands fa-tiktok"
+	}
+]

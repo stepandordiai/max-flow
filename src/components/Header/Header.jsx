@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import navLinksData from "./../../data/nav-links-data.json";
 import LngSelect from "../LngSelect/LngSelect";
 import Container from "../Container/Container";
 import logo from "/max-flow-logo-v1.png";
@@ -12,58 +13,48 @@ const Header = () => {
 	const { pathname } = useLocation();
 
 	const [isMenuActive, setIsMenuActive] = useState(false);
+	const [headerBlur, setHeaderBlur] = useState(false);
+	const [calcScrollHeight, setCalcScrollHeight] = useState(0);
 
-	// TODO:
+	// FIXME:
 	useEffect(() => {
 		setIsMenuActive(false);
 	}, [pathname, setIsMenuActive]);
 
-	// TODO:
 	useEffect(() => {
-		const handleKeyDown = (e) => {
-			if (e.key === "Escape") setIsMenuActive(false);
-		};
-		document.addEventListener("keydown", handleKeyDown);
-		return () => document.removeEventListener("keydown", handleKeyDown);
-	}, []);
-
-	const inactiveLink = "header__nav-link";
-	const activeLink = "header__nav-link header__nav-link--active";
-
-	const inactiveMenuLink = "menu__nav-link";
-	const activeMenuLink = "menu__nav-link menu__nav-link--active";
-
-	useEffect(() => {
-		let positionHeight = 0;
-		const handleHeaderProgress = () => {
-			const scrollHeight = document.documentElement.scrollHeight;
+		const handleProgressBar = () => {
+			const pageHeight = document.documentElement.scrollHeight;
 			const windowHeight = document.documentElement.clientHeight;
-			const calcHeight = scrollHeight - windowHeight;
+			const calcHeight = pageHeight - windowHeight;
 			const scrollTop = document.documentElement.scrollTop;
-			positionHeight = Math.min((scrollTop * 100) / calcHeight, 100);
-			const progressBar = document.querySelector(
-				".header__progress-divider-inner"
-			);
-			progressBar.style.width = `${positionHeight}%`;
+			setCalcScrollHeight(Math.min((scrollTop * 100) / calcHeight, 100));
 		};
 
-		document.addEventListener("scroll", handleHeaderProgress);
+		document.addEventListener("scroll", handleProgressBar);
 
-		return () => {
-			document.removeEventListener("scroll", handleHeaderProgress);
-		};
+		return () => document.removeEventListener("scroll", handleProgressBar);
 	}, [pathname]);
 
 	useEffect(() => {
-		const header = document.querySelector(".header");
-
-		window.addEventListener("scroll", () => {
+		const handleHeaderOnScroll = () => {
 			if (document.documentElement.scrollTop > 0) {
-				header.classList.add("header--active");
+				setHeaderBlur(true);
 			} else {
-				header.classList.remove("header--active");
+				setHeaderBlur(false);
 			}
-		});
+		};
+
+		const closeMenuOnEsc = (e) => {
+			if (e.key === "Escape") setIsMenuActive(false);
+		};
+
+		window.addEventListener("scroll", handleHeaderOnScroll);
+		document.addEventListener("keydown", closeMenuOnEsc);
+
+		return () => {
+			window.removeEventListener("scroll", handleHeaderOnScroll);
+			document.removeEventListener("keydown", closeMenuOnEsc);
+		};
 	}, []);
 
 	function toggleBurgerBtn() {
@@ -72,7 +63,11 @@ const Header = () => {
 
 	return (
 		<>
-			<header className={isMenuActive ? "header header--active" : "header"}>
+			<header
+				className={`header ${
+					isMenuActive || headerBlur ? "header--active" : ""
+				}`}
+			>
 				<Container>
 					<div className="header-inner">
 						<NavLink
@@ -84,46 +79,21 @@ const Header = () => {
 							<span>MaxFlow 360&deg;</span>
 						</NavLink>
 						<nav className="header__nav">
-							<NavLink
-								to="/"
-								className={({ isActive }) =>
-									isActive ? activeLink : inactiveLink
-								}
-							>
-								{t("home")}
-							</NavLink>
-							<NavLink
-								to="/product"
-								className={({ isActive }) =>
-									isActive ? activeLink : inactiveLink
-								}
-							>
-								{t("product_title")}
-							</NavLink>
-							<NavLink
-								to="/how-it-works"
-								className={({ isActive }) =>
-									isActive ? activeLink : inactiveLink
-								}
-							>
-								{t("how_it_works_title")}
-							</NavLink>
-							<NavLink
-								to="/financing"
-								className={({ isActive }) =>
-									isActive ? activeLink : inactiveLink
-								}
-							>
-								{t("financing")}
-							</NavLink>
-							<NavLink
-								to="/contact"
-								className={({ isActive }) =>
-									isActive ? activeLink : inactiveLink
-								}
-							>
-								{t("contact_title")}
-							</NavLink>
+							{navLinksData.map((link, index) => {
+								return (
+									<NavLink
+										key={index}
+										className={({ isActive }) =>
+											`header__nav-link ${
+												isActive ? "header__nav-link--active" : ""
+											}`
+										}
+										to={link.path}
+									>
+										{t(link.name)}
+									</NavLink>
+								);
+							})}
 						</nav>
 						<div className="header__right-container">
 							<LngSelect />
@@ -147,7 +117,10 @@ const Header = () => {
 							></div>
 						</div>
 						<div className="header__progress-divider">
-							<div className="header__progress-divider-inner"></div>
+							<div
+								style={{ width: `${calcScrollHeight}%` }}
+								className="header__progress-divider-inner"
+							></div>
 						</div>
 					</div>
 				</Container>
@@ -159,51 +132,20 @@ const Header = () => {
 					}
 				>
 					<nav className="menu__nav">
-						<NavLink
-							onClick={() => setIsMenuActive(false)}
-							className={({ isActive }) =>
-								isActive ? activeMenuLink : inactiveMenuLink
-							}
-							to={"/"}
-						>
-							{t("home")}
-						</NavLink>
-						<NavLink
-							onClick={() => setIsMenuActive(false)}
-							className={({ isActive }) =>
-								isActive ? activeMenuLink : inactiveMenuLink
-							}
-							to={"/product"}
-						>
-							{t("product_title")}
-						</NavLink>
-						<NavLink
-							onClick={() => setIsMenuActive(false)}
-							className={({ isActive }) =>
-								isActive ? activeMenuLink : inactiveMenuLink
-							}
-							to={"/how-it-works"}
-						>
-							{t("how_it_works_title")}
-						</NavLink>
-						<NavLink
-							onClick={() => setIsMenuActive(false)}
-							className={({ isActive }) =>
-								isActive ? activeMenuLink : inactiveMenuLink
-							}
-							to={"/financing"}
-						>
-							{t("financing")}
-						</NavLink>
-						<NavLink
-							onClick={() => setIsMenuActive(false)}
-							className={({ isActive }) =>
-								isActive ? activeMenuLink : inactiveMenuLink
-							}
-							to={"/contact"}
-						>
-							{t("contact_title")}
-						</NavLink>
+						{navLinksData.map((link, index) => {
+							return (
+								<NavLink
+									key={index}
+									onClick={() => setIsMenuActive(false)}
+									className={({ isActive }) =>
+										`menu__nav-link ${isActive ? "menu__nav-link--active" : ""}`
+									}
+									to={link.path}
+								>
+									{t(link.name)}
+								</NavLink>
+							);
+						})}
 					</nav>
 					<NavLink
 						onClick={() => setIsMenuActive(false)}

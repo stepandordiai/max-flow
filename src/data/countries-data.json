@@ -1,0 +1,17 @@
+[
+	{
+		"name": "CZ",
+		"code": "+420",
+		"flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/1280px-Flag_of_the_Czech_Republic.svg.png"
+	},
+	{
+		"name": "UA",
+		"code": "+380",
+		"flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/500px-Flag_of_Ukraine.svg.png"
+	},
+	{
+		"name": "SK",
+		"code": "+421",
+		"flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/500px-Flag_of_Slovakia.svg.png"
+	}
+]

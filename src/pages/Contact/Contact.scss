@@ -188,6 +188,15 @@ textarea {
 	border-right: 3px solid rgba(255, 255, 255, 0.1);
 }
 
+.custom-select__btn-icon {
+	pointer-events: none;
+	transition: transform 0.3s;
+}
+
+.custom-select__btn-icon--active {
+	transform: rotateX(180deg);
+}
+
 .custom-select-dd {
 	width: max-content;
 	opacity: 0;

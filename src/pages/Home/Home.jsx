@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { NavLink } from "react-router-dom";
-import { useEffect } from "react";
 import Partners from "../../components/Partners/Partners";
 import Benefits from "../../components/Benefits/Benefits";
 import AboutUs from "../../components/AboutUs/AboutUs";
@@ -15,16 +15,21 @@ import "./Home.scss";
 const Home = () => {
 	const { t } = useTranslation();
 
+	const [scrollIndicator, setScrollIndicator] = useState(true);
+
 	useEffect(() => {
-		document.addEventListener("scroll", () => {
+		const handleScrollIndicator = () => {
 			const scrollTop = document.documentElement.scrollTop;
-			const homeTopScroll = document.querySelector(".home__top-scroll");
 			if (scrollTop > 0) {
-				homeTopScroll.classList.add("home__top-scroll--active");
+				setScrollIndicator(true);
 			} else {
-				homeTopScroll.classList.remove("home__top-scroll--active");
+				setScrollIndicator(false);
 			}
-		});
+		};
+
+		document.addEventListener("scroll", handleScrollIndicator);
+
+		return () => document.removeEventListener("scroll", handleScrollIndicator);
 	}, []);
 
 	return (
@@ -62,7 +67,9 @@ const Home = () => {
 								</div>
 							</div>
 							<div
-								className="home__top-scroll"
+								className={`home__top-scroll ${
+									scrollIndicator ? "home__top-scroll--hide" : ""
+								}`}
 								data-value={t("scroll_to_explore")}
 							></div>
 							<video

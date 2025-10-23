@@ -5,6 +5,7 @@ import "./AboutUs.scss";
 const AboutUs = () => {
 	const { t } = useTranslation();
 
+	// FIXME:
 	useEffect(() => {
 		document.querySelectorAll(".about-us__card-counter").forEach((count) => {
 			document.addEventListener("scroll", () => {

@@ -15,6 +15,7 @@ import "./scss/App.scss";
 function App() {
 	return (
 		<Router>
+			<ScrollToTop />
 			<Header />
 			<Routes>
 				<Route path="/" element={<Home />} />
@@ -26,7 +27,6 @@ function App() {
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 			<Footer />
-			<ScrollToTop />
 		</Router>
 	);
 }

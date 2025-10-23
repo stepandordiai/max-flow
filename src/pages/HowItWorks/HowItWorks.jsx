@@ -15,6 +15,7 @@ import "./HowItWorks.scss";
 const HowItWorks = () => {
 	const { t } = useTranslation();
 
+	// FIXME:
 	useEffect(() => {
 		document.addEventListener("scroll", () => {
 			const conic = document.querySelector(".process");

@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
+import navLinksData from "./../../data/nav-links-data.json";
+import socialsData from "./../../data/socials-data.json";
+import { NavLink } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import Container from "../Container/Container";
 import "./Footer.scss";
@@ -8,6 +10,7 @@ import "./Footer.scss";
 const Footer = () => {
 	const { t } = useTranslation();
 
+	// FIXME:
 	useEffect(() => {
 		const footerNavBtn = document.querySelectorAll(".footer__nav-btn");
 		const footerNavBtnIcon = document.querySelectorAll(".footer__nav-btn-icon");
@@ -34,9 +37,6 @@ const Footer = () => {
 		});
 	}, []);
 
-	const inactiveFooterNavLink = "footer__nav-link";
-	const activeFooterNavLink = "footer__nav-link footer__nav-link--active";
-
 	return (
 		<footer className="footer">
 			<Container>
@@ -51,46 +51,21 @@ const Footer = () => {
 							</button>
 							<div className="footer__nav-wrapper">
 								<nav className="footer__nav">
-									<NavLink
-										className={({ isActive }) =>
-											isActive ? activeFooterNavLink : inactiveFooterNavLink
-										}
-										to="/"
-									>
-										{t("home")}
-									</NavLink>
-									<NavLink
-										className={({ isActive }) =>
-											isActive ? activeFooterNavLink : inactiveFooterNavLink
-										}
-										to="/product"
-									>
-										{t("product_title")}
-									</NavLink>
-									<NavLink
-										className={({ isActive }) =>
-											isActive ? activeFooterNavLink : inactiveFooterNavLink
-										}
-										to="/how-it-works"
-									>
-										{t("how_it_works_title")}
-									</NavLink>
-									<NavLink
-										className={({ isActive }) =>
-											isActive ? activeFooterNavLink : inactiveFooterNavLink
-										}
-										to="/financing"
-									>
-										{t("financing")}
-									</NavLink>
-									<NavLink
-										className={({ isActive }) =>
-											isActive ? activeFooterNavLink : inactiveFooterNavLink
-										}
-										to="/contact"
-									>
-										{t("contact_title")}
-									</NavLink>
+									{navLinksData.map((link, index) => {
+										return (
+											<NavLink
+												key={index}
+												className={({ isActive }) =>
+													`footer__nav-link ${
+														isActive ? "footer__nav-link--active" : ""
+													}`
+												}
+												to={link.path}
+											>
+												{t(link.name)}
+											</NavLink>
+										);
+									})}
 								</nav>
 							</div>
 						</div>
@@ -207,30 +182,19 @@ const Footer = () => {
 							{t("contact.social_media")}
 						</p>
 						<div className="footer__middle-socials">
-							<a
-								className="footer__socials-link"
-								href="https://www.facebook.com/profile.php?id=61576683235805"
-								target="_blank"
-							>
-								<i className="fa-brands fa-facebook-f"></i>
-								<span>Facebook</span>
-							</a>
-							<a
-								className="footer__socials-link"
-								href="https://www.instagram.com/fvestavby/"
-								target="_blank"
-							>
-								<i className="fa-brands fa-instagram"></i>
-								<span>Instagram</span>
-							</a>
-							<a
-								className="footer__socials-link"
-								href="https://www.tiktok.com/@fvestavby"
-								target="_blank"
-							>
-								<i className="fa-brands fa-tiktok"></i>
-								<span>TikTok</span>
-							</a>
+							{socialsData.map((social, index) => {
+								return (
+									<a
+										key={index}
+										className="footer__socials-link"
+										href={social.url}
+										target="_blank"
+									>
+										<i className={social.logoImg}></i>
+										<span>{social.name}</span>
+									</a>
+								);
+							})}
 						</div>
 					</div>
 					<div className="footer__bottom">

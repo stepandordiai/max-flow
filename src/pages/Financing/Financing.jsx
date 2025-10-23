@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet-async";
-import "./Financing.scss";
 import Container from "../../components/Container/Container";
+import "./Financing.scss";
 
 const Financing = () => {
 	const { t } = useTranslation();

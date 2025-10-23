@@ -1,112 +1,90 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import i18next from "i18next";
 import downArrowIcon from "/icons/down-arrow.png";
 import "./LngSelect.scss";
 
+const lngData = [
+	{ code: "cs", name: "CZ" },
+	{ code: "sk", name: "SK" },
+	{ code: "en", name: "EN" },
+];
+
+function getStorage() {
+	return localStorage.getItem("i18nextLng") || "cs";
+}
+
 const LngSelect = () => {
-	function getStorage() {
-		return localStorage.getItem("i18nextLng") || "cs";
-	}
+	const [lngSelectActive, setLngSelectActive] = useState(false);
+	const [lngOptionName, setLngOptionName] = useState("CZ");
+	const [lngOption, setLngOption] = useState(getStorage());
 
-	const handleChangeLanguage = (lng) => {
-		i18next.changeLanguage(lng);
-		getStorage();
-	};
+	const lngSelect = useRef(null);
+
 	useEffect(() => {
-		const selectBtn = document.querySelector(".lng-select__btn");
-		const selectList = document.querySelector(".lng-select__list");
-		const selectOptions = selectList.querySelectorAll(".lng-select__option");
-		const selectBtnIcon = document.querySelector(".lng-select__btn-icon");
-		const selectBtnTxt = document.querySelector(".lng-select__btn-value");
+		const storedLngData = getStorage();
+		const foundLng = lngData.find((lng) => lng.code === storedLngData);
+		setLngOptionName(foundLng ? foundLng.name : lngData[0].name);
 
-		selectBtn.addEventListener("click", () => {
-			selectList.classList.toggle("lng-select__list--visible");
-			selectBtn.classList.toggle("lng-select__btn--active");
-			selectBtnIcon.classList.toggle("lng-select__btn-icon--active");
-		});
-
-		selectOptions.forEach((option) => {
-			option.addEventListener("click", (e) => {
-				e.stopPropagation();
-				selectBtnTxt.textContent = option.textContent;
-				handleChangeLanguage(option.dataset.value || "cs");
-				selectBtn.classList.remove("lng-select__btn--active");
-				selectList.classList.remove("lng-select__list--visible");
-				selectBtnIcon.classList.remove("lng-select__btn-icon--active");
-				for (let i = 0; i < selectOptions.length; i++) {
-					selectOptions[i].classList.remove("lng-select__option--active");
-				}
-				if (option.dataset.value === getStorage()) {
-					option.classList.add("lng-select__option--active");
-				}
-			});
-		});
-
-		document.addEventListener("click", (e) => {
-			if (e.target !== selectBtn) {
-				selectBtn.classList.remove("lng-select__btn--active");
-				selectList.classList.remove("lng-select__list--visible");
-				selectBtnIcon.classList.remove("lng-select__btn-icon--active");
+		const handleClickNotOnLngSelect = (e) => {
+			if (lngSelect.current && !lngSelect.current.contains(e.target)) {
+				setLngSelectActive(false);
 			}
-		});
-
-		const handleLngSelectBtn = (code = "CZ") => {
-			return code;
 		};
 
-		switch (getStorage()) {
-			case "cs":
-				selectBtnTxt.innerText = handleLngSelectBtn("CZ");
-				break;
-			case "sk":
-				selectBtnTxt.innerText = handleLngSelectBtn("SK");
-				break;
-			case "en":
-				selectBtnTxt.innerText = handleLngSelectBtn("EN");
-				break;
-		}
+		document.addEventListener("click", handleClickNotOnLngSelect);
+
+		return () =>
+			document.removeEventListener("click", handleClickNotOnLngSelect);
 	}, []);
 
-	const inactiveLngOption = "lng-select__option";
-	const activeLngOption = "lng-select__option lng-select__option--active";
+	const handleLngSelectBtn = () => {
+		setLngSelectActive((prev) => !prev);
+	};
+
+	const handleLng = (lngCode, lngName) => {
+		i18next.changeLanguage(lngCode);
+		setLngOption(lngCode);
+		setLngOptionName(lngName);
+		setLngSelectActive(false);
+	};
 
 	return (
-		<div className="lng-select">
-			<button className="lng-select__btn">
-				<span className="lng-select__btn-value">CZ</span>
+		<div ref={lngSelect} className="lng-select">
+			<button
+				onClick={handleLngSelectBtn}
+				className={`lng-select__btn ${
+					lngSelectActive ? "lng-select__btn--active" : ""
+				}`}
+			>
+				<span className="lng-select__btn-value">{lngOptionName}</span>
 				<img
-					className="lng-select__btn-icon"
+					className={`lng-select__btn-icon ${
+						lngSelectActive ? "lng-select__btn-icon--active" : ""
+					}`}
 					src={downArrowIcon}
 					width={20}
 					height={20}
 					alt=""
 				/>
 			</button>
-			<ul className="lng-select__list">
-				<li
-					className={
-						getStorage() === "cs" ? activeLngOption : inactiveLngOption
-					}
-					data-value="cs"
-				>
-					<span>CZ</span>
-				</li>
-				<li
-					className={
-						getStorage() === "sk" ? activeLngOption : inactiveLngOption
-					}
-					data-value="sk"
-				>
-					<span>SK</span>
-				</li>
-				<li
-					className={
-						getStorage() === "en" ? activeLngOption : inactiveLngOption
-					}
-					data-value="en"
-				>
-					<span>EN</span>
-				</li>
+			<ul
+				className={`lng-select__list ${
+					lngSelectActive ? "lng-select__list--visible" : ""
+				}`}
+			>
+				{lngData.map((lng) => {
+					return (
+						<li
+							key={lng.code}
+							onClick={() => handleLng(lng.code, lng.name)}
+							className={`lng-select__option ${
+								lngOption === lng.code ? "lng-select__option--active" : ""
+							}`}
+						>
+							<span>{lng.name}</span>
+						</li>
+					);
+				})}
 			</ul>
 		</div>
 	);

@@ -1,0 +1,7 @@
+[
+	{ "name": "home", "path": "/" },
+	{ "name": "product_title", "path": "/product" },
+	{ "name": "how_it_works_title", "path": "/how-it-works" },
+	{ "name": "financing", "path": "/financing" },
+	{ "name": "contact_title", "path": "/contact" }
+]

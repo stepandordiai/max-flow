@@ -1,46 +1,35 @@
 import { useTranslation } from "react-i18next";
+import { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet-async";
-import { useEffect, useState } from "react";
+import countriesData from "./../../data/countries-data.json";
+import socialsData from "./../../data/socials-data.json";
+import Container from "../../components/Container/Container";
 import arrowDownIcon from "/icons/down-arrow.png";
 import "./Contact.scss";
-import Container from "../../components/Container/Container";
+
+const getStorage = () => {
+	return localStorage.getItem("country_code") || "CZ";
+};
 
 const Contact = () => {
 	const { t } = useTranslation();
 
-	const countriesData = [
-		{
-			name: "CZ",
-			code: "+420",
-			flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/1280px-Flag_of_the_Czech_Republic.svg.png",
-		},
-		{
-			name: "UA",
-			code: "+380",
-			flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/500px-Flag_of_Ukraine.svg.png",
-		},
-		{
-			name: "SK",
-			code: "+421",
-			flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/500px-Flag_of_Slovakia.svg.png",
-		},
-	];
-
-	const [countryName, setCountryName] = useState(countriesData[0].name);
+	const [countrySelect, setCountrySelect] = useState(false);
+	const [countryName, setCountryName] = useState(getStorage());
+	const [countryFlag, setCountryrFlag] = useState(countriesData[0].flag);
 	const [inputValue, setInputValue] = useState(countriesData[0].code);
-	const [currentCode, setCurrentCode] = useState(countriesData[0].code);
+
+	const countrySelectRef = useRef(null);
 
 	const handleCodeInputValue = (e) => {
-		let currentValue = e.target.value;
+		const value = e.target.value;
 
-		if (!currentValue.startsWith(currentCode)) {
-			currentValue = currentCode;
-			setInputValue(currentValue);
+		if (value.length >= 4) {
+			setInputValue(value);
 		}
-
-		setInputValue(currentValue);
 	};
 
+	// FIXME:
 	useEffect(() => {
 		const inputs = document.querySelectorAll(".js-input");
 		const customContainer = document.querySelector(".custom-input-container");
@@ -65,42 +54,43 @@ const Contact = () => {
 				customContainer.classList.remove("input--active");
 			}
 		});
+	}, []);
 
-		const newCode = countriesData.find(
+	useEffect(() => {
+		const foundCountry = countriesData.find(
 			(country) => country.name === countryName
 		);
 
-		setInputValue(newCode.code);
-		setCurrentCode(newCode.code);
-	}, [countryName]);
+		setCountryrFlag(foundCountry.flag);
+		setInputValue(foundCountry.code);
 
-	useEffect(() => {
-		const customSelectDd = document.querySelector(".custom-select-dd");
-		const customSelectBtn = document.querySelector(".custom-select-btn");
-
-		customSelectBtn.addEventListener("click", (e) => {
-			e.preventDefault();
-			customSelectDd.classList.add("custom-select-dd--active");
-		});
-
-		document.querySelectorAll(".custom-select-option").forEach((option) => {
-			option.addEventListener("click", (e) => {
-				const dataValue = e.target.dataset.value;
-				const dataFlag = e.target.dataset.flag;
-				setCountryName(dataValue);
-				document.querySelector(".custom-select-btn-txt").textContent =
-					dataValue;
-				document.querySelector(".custom-select-btn-flag").src = dataFlag;
-				customSelectDd.classList.remove("custom-select-dd--active");
-			});
-		});
-
-		document.addEventListener("click", (e) => {
-			if (e.target !== customSelectDd && e.target !== customSelectBtn) {
-				customSelectDd.classList.remove("custom-select-dd--active");
+		const handleClickNotOnCountrySelect = (e) => {
+			if (
+				countrySelectRef.current &&
+				!countrySelectRef.current.contains(e.target)
+			) {
+				setCountrySelect(false);
 			}
-		});
+		};
+
+		document.addEventListener("click", handleClickNotOnCountrySelect);
+
+		return () =>
+			document.removeEventListener("click", handleClickNotOnCountrySelect);
 	}, []);
+
+	const handleCountrySelect = (e) => {
+		e.preventDefault();
+		setCountrySelect((prev) => !prev);
+	};
+
+	const handleCountryName = (countryName, countryFlag, countryCode) => {
+		setCountryName(countryName);
+		localStorage.setItem("country_code", countryName);
+		setCountrySelect(false);
+		setInputValue(countryCode);
+		setCountryrFlag(countryFlag);
+	};
 
 	return (
 		<>
@@ -160,30 +150,19 @@ const Contact = () => {
 							<div>
 								<p style={{ marginBottom: 5 }}>{t("contact.social_media")}</p>
 								<div className="contact__info-socials">
-									<a
-										className="contact__info-socials-link"
-										href="https://www.facebook.com/people/Fve-stavby/61576683235805/"
-										target="_blank"
-									>
-										<i className="fa-brands fa-facebook-f"></i>
-										<span>Facebook</span>
-									</a>
-									<a
-										className="contact__info-socials-link"
-										href="https://www.instagram.com/fvestavby/#"
-										target="_blank"
-									>
-										<i className="fa-brands fa-instagram"></i>
-										<span>Instagram</span>
-									</a>
-									<a
-										className="contact__info-socials-link"
-										href="https://www.tiktok.com/@fvestavby"
-										target="_blank"
-									>
-										<i className="fa-brands fa-tiktok"></i>
-										<span>TikTok</span>
-									</a>
+									{socialsData.map((social, index) => {
+										return (
+											<a
+												key={index}
+												className="contact__info-socials-link"
+												href={social.url}
+												target="_blank"
+											>
+												<i className={social.logoImg}></i>
+												<span>{social.name}</span>
+											</a>
+										);
+									})}
 								</div>
 							</div>
 						</div>
@@ -225,35 +204,52 @@ const Contact = () => {
 								</div>
 								<div className="contact__form-input-container">
 									<label htmlFor="tel">{t("contact.tel")}</label>
-
 									<div className="custom-input-container">
-										<div className="custom-select">
-											<button className="custom-select-btn">
+										<div ref={countrySelectRef} className="custom-select">
+											<button
+												onClick={handleCountrySelect}
+												className="custom-select-btn"
+											>
 												<img
 													style={{ pointerEvents: "none" }}
 													className="custom-select-btn-flag"
 													width={20}
-													src={countriesData[0].flag}
+													src={countryFlag}
 													alt=""
 												/>
 												<span
 													style={{ pointerEvents: "none" }}
 													className="custom-select-btn-txt"
 												>
-													CZ
+													{countryName}
 												</span>
 												<img
-													style={{ pointerEvents: "none" }}
+													className={`custom-select__btn-icon ${
+														countrySelect
+															? "custom-select__btn-icon--active"
+															: ""
+													}`}
 													width={20}
 													src={arrowDownIcon}
 													alt=""
 												/>
 											</button>
-											<div className="custom-select-dd">
+											<div
+												className={`custom-select-dd ${
+													countrySelect ? "custom-select-dd--active" : ""
+												}`}
+											>
 												{countriesData.map((country, index) => {
 													return (
 														<div
 															key={index}
+															onClick={() =>
+																handleCountryName(
+																	country.name,
+																	country.flag,
+																	country.code
+																)
+															}
 															style={{
 																display: "flex",
 																justifyContent: "center",
@@ -261,8 +257,6 @@ const Contact = () => {
 																gap: 5,
 															}}
 															className="custom-select-option"
-															data-value={country.name}
-															data-flag={country.flag}
 														>
 															<img
 																style={{ pointerEvents: "none" }}
