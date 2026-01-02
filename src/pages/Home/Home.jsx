@@ -20,11 +20,7 @@ const Home = () => {
 	useEffect(() => {
 		const handleScrollIndicator = () => {
 			const scrollTop = document.documentElement.scrollTop;
-			if (scrollTop > 0) {
-				setScrollIndicator(true);
-			} else {
-				setScrollIndicator(false);
-			}
+			setScrollIndicator(scrollTop > 0);
 		};
 
 		document.addEventListener("scroll", handleScrollIndicator);

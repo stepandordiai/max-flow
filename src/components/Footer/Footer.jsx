@@ -199,7 +199,7 @@ const Footer = () => {
 					</div>
 					<div className="footer__bottom">
 						<div>
-							<p>&copy; 2025 MaxFlow 360&deg;</p>
+							<p>&copy; 2025-{new Date().getFullYear()} MaxFlow 360&deg;</p>
 							<p>{t("footer.all_rights_reserved")}</p>
 						</div>
 						<p className="footer__creator">
